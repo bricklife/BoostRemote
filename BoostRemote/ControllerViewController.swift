@@ -31,9 +31,9 @@ class ControllerViewController: UIViewController {
     }
     
     private func setUp(slider: UISlider) {
-        slider.setThumbImage(UIImage(named: "thumb"), for: .normal)
-        slider.setMinimumTrackImage(UIImage(named: "left"), for: .normal)
-        slider.setMaximumTrackImage(UIImage(named: "right"), for: .normal)
+        slider.setThumbImage(UIImage(named: "thumb")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        slider.setMinimumTrackImage(UIImage(named: "left")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        slider.setMaximumTrackImage(UIImage(named: "right")?.withRenderingMode(.alwaysTemplate), for: .normal)
         
         slider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * -0.5))
     }
