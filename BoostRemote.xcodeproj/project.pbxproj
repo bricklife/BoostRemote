@@ -12,7 +12,6 @@
 		CB3BE8B61F2FF2F4000561F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */; };
 		CB3BE8B81F2FF2F4000561F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE8B71F2FF2F4000561F7 /* Assets.xcassets */; };
 		CB3BE8BB1F2FF2F4000561F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE8B91F2FF2F4000561F7 /* LaunchScreen.storyboard */; };
-		CB3BE8CD1F2FF43A000561F7 /* PeripheralScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE8CC1F2FF43A000561F7 /* PeripheralScanViewController.swift */; };
 		CBA1F0F11F2FF79B0070506F /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = CBA1F0F01F2FF79B0070506F /* Cartfile */; };
 		CBA1F0F21F2FF7B40070506F /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F09C1F2FF7790070506F /* ReactiveCocoa.framework */; };
 		CBA1F0F31F2FF7B40070506F /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F09C1F2FF7790070506F /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -283,7 +282,6 @@
 		CB3BE8B71F2FF2F4000561F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3BE8BA1F2FF2F4000561F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3BE8BC1F2FF2F4000561F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB3BE8CC1F2FF43A000561F7 /* PeripheralScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralScanViewController.swift; sourceTree = "<group>"; };
 		CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = Carthage/Checkouts/ReactiveCocoa/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveSwift.xcodeproj; path = Carthage/Checkouts/ReactiveSwift/ReactiveSwift.xcodeproj; sourceTree = "<group>"; };
 		CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
@@ -329,7 +327,6 @@
 				CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */,
 				CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */,
 				CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */,
-				CB3BE8CC1F2FF43A000561F7 /* PeripheralScanViewController.swift */,
 				CB3BE8B71F2FF2F4000561F7 /* Assets.xcassets */,
 				CB3BE8B91F2FF2F4000561F7 /* LaunchScreen.storyboard */,
 				CB3BE8BC1F2FF2F4000561F7 /* Info.plist */,
@@ -708,7 +705,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB3BE8CD1F2FF43A000561F7 /* PeripheralScanViewController.swift in Sources */,
 				CB3BE8B31F2FF2F4000561F7 /* ControllerViewController.swift in Sources */,
 				CB3BE8B11F2FF2F4000561F7 /* AppDelegate.swift in Sources */,
 			);

@@ -15,12 +15,15 @@ class ControllerViewController: UIViewController {
     
     @IBOutlet weak var leftSlider: UISlider!
     @IBOutlet weak var rightSlider: UISlider!
+    @IBOutlet weak var centerSlider: UISlider!
+    @IBOutlet weak var connectButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUp(slider: leftSlider)
         setUp(slider: rightSlider)
+        setUp(slider: centerSlider)
         
         signal(for: leftSlider).observeValues { (value) in
             print("left:", value)
@@ -28,6 +31,11 @@ class ControllerViewController: UIViewController {
         signal(for: rightSlider).observeValues { (value) in
             print("right:", value)
         }
+        signal(for: centerSlider).observeValues { (value) in
+            print("center:", value)
+        }
+        
+        connectButton.setImage(UIImage(named: "disconnected")?.withRenderingMode(.alwaysTemplate), for: .normal)
     }
     
     private func setUp(slider: UISlider) {
