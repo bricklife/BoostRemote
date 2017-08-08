@@ -36,6 +36,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJq-QM-TpF">
                                 <rect key="frame" x="208" y="36" width="64" height="32"/>
                                 <state key="normal" image="disconnected"/>
+                                <connections>
+                                    <action selector="connectButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahW-q6-jaw"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wx3-oT-Ocr">
                                 <rect key="frame" x="136" y="84" width="208" height="205"/>

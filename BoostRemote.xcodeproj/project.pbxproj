@@ -21,6 +21,11 @@
 		CBA1F0FB1F2FF7B40070506F /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F0CC1F2FF7870070506F /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBA1F0FE1F2FF7B40070506F /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F0E11F2FF78C0070506F /* ReSwift.framework */; };
 		CBA1F0FF1F2FF7B40070506F /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F0E11F2FF78C0070506F /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBD94E841F391B3F0037ED71 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E831F391B3F0037ED71 /* State.swift */; };
+		CBD94E861F391D7F0037ED71 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E851F391D7F0037ED71 /* Action.swift */; };
+		CBD94E881F391E2E0037ED71 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E871F391E2E0037ED71 /* Reducer.swift */; };
+		CBD94E8A1F392C310037ED71 /* Motor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E891F392C310037ED71 /* Motor.swift */; };
+		CBD94E8C1F3936A60037ED71 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E8B1F3936A60037ED71 /* Command.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,6 +292,11 @@
 		CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
 		CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReSwift.xcodeproj; path = Carthage/Checkouts/ReSwift/ReSwift.xcodeproj; sourceTree = "<group>"; };
 		CBA1F0F01F2FF79B0070506F /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		CBD94E831F391B3F0037ED71 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		CBD94E851F391D7F0037ED71 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		CBD94E871F391E2E0037ED71 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		CBD94E891F392C310037ED71 /* Motor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Motor.swift; sourceTree = "<group>"; };
+		CBD94E8B1F3936A60037ED71 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +337,11 @@
 				CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */,
 				CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */,
 				CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */,
+				CBD94E831F391B3F0037ED71 /* State.swift */,
+				CBD94E851F391D7F0037ED71 /* Action.swift */,
+				CBD94E871F391E2E0037ED71 /* Reducer.swift */,
+				CBD94E891F392C310037ED71 /* Motor.swift */,
+				CBD94E8B1F3936A60037ED71 /* Command.swift */,
 				CB3BE8B71F2FF2F4000561F7 /* Assets.xcassets */,
 				CB3BE8B91F2FF2F4000561F7 /* LaunchScreen.storyboard */,
 				CB3BE8BC1F2FF2F4000561F7 /* Info.plist */,
@@ -706,7 +721,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB3BE8B31F2FF2F4000561F7 /* ControllerViewController.swift in Sources */,
+				CBD94E8A1F392C310037ED71 /* Motor.swift in Sources */,
+				CBD94E861F391D7F0037ED71 /* Action.swift in Sources */,
 				CB3BE8B11F2FF2F4000561F7 /* AppDelegate.swift in Sources */,
+				CBD94E8C1F3936A60037ED71 /* Command.swift in Sources */,
+				CBD94E881F391E2E0037ED71 /* Reducer.swift in Sources */,
+				CBD94E841F391B3F0037ED71 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
