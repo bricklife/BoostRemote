@@ -32,6 +32,7 @@
 		CBF9D2F01F3CCA6E00B97E11 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2EF1F3CCA6E00B97E11 /* Port.swift */; };
 		CBF9D2F21F3CCA8900B97E11 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2F11F3CCA8900B97E11 /* DeviceType.swift */; };
 		CBF9D2F41F3CCB0900B97E11 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2F31F3CCB0900B97E11 /* Notification.swift */; };
+		CBF9D2F61F3CDAC700B97E11 /* Data+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2F51F3CDAC700B97E11 /* Data+HexString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,6 +310,7 @@
 		CBF9D2EF1F3CCA6E00B97E11 /* Port.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
 		CBF9D2F11F3CCA8900B97E11 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		CBF9D2F31F3CCB0900B97E11 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		CBF9D2F51F3CDAC700B97E11 /* Data+HexString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+HexString.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +353,7 @@
 				CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */,
 				CBF9D2B81F3CACA800B97E11 /* MoveHubManager.swift */,
 				CBF9D2D31F3CB0DD00B97E11 /* CoreBluetooth+Extension.swift */,
+				CBF9D2F51F3CDAC700B97E11 /* Data+HexString.swift */,
 				CBF9D2D81F3CB63300B97E11 /* Redux */,
 				CBF9D2D71F3CB62700B97E11 /* MoveHub */,
 				CB3BE8B71F2FF2F4000561F7 /* Assets.xcassets */,
@@ -760,6 +763,7 @@
 				CBD94E861F391D7F0037ED71 /* Action.swift in Sources */,
 				CB3BE8B11F2FF2F4000561F7 /* AppDelegate.swift in Sources */,
 				CBD94E8C1F3936A60037ED71 /* Command.swift in Sources */,
+				CBF9D2F61F3CDAC700B97E11 /* Data+HexString.swift in Sources */,
 				CBF9D2F21F3CCA8900B97E11 /* DeviceType.swift in Sources */,
 				CBF9D2F41F3CCB0900B97E11 /* Notification.swift in Sources */,
 				CBD94E881F391E2E0037ED71 /* Reducer.swift in Sources */,

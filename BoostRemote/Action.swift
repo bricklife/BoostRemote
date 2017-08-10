@@ -34,6 +34,6 @@ struct ActionCenter {
     
     static func send(command: Command) {
         print(command)
-        print(command.data as NSData)
+        print(command.data.hexString)
     }
 }

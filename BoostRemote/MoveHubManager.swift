@@ -101,14 +101,6 @@ extension MoveHubManager: CBPeripheralDelegate {
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        
-        func dump(_ data: Data?) -> String {
-            guard let data = data else {
-                return "nil"
-            }
-            return (data as NSData).description
-        }
-        
-        print(#function, characteristic.uuid, dump(characteristic.value), error ?? "")
+        print(#function, characteristic.uuid, characteristic.value?.hexString ?? "nil", error ?? "")
     }
 }
