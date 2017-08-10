@@ -24,6 +24,6 @@ struct MotorPowerCommand: Command {
     }
     
     var description: String {
-        return "MotorPowerCommand <port: \(port.name), power: \(power)>"
+        return "MotorPowerCommand <port: \(port), power: \(power)>"
     }
 }
