@@ -11,24 +11,17 @@ import Foundation
 extension Data {
     
     public init?(hexString: String) {
-        var hexString = hexString
+        let hexString = hexString
             .replacingOccurrences(of: "0x", with: "")
             .components(separatedBy: CharacterSet(charactersIn: "0123456789abcdefABCDEF").inverted)
             .joined()
         
-        guard hexString.characters.count % 2 == 0 else { return nil }
+        let even = hexString.characters.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
+        let odd  = hexString.characters.enumerated().filter { $0.offset % 2 == 1 }.map { $0.element }
         
-        var data = Data(capacity: hexString.characters.count / 2)
+        let bytes = zip(even, odd).flatMap { UInt8(String([$0.0, $0.1]), radix: 16) }
         
-        while (hexString.characters.count > 0) {
-            let index = hexString.index(hexString.startIndex, offsetBy: 2)
-            let byteLiteral = hexString.substring(to: index)
-            guard let byte = UInt8(byteLiteral, radix: 16) else { return nil }
-            data.append(byte)
-            hexString = hexString.substring(from: index)
-        }
-        
-        self = data
+        self.init(bytes: bytes)
     }
     
     public var hexString: String {
