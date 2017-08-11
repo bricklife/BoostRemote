@@ -923,7 +923,7 @@
 				);
 				INFOPLIST_FILE = BoostRemote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bricklife.ios.BoostRemote;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bricklife.ios.boost-remote";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -941,7 +941,7 @@
 				);
 				INFOPLIST_FILE = BoostRemote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bricklife.ios.BoostRemote;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bricklife.ios.boost-remote";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
