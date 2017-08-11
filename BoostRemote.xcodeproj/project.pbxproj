@@ -27,7 +27,6 @@
 		CBD94E8A1F392C310037ED71 /* Motor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E891F392C310037ED71 /* Motor.swift */; };
 		CBD94E8C1F3936A60037ED71 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E8B1F3936A60037ED71 /* Command.swift */; };
 		CBF9D2B91F3CACA800B97E11 /* MoveHubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2B81F3CACA800B97E11 /* MoveHubManager.swift */; };
-		CBF9D2D41F3CB0DD00B97E11 /* CoreBluetooth+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2D31F3CB0DD00B97E11 /* CoreBluetooth+Extension.swift */; };
 		CBF9D2D61F3CB52800B97E11 /* MoveHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2D51F3CB52800B97E11 /* MoveHubService.swift */; };
 		CBF9D2F01F3CCA6E00B97E11 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2EF1F3CCA6E00B97E11 /* Port.swift */; };
 		CBF9D2F21F3CCA8900B97E11 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2F11F3CCA8900B97E11 /* DeviceType.swift */; };
@@ -305,7 +304,6 @@
 		CBD94E891F392C310037ED71 /* Motor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Motor.swift; sourceTree = "<group>"; };
 		CBD94E8B1F3936A60037ED71 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		CBF9D2B81F3CACA800B97E11 /* MoveHubManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveHubManager.swift; sourceTree = "<group>"; };
-		CBF9D2D31F3CB0DD00B97E11 /* CoreBluetooth+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreBluetooth+Extension.swift"; sourceTree = "<group>"; };
 		CBF9D2D51F3CB52800B97E11 /* MoveHubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveHubService.swift; sourceTree = "<group>"; };
 		CBF9D2EF1F3CCA6E00B97E11 /* Port.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
 		CBF9D2F11F3CCA8900B97E11 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
@@ -352,7 +350,6 @@
 				CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */,
 				CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */,
 				CBF9D2B81F3CACA800B97E11 /* MoveHubManager.swift */,
-				CBF9D2D31F3CB0DD00B97E11 /* CoreBluetooth+Extension.swift */,
 				CBF9D2F51F3CDAC700B97E11 /* Data+HexString.swift */,
 				CBF9D2D81F3CB63300B97E11 /* Redux */,
 				CBF9D2D71F3CB62700B97E11 /* MoveHub */,
@@ -771,7 +768,6 @@
 				CBD94E841F391B3F0037ED71 /* State.swift in Sources */,
 				CBF9D2F01F3CCA6E00B97E11 /* Port.swift in Sources */,
 				CBF9D2D61F3CB52800B97E11 /* MoveHubService.swift in Sources */,
-				CBF9D2D41F3CB0DD00B97E11 /* CoreBluetooth+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

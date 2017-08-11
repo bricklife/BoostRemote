@@ -20,20 +20,23 @@ struct ActionCenter {
     
     static func startScan() {
         let action: Store<State>.ActionCreator = { state, store in
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                store.dispatch(ConnectAction.connect)
-            }
+            MoveHubManager.shared.startScan()
             return ConnectAction.scan
         }
         store.dispatch(action)
     }
     
-    static func disconnect() {
+    static func stopScan() {
+        MoveHubManager.shared.stopScan()
         store.dispatch(ConnectAction.disconnect)
+    }
+    
+    static func disconnect() {
+        MoveHubManager.shared.disconnect()
     }
     
     static func send(command: Command) {
         print(command)
-        print(command.data.hexString)
+        MoveHubManager.shared.write(data: command.data)
     }
 }

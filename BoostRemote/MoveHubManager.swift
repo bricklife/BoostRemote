@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreBluetooth
+import ReSwift
 
 class MoveHubManager: NSObject {
     
@@ -21,6 +22,9 @@ class MoveHubManager: NSObject {
     override init() {
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
+    }
+    
+    func start() {
     }
     
     func startScan() {
@@ -48,14 +52,16 @@ class MoveHubManager: NSObject {
         }
     }
     
-    func store(characteristic: CBCharacteristic) {
+    func set(characteristic: CBCharacteristic) {
         if let peripheral = peripheral, characteristic.properties.contains([.write, .notify]) {
             self.characteristic = characteristic
             peripheral.setNotifyValue(true, for: characteristic)
+            store.dispatch(ConnectAction.connect)
         }
     }
     
     func write(data: Data) {
+        print("write", data.hexString)
         if let peripheral = peripheral, let characteristic = characteristic {
             peripheral.writeValue(data, for: characteristic, type: .withResponse)
         }
@@ -65,11 +71,28 @@ class MoveHubManager: NSObject {
 extension MoveHubManager: CBCentralManagerDelegate {
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        print(#function, central.state)
+        func description() -> String {
+            switch central.state {
+            case .poweredOff:
+                return "poweredOff"
+            case .poweredOn:
+                return "poweredOn"
+            case .resetting:
+                return "resetting"
+            case .unauthorized:
+                return "unauthorized"
+            case .unknown:
+                return "unknown"
+            case .unsupported:
+                return "unsupported"
+            }
+        }
+        print(description())
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         connect(peripheral: peripheral)
+        stopScan()
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
@@ -79,10 +102,12 @@ extension MoveHubManager: CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
         print(#function, error ?? "?")
+        store.dispatch(ConnectAction.disconnect)
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        print(#function, error ?? "?")
+        print(#function, error ?? "")
+        store.dispatch(ConnectAction.disconnect)
     }
 }
 
@@ -96,7 +121,7 @@ extension MoveHubManager: CBPeripheralDelegate {
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         if let characteristic = service.characteristics?.first(where: { $0.uuid == MoveHubService.characteristicUuid }) {
-            store(characteristic: characteristic)
+            set(characteristic: characteristic)
         }
     }
     
