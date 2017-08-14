@@ -12,7 +12,10 @@ import ReSwift
 struct Reducer {
     
     static func appReducer(action: Action, state: State?) -> State {
-        return State(connectionState: connectionReducer(state: state?.connectionState, action: action))
+        return State(
+            connectionState: connectionReducer(state: state?.connectionState, action: action),
+            portState: portReducer(state: state?.portState, action: action)
+        )
     }
     
     static func connectionReducer(state: ConnectionState?, action: Action) -> ConnectionState {
@@ -28,5 +31,20 @@ struct Reducer {
         case .disconnect:
             return .disconnected
         }
+    }
+    
+    static func portReducer(state: PortState?, action: Action) -> PortState {
+        var state = state ?? [:]
+        
+        guard let action = action as? NotificationAction else { return state }
+        
+        switch action.notification {
+        case .connected(let port, let deviceType):
+            state[port] = deviceType
+        case .disconnected(let port):
+            state[port] = nil
+        }
+        
+        return state
     }
 }

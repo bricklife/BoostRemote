@@ -12,6 +12,7 @@ import ReSwift
 struct State: StateType {
     
     var connectionState: ConnectionState
+    var portState: PortState
 }
 
 enum ConnectionState {
@@ -20,3 +21,5 @@ enum ConnectionState {
     case connected
     case connecting
 }
+
+typealias PortState = [Port: DeviceType]

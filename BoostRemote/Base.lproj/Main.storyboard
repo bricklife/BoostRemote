@@ -25,19 +25,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="E2E-fQ-rUb">
-                                        <rect key="frame" x="-34" y="64" width="227.5" height="225"/>
+                                        <rect key="frame" x="-34" y="64" width="211.5" height="209"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="E2E-fQ-rUb" secondAttribute="height" multiplier="1:1" id="FrH-Jb-GCq"/>
                                         </constraints>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Tw-7C-trd">
-                                        <rect key="frame" x="286.5" y="64" width="227.5" height="225"/>
+                                        <rect key="frame" x="302.5" y="64" width="211.5" height="209"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6Tw-7C-trd" secondAttribute="height" multiplier="1:1" id="NXG-9z-Ywz"/>
                                         </constraints>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wx3-oT-Ocr">
-                                        <rect key="frame" x="126.5" y="161" width="228" height="31"/>
+                                        <rect key="frame" x="134.5" y="153" width="212" height="31"/>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJq-QM-TpF">
                                         <rect key="frame" x="208.5" y="16" width="64" height="32"/>
@@ -46,9 +46,28 @@
                                             <action selector="connectButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahW-q6-jaw"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VN-wy-WSJ">
+                                        <rect key="frame" x="64" y="280" width="15" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cA-71-ppI">
+                                        <rect key="frame" x="401" y="280" width="15.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEz-sA-1GZ">
+                                        <rect key="frame" x="231.5" y="280" width="17" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="3cA-71-ppI" firstAttribute="centerX" secondItem="6Tw-7C-trd" secondAttribute="centerX" id="AV3-F1-OR6"/>
                                     <constraint firstItem="RJq-QM-TpF" firstAttribute="top" secondItem="rMZ-Aq-0i1" secondAttribute="top" constant="16" id="DS0-Xi-GPw"/>
                                     <constraint firstAttribute="width" secondItem="rMZ-Aq-0i1" secondAttribute="height" multiplier="2" id="Eav-R3-FS7"/>
                                     <constraint firstItem="Wx3-oT-Ocr" firstAttribute="centerX" secondItem="rMZ-Aq-0i1" secondAttribute="centerX" id="GQs-Qv-KPt"/>
@@ -57,10 +76,15 @@
                                     <constraint firstItem="Wx3-oT-Ocr" firstAttribute="width" secondItem="E2E-fQ-rUb" secondAttribute="width" id="NwM-Db-Hso"/>
                                     <constraint firstAttribute="trailing" secondItem="6Tw-7C-trd" secondAttribute="trailing" constant="-32" id="OAO-r6-6Af"/>
                                     <constraint firstItem="6Tw-7C-trd" firstAttribute="top" secondItem="rMZ-Aq-0i1" secondAttribute="top" constant="64" id="Z16-Np-GP2"/>
-                                    <constraint firstItem="Wx3-oT-Ocr" firstAttribute="centerY" secondItem="rMZ-Aq-0i1" secondAttribute="centerY" constant="16" id="aCs-UT-vi1"/>
-                                    <constraint firstAttribute="bottom" secondItem="6Tw-7C-trd" secondAttribute="bottom" constant="32" id="iT0-OW-W3Z"/>
-                                    <constraint firstAttribute="bottom" secondItem="E2E-fQ-rUb" secondAttribute="bottom" constant="32" id="jTs-OL-tpb"/>
+                                    <constraint firstItem="aEz-sA-1GZ" firstAttribute="top" secondItem="9VN-wy-WSJ" secondAttribute="top" id="ZC8-8f-Zuw"/>
+                                    <constraint firstItem="aEz-sA-1GZ" firstAttribute="centerX" secondItem="rMZ-Aq-0i1" secondAttribute="centerX" id="fZx-sk-zvx"/>
+                                    <constraint firstItem="9VN-wy-WSJ" firstAttribute="top" secondItem="E2E-fQ-rUb" secondAttribute="bottom" constant="8" id="gvg-dp-Rcg"/>
+                                    <constraint firstItem="Wx3-oT-Ocr" firstAttribute="centerY" secondItem="E2E-fQ-rUb" secondAttribute="centerY" id="hFd-1O-jVc"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Tw-7C-trd" secondAttribute="bottom" constant="48" id="iT0-OW-W3Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="E2E-fQ-rUb" secondAttribute="bottom" constant="48" id="jTs-OL-tpb"/>
+                                    <constraint firstItem="3cA-71-ppI" firstAttribute="top" secondItem="9VN-wy-WSJ" secondAttribute="top" id="oUz-i0-DSS"/>
                                     <constraint firstItem="RJq-QM-TpF" firstAttribute="centerX" secondItem="rMZ-Aq-0i1" secondAttribute="centerX" id="qAY-jA-wtw"/>
+                                    <constraint firstItem="9VN-wy-WSJ" firstAttribute="centerX" secondItem="E2E-fQ-rUb" secondAttribute="centerX" id="y6K-Jy-WIV"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -99,6 +123,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="centerLabel" destination="aEz-sA-1GZ" id="m8A-UV-eVg"/>
                         <outlet property="centerSlider" destination="Wx3-oT-Ocr" id="e3K-Go-7q2"/>
                         <outlet property="connectButton" destination="RJq-QM-TpF" id="EWe-4z-Clk"/>
                         <outlet property="leftSlider" destination="E2E-fQ-rUb" id="VeT-Fe-YZy"/>

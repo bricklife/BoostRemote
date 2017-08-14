@@ -16,6 +16,11 @@ enum ConnectAction: Action {
     case disconnect
 }
 
+struct NotificationAction: Action {
+    
+    let notification: Notification
+}
+
 struct ActionCenter {
     
     static func startScan() {

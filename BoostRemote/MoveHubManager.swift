@@ -127,5 +127,8 @@ extension MoveHubManager: CBPeripheralDelegate {
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         print(#function, characteristic.uuid, characteristic.value?.hexString ?? "nil", error ?? "")
+        if let data = characteristic.value, let notification = Notification(data: data) {
+            store.dispatch(NotificationAction(notification: notification))
+        }
     }
 }

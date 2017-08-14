@@ -16,14 +16,28 @@ class ControllerViewController: UIViewController, StoreSubscriber {
     
     @IBOutlet weak var leftSlider: UISlider!
     @IBOutlet weak var rightSlider: UISlider!
+    
     @IBOutlet weak var centerSlider: UISlider!
+    @IBOutlet weak var centerLabel: UILabel!
+    
     @IBOutlet weak var connectButton: UIButton!
     
     let connectionState = MutableProperty(ConnectionState.disconnected)
     
     var leftMotor: Motor? = Motor(port: .A)
     var rightMotor: Motor? = Motor(port: .B)
-    var centerMotor: Motor? = Motor(port: .C)
+    var centerMotor: Motor? {
+        didSet {
+            if let motor = centerMotor {
+                centerSlider.isHidden = false
+                centerLabel.isHidden = false
+                centerLabel.text = motor.port.description
+            } else {
+                centerSlider.isHidden = true
+                centerLabel.isHidden = true
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +71,12 @@ class ControllerViewController: UIViewController, StoreSubscriber {
     
     func newState(state: State) {
         connectionState.value = state.connectionState
+        
+        centerMotor = state.portState
+            .flatMap { (port, type) -> Motor? in
+                return type == .interactiveMotor ? Motor(port: port) : nil
+            }
+            .first
     }
     
     private func setUp(slider: UISlider) {
