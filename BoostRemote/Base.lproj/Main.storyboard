@@ -21,47 +21,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="E2E-fQ-rUb">
-                                <rect key="frame" x="-2" y="84" width="208" height="205"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMZ-Aq-0i1">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="E2E-fQ-rUb">
+                                        <rect key="frame" x="-34" y="64" width="227.5" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="E2E-fQ-rUb" secondAttribute="height" multiplier="1:1" id="FrH-Jb-GCq"/>
+                                        </constraints>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Tw-7C-trd">
+                                        <rect key="frame" x="286.5" y="64" width="227.5" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6Tw-7C-trd" secondAttribute="height" multiplier="1:1" id="NXG-9z-Ywz"/>
+                                        </constraints>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wx3-oT-Ocr">
+                                        <rect key="frame" x="126.5" y="161" width="228" height="31"/>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJq-QM-TpF">
+                                        <rect key="frame" x="208.5" y="16" width="64" height="32"/>
+                                        <state key="normal" image="disconnected"/>
+                                        <connections>
+                                            <action selector="connectButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahW-q6-jaw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="E2E-fQ-rUb" secondAttribute="height" multiplier="1:1" id="FrH-Jb-GCq"/>
+                                    <constraint firstItem="RJq-QM-TpF" firstAttribute="top" secondItem="rMZ-Aq-0i1" secondAttribute="top" constant="16" id="DS0-Xi-GPw"/>
+                                    <constraint firstAttribute="width" secondItem="rMZ-Aq-0i1" secondAttribute="height" multiplier="3:2" id="Eav-R3-FS7"/>
+                                    <constraint firstItem="Wx3-oT-Ocr" firstAttribute="centerX" secondItem="rMZ-Aq-0i1" secondAttribute="centerX" id="GQs-Qv-KPt"/>
+                                    <constraint firstItem="E2E-fQ-rUb" firstAttribute="leading" secondItem="rMZ-Aq-0i1" secondAttribute="leading" constant="-32" id="HXT-jb-P5C"/>
+                                    <constraint firstItem="E2E-fQ-rUb" firstAttribute="top" secondItem="rMZ-Aq-0i1" secondAttribute="top" constant="64" id="NHI-0Y-xFZ"/>
+                                    <constraint firstItem="Wx3-oT-Ocr" firstAttribute="width" secondItem="E2E-fQ-rUb" secondAttribute="width" id="NwM-Db-Hso"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Tw-7C-trd" secondAttribute="trailing" constant="-32" id="OAO-r6-6Af"/>
+                                    <constraint firstItem="6Tw-7C-trd" firstAttribute="top" secondItem="rMZ-Aq-0i1" secondAttribute="top" constant="64" id="Z16-Np-GP2"/>
+                                    <constraint firstItem="Wx3-oT-Ocr" firstAttribute="centerY" secondItem="rMZ-Aq-0i1" secondAttribute="centerY" constant="16" id="aCs-UT-vi1"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Tw-7C-trd" secondAttribute="bottom" constant="32" id="iT0-OW-W3Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="E2E-fQ-rUb" secondAttribute="bottom" constant="32" id="jTs-OL-tpb"/>
+                                    <constraint firstItem="RJq-QM-TpF" firstAttribute="centerX" secondItem="rMZ-Aq-0i1" secondAttribute="centerX" id="qAY-jA-wtw"/>
                                 </constraints>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Tw-7C-trd">
-                                <rect key="frame" x="274" y="84" width="208" height="205"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="6Tw-7C-trd" secondAttribute="height" multiplier="1:1" id="NXG-9z-Ywz"/>
-                                </constraints>
-                            </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJq-QM-TpF">
-                                <rect key="frame" x="208" y="36" width="64" height="32"/>
-                                <state key="normal" image="disconnected"/>
-                                <connections>
-                                    <action selector="connectButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahW-q6-jaw"/>
-                                </connections>
-                            </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wx3-oT-Ocr">
-                                <rect key="frame" x="136" y="84" width="208" height="205"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Wx3-oT-Ocr" secondAttribute="height" multiplier="1:1" id="Ijh-V2-aVd"/>
-                                </constraints>
-                            </slider>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Eav-R3-FS7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Eav-R3-FS7"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="E2E-fQ-rUb" secondAttribute="bottom" constant="32" id="EAN-GU-Jds"/>
-                            <constraint firstItem="RJq-QM-TpF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JDC-Sc-DlO"/>
-                            <constraint firstItem="E2E-fQ-rUb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="Jow-V8-Vmb"/>
-                            <constraint firstItem="Wx3-oT-Ocr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R8k-fp-W9t"/>
-                            <constraint firstAttribute="trailing" secondItem="6Tw-7C-trd" secondAttribute="trailing" id="Tui-Am-T1p"/>
-                            <constraint firstItem="Wx3-oT-Ocr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="mok-Ky-87x"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wx3-oT-Ocr" secondAttribute="bottom" constant="32" id="o1M-6f-GQM"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6Tw-7C-trd" secondAttribute="bottom" constant="32" id="pJu-sx-WDz"/>
-                            <constraint firstItem="E2E-fQ-rUb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w9n-90-Ab2"/>
-                            <constraint firstItem="RJq-QM-TpF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="wIK-l2-2mI"/>
-                            <constraint firstItem="6Tw-7C-trd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="y9G-Kq-kgq"/>
+                            <constraint firstItem="rMZ-Aq-0i1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BNE-pc-RNd"/>
+                            <constraint firstItem="rMZ-Aq-0i1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gx9-0h-3XW"/>
+                            <constraint firstItem="rMZ-Aq-0i1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Peq-1p-k3M"/>
+                            <constraint firstItem="rMZ-Aq-0i1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SwD-h0-6V0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rMZ-Aq-0i1" secondAttribute="bottom" id="hNW-ES-FTE"/>
+                            <constraint firstAttribute="trailing" secondItem="rMZ-Aq-0i1" secondAttribute="trailing" id="iTF-Hj-ZD2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Peq-1p-k3M"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="BNE-pc-RNd"/>
+                                <include reference="Peq-1p-k3M"/>
+                                <exclude reference="SwD-h0-6V0"/>
+                                <exclude reference="hNW-ES-FTE"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="centerSlider" destination="Wx3-oT-Ocr" id="e3K-Go-7q2"/>
                         <outlet property="connectButton" destination="RJq-QM-TpF" id="EWe-4z-Clk"/>
