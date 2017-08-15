@@ -1,4 +1,4 @@
 # BoostRemote
-Remote Controller for LEGO Boost
+LEGO Boost Remote Control
 
 https://youtu.be/WuvGT8WqLrQ
