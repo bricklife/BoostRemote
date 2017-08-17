@@ -30,6 +30,10 @@ struct Reducer {
             return state == .connecting ? .connected : state
         case .disconnect:
             return .disconnected
+        case .offline:
+            return .offline
+        case .unsupported:
+            return .unsupported
         }
     }
     

@@ -104,6 +104,9 @@ class ControllerViewController: UIViewController, StoreSubscriber {
             case .connected:
                 imageName = "connected"
                 alpha = 1
+            case .offline, .unsupported:
+                imageName = "offline"
+                alpha = 1
             }
             
             self?.connectButton.setImage(UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -129,12 +132,22 @@ class ControllerViewController: UIViewController, StoreSubscriber {
         }
     }
     
+    private func alert(message: String) {
+        let alert = UIAlertController(title: "CAUTION", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func connectButtonPushed(_ sender: Any) {
         switch connectionState.value {
         case .disconnected:
             ActionCenter.startScan()
         case .connecting, .connected:
             ActionCenter.disconnect()
+        case .offline:
+            alert(message: "Turn on Bluetooth")
+        case .unsupported:
+            alert(message: "Unsupported Device")
         }
     }
 }

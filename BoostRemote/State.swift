@@ -20,6 +20,8 @@ enum ConnectionState {
     case disconnected
     case connected
     case connecting
+    case offline
+    case unsupported
 }
 
 typealias PortState = [Port: DeviceType]

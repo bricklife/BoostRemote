@@ -74,16 +74,22 @@ extension MoveHubManager: CBCentralManagerDelegate {
         func description() -> String {
             switch central.state {
             case .poweredOff:
+                store.dispatch(ConnectAction.offline)
                 return "poweredOff"
             case .poweredOn:
+                store.dispatch(ConnectAction.disconnect)
                 return "poweredOn"
             case .resetting:
+                store.dispatch(ConnectAction.disconnect)
                 return "resetting"
             case .unauthorized:
+                store.dispatch(ConnectAction.unsupported)
                 return "unauthorized"
             case .unknown:
+                store.dispatch(ConnectAction.unsupported)
                 return "unknown"
             case .unsupported:
+                store.dispatch(ConnectAction.unsupported)
                 return "unsupported"
             }
         }

@@ -14,6 +14,8 @@ enum ConnectAction: Action {
     case scan
     case connect
     case disconnect
+    case offline
+    case unsupported
 }
 
 struct NotificationAction: Action {
