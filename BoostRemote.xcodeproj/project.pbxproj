@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB385A4A1F4E35210061EBE4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB385A491F4E35210061EBE4 /* Settings.bundle */; };
 		CB3BE8B11F2FF2F4000561F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */; };
 		CB3BE8B31F2FF2F4000561F7 /* ControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */; };
 		CB3BE8B61F2FF2F4000561F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */; };
@@ -286,6 +287,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB385A491F4E35210061EBE4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CB3BE8AD1F2FF2F4000561F7 /* BoostRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				CBF9D2D71F3CB62700B97E11 /* MoveHub */,
 				CB3BE8B71F2FF2F4000561F7 /* Assets.xcassets */,
 				CB3BE8B91F2FF2F4000561F7 /* LaunchScreen.storyboard */,
+				CB385A491F4E35210061EBE4 /* Settings.bundle */,
 				CB3BE8BC1F2FF2F4000561F7 /* Info.plist */,
 			);
 			path = BoostRemote;
@@ -743,6 +746,7 @@
 			files = (
 				CB3BE8BB1F2FF2F4000561F7 /* LaunchScreen.storyboard in Resources */,
 				CB3BE8B81F2FF2F4000561F7 /* Assets.xcassets in Resources */,
+				CB385A4A1F4E35210061EBE4 /* Settings.bundle in Resources */,
 				CBA1F0F11F2FF79B0070506F /* Cartfile in Resources */,
 				CB3BE8B61F2FF2F4000561F7 /* Main.storyboard in Resources */,
 			);
