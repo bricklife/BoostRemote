@@ -72,11 +72,15 @@ class ControllerViewController: UIViewController, StoreSubscriber {
     func newState(state: State) {
         connectionState.value = state.connectionState
         
-        centerMotor = state.portState
-            .flatMap { (port, type) -> Motor? in
-                return type == .interactiveMotor ? Motor(port: port) : nil
-            }
-            .first
+        if state.connectionState == .connected {
+            centerMotor = state.portState
+                .flatMap { (port, type) -> Motor? in
+                    return type == .interactiveMotor ? Motor(port: port) : nil
+                }
+                .first
+        } else {
+            centerMotor = nil
+        }
     }
     
     private func setUp(slider: UISlider) {
@@ -85,8 +89,6 @@ class ControllerViewController: UIViewController, StoreSubscriber {
         slider.setMaximumTrackImage(UIImage(named: "right")?.withRenderingMode(.alwaysTemplate), for: .normal)
         
         slider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * -0.5))
-        
-        //slider.reactive.isEnabled <~ connectionState.map { $0 == .connected }
     }
     
     private func setUp(button: UIButton) {
