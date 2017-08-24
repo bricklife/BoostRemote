@@ -28,13 +28,17 @@ class ControllerViewController: UIViewController, StoreSubscriber {
     var rightMotor: Motor? = Motor(port: .B)
     var centerMotor: Motor? {
         didSet {
+            let alpha: CGFloat
             if let motor = centerMotor {
-                centerSlider.isHidden = false
-                centerLabel.isHidden = false
                 centerLabel.text = motor.port.description
+                alpha = 1.0
             } else {
-                centerSlider.isHidden = true
-                centerLabel.isHidden = true
+                alpha = 0.0
+            }
+            
+            UIView.animate(withDuration: 0.2) {
+                self.centerSlider.alpha = alpha
+                self.centerLabel.alpha = alpha
             }
         }
     }
