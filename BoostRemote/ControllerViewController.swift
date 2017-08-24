@@ -50,6 +50,9 @@ class ControllerViewController: UIViewController, StoreSubscriber {
         setup(slider: rightSlider)
         setup(slider: centerSlider)
         
+        centerSlider.alpha = 0.0
+        centerLabel.alpha = 0.0
+
         setupConnectButtonImageView()
         
         signal(for: leftSlider).observeValues { [weak self] (value) in
