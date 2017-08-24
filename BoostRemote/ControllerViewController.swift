@@ -20,7 +20,7 @@ class ControllerViewController: UIViewController, StoreSubscriber {
     @IBOutlet weak var centerSlider: UISlider!
     @IBOutlet weak var centerLabel: UILabel!
     
-    @IBOutlet weak var connectButton: UIButton!
+    @IBOutlet weak var connectButtonImageView: UIImageView!
     
     let connectionState = MutableProperty(ConnectionState.disconnected)
     
@@ -42,11 +42,11 @@ class ControllerViewController: UIViewController, StoreSubscriber {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUp(slider: leftSlider)
-        setUp(slider: rightSlider)
-        setUp(slider: centerSlider)
+        setup(slider: leftSlider)
+        setup(slider: rightSlider)
+        setup(slider: centerSlider)
         
-        setUp(button: connectButton)
+        setupConnectButtonImageView()
         
         signal(for: leftSlider).observeValues { [weak self] (value) in
             self?.sendCommand(motor: self?.leftMotor, power: value)
@@ -83,7 +83,7 @@ class ControllerViewController: UIViewController, StoreSubscriber {
         }
     }
     
-    private func setUp(slider: UISlider) {
+    private func setup(slider: UISlider) {
         slider.setThumbImage(UIImage(named: "thumb")?.withRenderingMode(.alwaysTemplate), for: .normal)
         slider.setMinimumTrackImage(UIImage(named: "left")?.withRenderingMode(.alwaysTemplate), for: .normal)
         slider.setMaximumTrackImage(UIImage(named: "right")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -91,31 +91,34 @@ class ControllerViewController: UIViewController, StoreSubscriber {
         slider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * -0.5))
     }
     
-    private func setUp(button: UIButton) {
+    private func setupConnectButtonImageView() {
+        connectButtonImageView.animationDuration = 1
+        connectButtonImageView.animationRepeatCount = -1
+        connectButtonImageView.animationImages = (1...4).map { "connecting\($0)" }
+            .flatMap { UIImage(named: $0)?.withRenderingMode(.alwaysTemplate) }
+        
         connectionState.producer.startWithValues { [weak self] (state) in
-            let imageName: String
-            let alpha: CGFloat
+            if state == .connecting {
+                self?.connectButtonImageView.startAnimating()
+            } else {
+                self?.connectButtonImageView.stopAnimating()
+            }
             
+            let imageName: String
             switch state {
             case .disconnected:
                 imageName = "disconnected"
-                alpha = 1
             case .connecting:
-                imageName = "connected"
-                alpha = 0.5
+                imageName = "disconnected"
             case .connected:
                 imageName = "connected"
-                alpha = 1
             case .offline, .unsupported:
                 imageName = "offline"
-                alpha = 1
             }
-            
-            self?.connectButton.setImage(UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate), for: .normal)
-            self?.connectButton.alpha = alpha
+            self?.connectButtonImageView.image = UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate)
         }
     }
-
+    
     private func signal(for slider: UISlider) -> Signal<Int8, NoError> {
         let valueSignal = slider.reactive.values.map { Int8($0) * 10 }
         
