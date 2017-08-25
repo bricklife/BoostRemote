@@ -154,8 +154,10 @@ class ControllerViewController: UIViewController, StoreSubscriber {
         switch connectionState.value {
         case .disconnected:
             ActionCenter.startScan()
-        case .connecting, .connected:
+        case .connected:
             ActionCenter.disconnect()
+        case .connecting:
+            ActionCenter.stopScan()
         case .offline:
             alert(message: "Turn on Bluetooth")
         case .unsupported:
