@@ -40,6 +40,7 @@ struct ActionCenter {
     
     static func disconnect() {
         MoveHubManager.shared.disconnect()
+        store.dispatch(ConnectAction.disconnect)
     }
     
     static func send(command: Command) {

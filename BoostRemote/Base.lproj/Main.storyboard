@@ -39,9 +39,15 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wx3-oT-Ocr">
                                         <rect key="frame" x="134.5" y="153" width="212" height="31"/>
                                     </slider>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-Wg-iL8">
+                                        <rect key="frame" x="209" y="16" width="64" height="32"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJq-QM-TpF">
                                         <rect key="frame" x="208.5" y="16" width="64" height="32"/>
-                                        <state key="normal" image="disconnected"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="eff-5L-GoJ"/>
+                                            <constraint firstAttribute="height" constant="32" id="xJd-ph-o8O"/>
+                                        </constraints>
                                         <connections>
                                             <action selector="connectButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahW-q6-jaw"/>
                                         </connections>
@@ -72,11 +78,14 @@
                                     <constraint firstAttribute="width" secondItem="rMZ-Aq-0i1" secondAttribute="height" multiplier="2" id="Eav-R3-FS7"/>
                                     <constraint firstItem="Wx3-oT-Ocr" firstAttribute="centerX" secondItem="rMZ-Aq-0i1" secondAttribute="centerX" id="GQs-Qv-KPt"/>
                                     <constraint firstItem="E2E-fQ-rUb" firstAttribute="leading" secondItem="rMZ-Aq-0i1" secondAttribute="leading" constant="-32" id="HXT-jb-P5C"/>
+                                    <constraint firstItem="BGv-Wg-iL8" firstAttribute="top" secondItem="RJq-QM-TpF" secondAttribute="top" id="LTu-qM-zqb"/>
                                     <constraint firstItem="E2E-fQ-rUb" firstAttribute="top" secondItem="rMZ-Aq-0i1" secondAttribute="top" constant="64" id="NHI-0Y-xFZ"/>
                                     <constraint firstItem="Wx3-oT-Ocr" firstAttribute="width" secondItem="E2E-fQ-rUb" secondAttribute="width" id="NwM-Db-Hso"/>
                                     <constraint firstAttribute="trailing" secondItem="6Tw-7C-trd" secondAttribute="trailing" constant="-32" id="OAO-r6-6Af"/>
                                     <constraint firstItem="6Tw-7C-trd" firstAttribute="top" secondItem="rMZ-Aq-0i1" secondAttribute="top" constant="64" id="Z16-Np-GP2"/>
                                     <constraint firstItem="aEz-sA-1GZ" firstAttribute="top" secondItem="9VN-wy-WSJ" secondAttribute="top" id="ZC8-8f-Zuw"/>
+                                    <constraint firstItem="BGv-Wg-iL8" firstAttribute="leading" secondItem="RJq-QM-TpF" secondAttribute="leading" id="bUW-NR-h5J"/>
+                                    <constraint firstItem="BGv-Wg-iL8" firstAttribute="bottom" secondItem="RJq-QM-TpF" secondAttribute="bottom" id="dHD-sK-t6U"/>
                                     <constraint firstItem="aEz-sA-1GZ" firstAttribute="centerX" secondItem="rMZ-Aq-0i1" secondAttribute="centerX" id="fZx-sk-zvx"/>
                                     <constraint firstItem="9VN-wy-WSJ" firstAttribute="top" secondItem="E2E-fQ-rUb" secondAttribute="bottom" constant="8" id="gvg-dp-Rcg"/>
                                     <constraint firstItem="Wx3-oT-Ocr" firstAttribute="centerY" secondItem="E2E-fQ-rUb" secondAttribute="centerY" id="hFd-1O-jVc"/>
@@ -85,6 +94,7 @@
                                     <constraint firstItem="3cA-71-ppI" firstAttribute="top" secondItem="9VN-wy-WSJ" secondAttribute="top" id="oUz-i0-DSS"/>
                                     <constraint firstItem="RJq-QM-TpF" firstAttribute="centerX" secondItem="rMZ-Aq-0i1" secondAttribute="centerX" id="qAY-jA-wtw"/>
                                     <constraint firstItem="9VN-wy-WSJ" firstAttribute="centerX" secondItem="E2E-fQ-rUb" secondAttribute="centerX" id="y6K-Jy-WIV"/>
+                                    <constraint firstItem="BGv-Wg-iL8" firstAttribute="trailing" secondItem="RJq-QM-TpF" secondAttribute="trailing" id="yep-Nx-APY"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -125,7 +135,7 @@
                     <connections>
                         <outlet property="centerLabel" destination="aEz-sA-1GZ" id="m8A-UV-eVg"/>
                         <outlet property="centerSlider" destination="Wx3-oT-Ocr" id="e3K-Go-7q2"/>
-                        <outlet property="connectButton" destination="RJq-QM-TpF" id="EWe-4z-Clk"/>
+                        <outlet property="connectButtonImageView" destination="BGv-Wg-iL8" id="Evd-O6-3JY"/>
                         <outlet property="leftSlider" destination="E2E-fQ-rUb" id="VeT-Fe-YZy"/>
                         <outlet property="rightSlider" destination="6Tw-7C-trd" id="FNp-fO-aWV"/>
                     </connections>
@@ -135,8 +145,5 @@
             <point key="canvasLocation" x="33.75" y="20.625"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="disconnected" width="64" height="32"/>
-    </resources>
     <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
