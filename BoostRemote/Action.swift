@@ -44,7 +44,6 @@ struct ActionCenter {
     }
     
     static func send(command: Command) {
-        print(command)
         MoveHubManager.shared.write(data: command.data)
     }
 }

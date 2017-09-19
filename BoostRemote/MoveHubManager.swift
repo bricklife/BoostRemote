@@ -61,7 +61,6 @@ class MoveHubManager: NSObject {
     }
     
     func write(data: Data) {
-        print("write", data.hexString)
         if let peripheral = peripheral, let characteristic = characteristic {
             peripheral.writeValue(data, for: characteristic, type: .withResponse)
         }
@@ -93,7 +92,6 @@ extension MoveHubManager: CBCentralManagerDelegate {
                 return "unsupported"
             }
         }
-        print(description())
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
@@ -107,12 +105,10 @@ extension MoveHubManager: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        print(#function, error ?? "?")
         store.dispatch(ConnectAction.disconnect)
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        print(#function, error ?? "")
         store.dispatch(ConnectAction.disconnect)
     }
 }
@@ -132,7 +128,6 @@ extension MoveHubManager: CBPeripheralDelegate {
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        print(#function, characteristic.uuid, characteristic.value?.hexString ?? "nil", error ?? "")
         if let data = characteristic.value, let notification = Notification(data: data) {
             store.dispatch(NotificationAction(notification: notification))
         }
