@@ -68,12 +68,12 @@ class ControllerViewController: UIViewController, StoreSubscriber {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        store.subscribe(self)
+        StoreCenter.store.subscribe(self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        store.unsubscribe(self)
+        StoreCenter.store.unsubscribe(self)
     }
     
     func newState(state: State) {
