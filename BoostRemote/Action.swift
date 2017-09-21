@@ -30,17 +30,17 @@ struct ActionCenter {
             MoveHubManager.shared.startScan()
             return ConnectAction.scan
         }
-        store.dispatch(action)
+        StoreCenter.store.dispatch(action)
     }
     
     static func stopScan() {
         MoveHubManager.shared.stopScan()
-        store.dispatch(ConnectAction.disconnect)
+        StoreCenter.store.dispatch(ConnectAction.disconnect)
     }
     
     static func disconnect() {
         MoveHubManager.shared.disconnect()
-        store.dispatch(ConnectAction.disconnect)
+        StoreCenter.store.dispatch(ConnectAction.disconnect)
     }
     
     static func send(command: Command) {

@@ -56,7 +56,7 @@ class MoveHubManager: NSObject {
         if let peripheral = peripheral, characteristic.properties.contains([.write, .notify]) {
             self.characteristic = characteristic
             peripheral.setNotifyValue(true, for: characteristic)
-            store.dispatch(ConnectAction.connect)
+            StoreCenter.store.dispatch(ConnectAction.connect)
         }
     }
     
@@ -72,17 +72,17 @@ extension MoveHubManager: CBCentralManagerDelegate {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch central.state {
         case .poweredOff:
-            store.dispatch(ConnectAction.offline)
+            StoreCenter.store.dispatch(ConnectAction.offline)
         case .poweredOn:
-            store.dispatch(ConnectAction.disconnect)
+            StoreCenter.store.dispatch(ConnectAction.disconnect)
         case .resetting:
-            store.dispatch(ConnectAction.disconnect)
+            StoreCenter.store.dispatch(ConnectAction.disconnect)
         case .unauthorized:
-            store.dispatch(ConnectAction.unsupported)
+            StoreCenter.store.dispatch(ConnectAction.unsupported)
         case .unknown:
-            store.dispatch(ConnectAction.unsupported)
+            StoreCenter.store.dispatch(ConnectAction.unsupported)
         case .unsupported:
-            store.dispatch(ConnectAction.unsupported)
+            StoreCenter.store.dispatch(ConnectAction.unsupported)
         }
     }
     
@@ -97,11 +97,11 @@ extension MoveHubManager: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        store.dispatch(ConnectAction.disconnect)
+        StoreCenter.store.dispatch(ConnectAction.disconnect)
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        store.dispatch(ConnectAction.disconnect)
+        StoreCenter.store.dispatch(ConnectAction.disconnect)
     }
 }
 
@@ -121,7 +121,7 @@ extension MoveHubManager: CBPeripheralDelegate {
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         if let data = characteristic.value, let notification = Notification(data: data) {
-            store.dispatch(NotificationAction(notification: notification))
+            StoreCenter.store.dispatch(NotificationAction(notification: notification))
         }
     }
 }
