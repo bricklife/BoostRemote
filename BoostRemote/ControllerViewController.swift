@@ -12,21 +12,21 @@ import ReactiveSwift
 import Result
 import ReSwift
 
-class ControllerViewController: UIViewController, StoreSubscriber {
+class ControllerViewController: UIViewController {
     
-    @IBOutlet weak var leftSlider: UISlider!
-    @IBOutlet weak var rightSlider: UISlider!
+    @IBOutlet private weak var leftSlider: UISlider!
+    @IBOutlet private weak var rightSlider: UISlider!
     
-    @IBOutlet weak var centerSlider: UISlider!
-    @IBOutlet weak var centerLabel: UILabel!
+    @IBOutlet private weak var centerSlider: UISlider!
+    @IBOutlet private weak var centerLabel: UILabel!
     
-    @IBOutlet weak var connectButtonImageView: UIImageView!
+    @IBOutlet private weak var connectButtonImageView: UIImageView!
     
-    let connectionState = MutableProperty(ConnectionState.disconnected)
+    private let connectionState = MutableProperty(ConnectionState.disconnected)
     
-    var leftMotor: Motor? = Motor(port: .A)
-    var rightMotor: Motor? = Motor(port: .B)
-    var centerMotor: Motor? {
+    private var leftMotor: Motor? = Motor(port: .A)
+    private var rightMotor: Motor? = Motor(port: .B)
+    private var centerMotor: Motor? {
         didSet {
             let alpha: CGFloat
             if let motor = centerMotor {
@@ -74,20 +74,6 @@ class ControllerViewController: UIViewController, StoreSubscriber {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         StoreCenter.store.unsubscribe(self)
-    }
-    
-    func newState(state: State) {
-        connectionState.value = state.connectionState
-        
-        if state.connectionState == .connected {
-            centerMotor = state.portState
-                .flatMap { (port, type) -> Motor? in
-                    return type == .interactiveMotor ? Motor(port: port) : nil
-                }
-                .first
-        } else {
-            centerMotor = nil
-        }
     }
     
     private func setup(slider: UISlider) {
@@ -150,7 +136,7 @@ class ControllerViewController: UIViewController, StoreSubscriber {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func connectButtonPushed(_ sender: Any) {
+    @IBAction private func connectButtonPushed(_ sender: Any) {
         switch connectionState.value {
         case .disconnected:
             ActionCenter.startScan()
@@ -162,6 +148,23 @@ class ControllerViewController: UIViewController, StoreSubscriber {
             alert(message: "Turn on Bluetooth")
         case .unsupported:
             alert(message: "Unsupported Device")
+        }
+    }
+}
+
+extension ControllerViewController: StoreSubscriber {
+    
+    func newState(state: State) {
+        connectionState.value = state.connectionState
+        
+        if state.connectionState == .connected {
+            centerMotor = state.portState
+                .flatMap { (port, type) -> Motor? in
+                    return type == .interactiveMotor ? Motor(port: port) : nil
+                }
+                .first
+        } else {
+            centerMotor = nil
         }
     }
 }
