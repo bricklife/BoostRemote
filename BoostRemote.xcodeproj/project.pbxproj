@@ -14,15 +14,10 @@
 		CB3BE8B81F2FF2F4000561F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE8B71F2FF2F4000561F7 /* Assets.xcassets */; };
 		CB3BE8BB1F2FF2F4000561F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE8B91F2FF2F4000561F7 /* LaunchScreen.storyboard */; };
 		CB44B8531F73C11400D0D250 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB44B8521F73C11400D0D250 /* Store.swift */; };
-		CBA1F0F11F2FF79B0070506F /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = CBA1F0F01F2FF79B0070506F /* Cartfile */; };
-		CBA1F0F21F2FF7B40070506F /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F09C1F2FF7790070506F /* ReactiveCocoa.framework */; };
-		CBA1F0F31F2FF7B40070506F /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F09C1F2FF7790070506F /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CBA1F0F61F2FF7B40070506F /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F0B41F2FF7810070506F /* ReactiveSwift.framework */; };
-		CBA1F0F71F2FF7B40070506F /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F0B41F2FF7810070506F /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CBA1F0FA1F2FF7B40070506F /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F0CC1F2FF7870070506F /* Result.framework */; };
-		CBA1F0FB1F2FF7B40070506F /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F0CC1F2FF7870070506F /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CBA1F0FE1F2FF7B40070506F /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F0E11F2FF78C0070506F /* ReSwift.framework */; };
-		CBA1F0FF1F2FF7B40070506F /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBA1F0E11F2FF78C0070506F /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBA46E781F882F0C0017E5C2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */; };
+		CBA46E7A1F882F0F0017E5C2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E791F882F0F0017E5C2 /* Result.framework */; };
+		CBA46E7D1F882F800017E5C2 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E7B1F882F800017E5C2 /* ReSwift.framework */; };
+		CBA46E7E1F882F800017E5C2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E7C1F882F800017E5C2 /* ReactiveCocoa.framework */; };
 		CBD94E841F391B3F0037ED71 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E831F391B3F0037ED71 /* State.swift */; };
 		CBD94E861F391D7F0037ED71 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E851F391D7F0037ED71 /* Action.swift */; };
 		CBD94E881F391E2E0037ED71 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E871F391E2E0037ED71 /* Reducer.swift */; };
@@ -36,240 +31,6 @@
 		CBF9D2F61F3CDAC700B97E11 /* Data+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2F51F3CDAC700B97E11 /* Data+HexString.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CBA1F0971F2FF7790070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D04725EA19E49ED7006002AA;
-			remoteInfo = "ReactiveCocoa-macOS";
-		};
-		CBA1F0991F2FF7790070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D04725F519E49ED7006002AA;
-			remoteInfo = "ReactiveCocoa-macOSTests";
-		};
-		CBA1F09B1F2FF7790070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D047260C19E49F82006002AA;
-			remoteInfo = "ReactiveCocoa-iOS";
-		};
-		CBA1F09D1F2FF7790070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D047261619E49F82006002AA;
-			remoteInfo = "ReactiveCocoa-iOSTests";
-		};
-		CBA1F09F1F2FF7790070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A9B315541B3940610001CB9C;
-			remoteInfo = "ReactiveCocoa-watchOS";
-		};
-		CBA1F0A11F2FF7790070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57A4D2411BA13D7A00F7D4B1;
-			remoteInfo = "ReactiveCocoa-tvOS";
-		};
-		CBA1F0A31F2FF7790070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7DFBED031CDB8C9500EE435B;
-			remoteInfo = "ReactiveCocoa-tvOSTests";
-		};
-		CBA1F0AF1F2FF7810070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D04725EA19E49ED7006002AA;
-			remoteInfo = "ReactiveSwift-macOS";
-		};
-		CBA1F0B11F2FF7810070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D04725F519E49ED7006002AA;
-			remoteInfo = "ReactiveSwift-macOSTests";
-		};
-		CBA1F0B31F2FF7810070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D047260C19E49F82006002AA;
-			remoteInfo = "ReactiveSwift-iOS";
-		};
-		CBA1F0B51F2FF7810070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D047261619E49F82006002AA;
-			remoteInfo = "ReactiveSwift-iOSTests";
-		};
-		CBA1F0B71F2FF7810070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A9B315541B3940610001CB9C;
-			remoteInfo = "ReactiveSwift-watchOS";
-		};
-		CBA1F0B91F2FF7810070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57A4D2411BA13D7A00F7D4B1;
-			remoteInfo = "ReactiveSwift-tvOS";
-		};
-		CBA1F0BB1F2FF7810070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7DFBED031CDB8C9500EE435B;
-			remoteInfo = "ReactiveSwift-tvOSTests";
-		};
-		CBA1F0C71F2FF7870070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480571A9572F5009D7229;
-			remoteInfo = "Result-Mac";
-		};
-		CBA1F0C91F2FF7870070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480671A9572F5009D7229;
-			remoteInfo = "Result-MacTests";
-		};
-		CBA1F0CB1F2FF7870070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D454807D1A957361009D7229;
-			remoteInfo = "Result-iOS";
-		};
-		CBA1F0CD1F2FF7870070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480871A957362009D7229;
-			remoteInfo = "Result-iOSTests";
-		};
-		CBA1F0CF1F2FF7870070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57FCDE471BA280DC00130C48;
-			remoteInfo = "Result-tvOS";
-		};
-		CBA1F0D11F2FF7870070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57FCDE541BA280E000130C48;
-			remoteInfo = "Result-tvOSTests";
-		};
-		CBA1F0D31F2FF7870070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D03579A31B2B788F005D26AE;
-			remoteInfo = "Result-watchOS";
-		};
-		CBA1F0E01F2FF78C0070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 625E66831C1FF97E0027C288;
-			remoteInfo = "ReSwift-iOS";
-		};
-		CBA1F0E21F2FF78C0070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 625E669A1C1FFA3C0027C288;
-			remoteInfo = "ReSwift-iOSTests";
-		};
-		CBA1F0E41F2FF78C0070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25DBCF7B1C30C4AA00D63A58;
-			remoteInfo = "ReSwift-macOS";
-		};
-		CBA1F0E61F2FF78C0070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25DBCF871C30C4DB00D63A58;
-			remoteInfo = "ReSwift-macOSTests";
-		};
-		CBA1F0E81F2FF78C0070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25DBCF4E1C30C18D00D63A58;
-			remoteInfo = "ReSwift-tvOS";
-		};
-		CBA1F0EA1F2FF78C0070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25DBCF641C30C1AC00D63A58;
-			remoteInfo = "ReSwift-tvOSTests";
-		};
-		CBA1F0EC1F2FF78C0070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25DBCF371C30BF2B00D63A58;
-			remoteInfo = "ReSwift-watchOS";
-		};
-		CBA1F0EE1F2FF78C0070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3F13C0E81E7B3E4000D8442C;
-			remoteInfo = SwiftLintIntegration;
-		};
-		CBA1F0F41F2FF7B40070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D047260B19E49F82006002AA;
-			remoteInfo = "ReactiveCocoa-iOS";
-		};
-		CBA1F0F81F2FF7B40070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D047260B19E49F82006002AA;
-			remoteInfo = "ReactiveSwift-iOS";
-		};
-		CBA1F0FC1F2FF7B40070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D454807C1A957361009D7229;
-			remoteInfo = "Result-iOS";
-		};
-		CBA1F1001F2FF7B40070506F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 625E66821C1FF97E0027C288;
-			remoteInfo = "ReSwift-iOS";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		CB3BE8CB1F2FF3AC000561F7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -277,10 +38,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CBA1F0FB1F2FF7B40070506F /* Result.framework in Embed Frameworks */,
-				CBA1F0FF1F2FF7B40070506F /* ReSwift.framework in Embed Frameworks */,
-				CBA1F0F31F2FF7B40070506F /* ReactiveCocoa.framework in Embed Frameworks */,
-				CBA1F0F71F2FF7B40070506F /* ReactiveSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,11 +54,10 @@
 		CB3BE8BA1F2FF2F4000561F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3BE8BC1F2FF2F4000561F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB44B8521F73C11400D0D250 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = Carthage/Checkouts/ReactiveCocoa/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
-		CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveSwift.xcodeproj; path = Carthage/Checkouts/ReactiveSwift/ReactiveSwift.xcodeproj; sourceTree = "<group>"; };
-		CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
-		CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReSwift.xcodeproj; path = Carthage/Checkouts/ReSwift/ReSwift.xcodeproj; sourceTree = "<group>"; };
-		CBA1F0F01F2FF79B0070506F /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		CBA46E791F882F0F0017E5C2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		CBA46E7B1F882F800017E5C2 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
+		CBA46E7C1F882F800017E5C2 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		CBD94E831F391B3F0037ED71 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		CBD94E851F391D7F0037ED71 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		CBD94E871F391E2E0037ED71 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
@@ -320,10 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBA1F0FA1F2FF7B40070506F /* Result.framework in Frameworks */,
-				CBA1F0FE1F2FF7B40070506F /* ReSwift.framework in Frameworks */,
-				CBA1F0F21F2FF7B40070506F /* ReactiveCocoa.framework in Frameworks */,
-				CBA1F0F61F2FF7B40070506F /* ReactiveSwift.framework in Frameworks */,
+				CBA46E7A1F882F0F0017E5C2 /* Result.framework in Frameworks */,
+				CBA46E781F882F0C0017E5C2 /* ReactiveSwift.framework in Frameworks */,
+				CBA46E7E1F882F800017E5C2 /* ReactiveCocoa.framework in Frameworks */,
+				CBA46E7D1F882F800017E5C2 /* ReSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,8 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				CB3BE8AF1F2FF2F4000561F7 /* BoostRemote */,
-				CB3BE8CE1F2FF580000561F7 /* Carthage */,
 				CB3BE8AE1F2FF2F4000561F7 /* Products */,
+				CBA46E761F882F0B0017E5C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -365,73 +121,15 @@
 			path = BoostRemote;
 			sourceTree = "<group>";
 		};
-		CB3BE8CE1F2FF580000561F7 /* Carthage */ = {
+		CBA46E761F882F0B0017E5C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CBA1F0F01F2FF79B0070506F /* Cartfile */,
-				CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */,
-				CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */,
-				CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */,
-				CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */,
+				CBA46E7C1F882F800017E5C2 /* ReactiveCocoa.framework */,
+				CBA46E7B1F882F800017E5C2 /* ReSwift.framework */,
+				CBA46E791F882F0F0017E5C2 /* Result.framework */,
+				CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */,
 			);
-			name = Carthage;
-			sourceTree = "<group>";
-		};
-		CBA1F08E1F2FF7790070506F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CBA1F0981F2FF7790070506F /* ReactiveCocoa.framework */,
-				CBA1F09A1F2FF7790070506F /* ReactiveCocoaTests.xctest */,
-				CBA1F09C1F2FF7790070506F /* ReactiveCocoa.framework */,
-				CBA1F09E1F2FF7790070506F /* ReactiveCocoaTests.xctest */,
-				CBA1F0A01F2FF7790070506F /* ReactiveCocoa.framework */,
-				CBA1F0A21F2FF7790070506F /* ReactiveCocoa.framework */,
-				CBA1F0A41F2FF7790070506F /* ReactiveCocoaTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CBA1F0A61F2FF7810070506F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CBA1F0B01F2FF7810070506F /* ReactiveSwift.framework */,
-				CBA1F0B21F2FF7810070506F /* ReactiveSwiftTests.xctest */,
-				CBA1F0B41F2FF7810070506F /* ReactiveSwift.framework */,
-				CBA1F0B61F2FF7810070506F /* ReactiveSwiftTests.xctest */,
-				CBA1F0B81F2FF7810070506F /* ReactiveSwift.framework */,
-				CBA1F0BA1F2FF7810070506F /* ReactiveSwift.framework */,
-				CBA1F0BC1F2FF7810070506F /* ReactiveSwiftTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CBA1F0BE1F2FF7870070506F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CBA1F0C81F2FF7870070506F /* Result.framework */,
-				CBA1F0CA1F2FF7870070506F /* Result-MacTests.xctest */,
-				CBA1F0CC1F2FF7870070506F /* Result.framework */,
-				CBA1F0CE1F2FF7870070506F /* Result-iOSTests.xctest */,
-				CBA1F0D01F2FF7870070506F /* Result.framework */,
-				CBA1F0D21F2FF7870070506F /* Result-tvOSTests.xctest */,
-				CBA1F0D41F2FF7870070506F /* Result.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CBA1F0D61F2FF78C0070506F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CBA1F0E11F2FF78C0070506F /* ReSwift.framework */,
-				CBA1F0E31F2FF78C0070506F /* ReSwift-iOSTests.xctest */,
-				CBA1F0E51F2FF78C0070506F /* ReSwift.framework */,
-				CBA1F0E71F2FF78C0070506F /* ReSwift-macOSTests.xctest */,
-				CBA1F0E91F2FF78C0070506F /* ReSwift.framework */,
-				CBA1F0EB1F2FF78C0070506F /* ReSwift-tvOSTests.xctest */,
-				CBA1F0ED1F2FF78C0070506F /* ReSwift.framework */,
-				CBA1F0EF1F2FF78C0070506F /* SwiftLintIntegration.xctest */,
-			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CBF9D2D71F3CB62700B97E11 /* MoveHub */ = {
@@ -469,14 +167,11 @@
 				CB3BE8AA1F2FF2F4000561F7 /* Frameworks */,
 				CB3BE8AB1F2FF2F4000561F7 /* Resources */,
 				CB3BE8CB1F2FF3AC000561F7 /* Embed Frameworks */,
+				CBA46E7F1F882FA30017E5C2 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CBA1F0F51F2FF7B40070506F /* PBXTargetDependency */,
-				CBA1F0F91F2FF7B40070506F /* PBXTargetDependency */,
-				CBA1F0FD1F2FF7B40070506F /* PBXTargetDependency */,
-				CBA1F1011F2FF7B40070506F /* PBXTargetDependency */,
 			);
 			name = BoostRemote;
 			productName = BoostRemote;
@@ -511,236 +206,12 @@
 			mainGroup = CB3BE8A41F2FF2F4000561F7;
 			productRefGroup = CB3BE8AE1F2FF2F4000561F7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CBA1F08E1F2FF7790070506F /* Products */;
-					ProjectRef = CBA1F08D1F2FF7790070506F /* ReactiveCocoa.xcodeproj */;
-				},
-				{
-					ProductGroup = CBA1F0A61F2FF7810070506F /* Products */;
-					ProjectRef = CBA1F0A51F2FF7810070506F /* ReactiveSwift.xcodeproj */;
-				},
-				{
-					ProductGroup = CBA1F0BE1F2FF7870070506F /* Products */;
-					ProjectRef = CBA1F0BD1F2FF7870070506F /* Result.xcodeproj */;
-				},
-				{
-					ProductGroup = CBA1F0D61F2FF78C0070506F /* Products */;
-					ProjectRef = CBA1F0D51F2FF78C0070506F /* ReSwift.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CB3BE8AC1F2FF2F4000561F7 /* BoostRemote */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CBA1F0981F2FF7790070506F /* ReactiveCocoa.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveCocoa.framework;
-			remoteRef = CBA1F0971F2FF7790070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F09A1F2FF7790070506F /* ReactiveCocoaTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveCocoaTests.xctest;
-			remoteRef = CBA1F0991F2FF7790070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F09C1F2FF7790070506F /* ReactiveCocoa.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveCocoa.framework;
-			remoteRef = CBA1F09B1F2FF7790070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F09E1F2FF7790070506F /* ReactiveCocoaTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveCocoaTests.xctest;
-			remoteRef = CBA1F09D1F2FF7790070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0A01F2FF7790070506F /* ReactiveCocoa.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveCocoa.framework;
-			remoteRef = CBA1F09F1F2FF7790070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0A21F2FF7790070506F /* ReactiveCocoa.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveCocoa.framework;
-			remoteRef = CBA1F0A11F2FF7790070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0A41F2FF7790070506F /* ReactiveCocoaTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveCocoaTests.xctest;
-			remoteRef = CBA1F0A31F2FF7790070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0B01F2FF7810070506F /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = CBA1F0AF1F2FF7810070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0B21F2FF7810070506F /* ReactiveSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveSwiftTests.xctest;
-			remoteRef = CBA1F0B11F2FF7810070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0B41F2FF7810070506F /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = CBA1F0B31F2FF7810070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0B61F2FF7810070506F /* ReactiveSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveSwiftTests.xctest;
-			remoteRef = CBA1F0B51F2FF7810070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0B81F2FF7810070506F /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = CBA1F0B71F2FF7810070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0BA1F2FF7810070506F /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = CBA1F0B91F2FF7810070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0BC1F2FF7810070506F /* ReactiveSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveSwiftTests.xctest;
-			remoteRef = CBA1F0BB1F2FF7810070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0C81F2FF7870070506F /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = CBA1F0C71F2FF7870070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0CA1F2FF7870070506F /* Result-MacTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-MacTests.xctest";
-			remoteRef = CBA1F0C91F2FF7870070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0CC1F2FF7870070506F /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = CBA1F0CB1F2FF7870070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0CE1F2FF7870070506F /* Result-iOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-iOSTests.xctest";
-			remoteRef = CBA1F0CD1F2FF7870070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0D01F2FF7870070506F /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = CBA1F0CF1F2FF7870070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0D21F2FF7870070506F /* Result-tvOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-tvOSTests.xctest";
-			remoteRef = CBA1F0D11F2FF7870070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0D41F2FF7870070506F /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = CBA1F0D31F2FF7870070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0E11F2FF78C0070506F /* ReSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReSwift.framework;
-			remoteRef = CBA1F0E01F2FF78C0070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0E31F2FF78C0070506F /* ReSwift-iOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ReSwift-iOSTests.xctest";
-			remoteRef = CBA1F0E21F2FF78C0070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0E51F2FF78C0070506F /* ReSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReSwift.framework;
-			remoteRef = CBA1F0E41F2FF78C0070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0E71F2FF78C0070506F /* ReSwift-macOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ReSwift-macOSTests.xctest";
-			remoteRef = CBA1F0E61F2FF78C0070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0E91F2FF78C0070506F /* ReSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReSwift.framework;
-			remoteRef = CBA1F0E81F2FF78C0070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0EB1F2FF78C0070506F /* ReSwift-tvOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ReSwift-tvOSTests.xctest";
-			remoteRef = CBA1F0EA1F2FF78C0070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0ED1F2FF78C0070506F /* ReSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReSwift.framework;
-			remoteRef = CBA1F0EC1F2FF78C0070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBA1F0EF1F2FF78C0070506F /* SwiftLintIntegration.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftLintIntegration.xctest;
-			remoteRef = CBA1F0EE1F2FF78C0070506F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CB3BE8AB1F2FF2F4000561F7 /* Resources */ = {
@@ -750,12 +221,35 @@
 				CB3BE8BB1F2FF2F4000561F7 /* LaunchScreen.storyboard in Resources */,
 				CB3BE8B81F2FF2F4000561F7 /* Assets.xcassets in Resources */,
 				CB385A4A1F4E35210061EBE4 /* Settings.bundle in Resources */,
-				CBA1F0F11F2FF79B0070506F /* Cartfile in Resources */,
 				CB3BE8B61F2FF2F4000561F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CBA46E7F1F882FA30017E5C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB3BE8A91F2FF2F4000561F7 /* Sources */ = {
@@ -780,29 +274,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CBA1F0F51F2FF7B40070506F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ReactiveCocoa-iOS";
-			targetProxy = CBA1F0F41F2FF7B40070506F /* PBXContainerItemProxy */;
-		};
-		CBA1F0F91F2FF7B40070506F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ReactiveSwift-iOS";
-			targetProxy = CBA1F0F81F2FF7B40070506F /* PBXContainerItemProxy */;
-		};
-		CBA1F0FD1F2FF7B40070506F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Result-iOS";
-			targetProxy = CBA1F0FC1F2FF7B40070506F /* PBXContainerItemProxy */;
-		};
-		CBA1F1011F2FF7B40070506F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ReSwift-iOS";
-			targetProxy = CBA1F1001F2FF7B40070506F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */ = {
