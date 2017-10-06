@@ -2,8 +2,8 @@
 Remote Control iOS app for LEGO® Boost
 
 ## Requirements
-- Xcode 8.3
-- Swift 3.1
+- Xcode 9
+- Swift 4
 - iOS 9 or higher
 - iOS device supporting Bluetooth Low Energy (BLE)
 - LEGO® Boost Move Hub
