@@ -14,11 +14,9 @@ import ReSwift
 
 class ControllerViewController: UIViewController {
     
-    @IBOutlet private weak var leftSlider: UISlider!
-    @IBOutlet private weak var rightSlider: UISlider!
-    
-    @IBOutlet private weak var centerSlider: UISlider!
-    @IBOutlet private weak var centerLabel: UILabel!
+    @IBOutlet private weak var leftStick: StickView!
+    @IBOutlet private weak var rightStick: StickView!
+    @IBOutlet private weak var centerStick: StickView!
     
     @IBOutlet private weak var connectButtonImageView: UIImageView!
     
@@ -30,15 +28,14 @@ class ControllerViewController: UIViewController {
         didSet {
             let alpha: CGFloat
             if let motor = centerMotor {
-                centerLabel.text = motor.port.description
+                centerStick.text = motor.port.description
                 alpha = 1.0
             } else {
                 alpha = 0.0
             }
             
             UIView.animate(withDuration: 0.2) {
-                self.centerSlider.alpha = alpha
-                self.centerLabel.alpha = alpha
+                self.centerStick.alpha = alpha
             }
         }
     }
@@ -46,22 +43,17 @@ class ControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup(slider: leftSlider)
-        setup(slider: rightSlider)
-        setup(slider: centerSlider)
-        
-        centerSlider.alpha = 0.0
-        centerLabel.alpha = 0.0
+        centerStick.alpha = 0.0
 
         setupConnectButtonImageView()
         
-        signal(for: leftSlider).observeValues { [weak self] (value) in
+        signal(for: leftStick.slider).observeValues { [weak self] (value) in
             self?.sendCommand(motor: self?.leftMotor, power: value)
         }
-        signal(for: rightSlider).observeValues { [weak self] (value) in
+        signal(for: rightStick.slider).observeValues { [weak self] (value) in
             self?.sendCommand(motor: self?.rightMotor, power: value)
         }
-        signal(for: centerSlider).observeValues { [weak self] (value) in
+        signal(for: centerStick.slider).observeValues { [weak self] (value) in
             self?.sendCommand(motor: self?.centerMotor, power: value)
         }
     }
@@ -74,14 +66,6 @@ class ControllerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         StoreCenter.store.unsubscribe(self)
-    }
-    
-    private func setup(slider: UISlider) {
-        slider.setThumbImage(UIImage(named: "thumb")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        slider.setMinimumTrackImage(UIImage(named: "left")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        slider.setMaximumTrackImage(UIImage(named: "right")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        
-        slider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * -0.5))
     }
     
     private func setupConnectButtonImageView() {
