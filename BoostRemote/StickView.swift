@@ -38,6 +38,7 @@ class StickView: UIView {
     
     private func initialize() {
         setupSlider()
+        setupImageView()
         
         verticalSlider.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,10 +53,10 @@ class StickView: UIView {
             ])
         
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: verticalSlider.bottomAnchor, constant: 8),
+            imageView.topAnchor.constraint(equalTo: verticalSlider.bottomAnchor, constant: 16),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 28),
+            imageView.heightAnchor.constraint(equalToConstant: 32),
             ])
     }
     
@@ -67,5 +68,9 @@ class StickView: UIView {
         slider.maximumValue = 10
         slider.minimumValue = -10
         slider.value = 0
+    }
+    
+    private func setupImageView() {
+        imageView.contentMode = .center
     }
 }
