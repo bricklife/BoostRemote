@@ -37,25 +37,16 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9R-3b-i35" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="144" height="240"/>
+                                        <rect key="frame" x="0.0" y="64" width="144" height="248"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="A"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3R-5v-dgL" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="168" y="64" width="144" height="240"/>
+                                        <rect key="frame" x="168" y="64" width="144" height="248"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="C"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us8-7B-sUF" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="335.5" y="64" width="144" height="240"/>
+                                        <rect key="frame" x="335.5" y="64" width="144" height="248"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="B"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,7 +54,7 @@
                                     <constraint firstItem="Us8-7B-sUF" firstAttribute="top" secondItem="We4-mK-OTv" secondAttribute="top" constant="64" id="5zS-dD-O9G"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="leading" secondItem="wPd-OH-fkl" secondAttribute="leading" id="7p8-8Y-iYX"/>
                                     <constraint firstItem="Us8-7B-sUF" firstAttribute="width" secondItem="c9R-3b-i35" secondAttribute="width" id="8v9-jS-05d"/>
-                                    <constraint firstAttribute="bottom" secondItem="C3R-5v-dgL" secondAttribute="bottom" constant="16" id="916-jL-vaM"/>
+                                    <constraint firstAttribute="bottom" secondItem="C3R-5v-dgL" secondAttribute="bottom" constant="8" id="916-jL-vaM"/>
                                     <constraint firstAttribute="width" secondItem="We4-mK-OTv" secondAttribute="height" multiplier="2" id="C13-8d-Fzl"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="bottom" secondItem="wPd-OH-fkl" secondAttribute="bottom" id="IFE-lk-5Ww"/>
                                     <constraint firstItem="C3R-5v-dgL" firstAttribute="width" secondItem="c9R-3b-i35" secondAttribute="width" id="LWT-pT-rAz"/>
@@ -73,9 +64,9 @@
                                     <constraint firstItem="c9R-3b-i35" firstAttribute="leading" secondItem="We4-mK-OTv" secondAttribute="leading" id="bBg-2V-XGm"/>
                                     <constraint firstItem="C3R-5v-dgL" firstAttribute="top" secondItem="aza-Df-HRh" secondAttribute="bottom" constant="16" id="bTe-fU-jL2"/>
                                     <constraint firstItem="C3R-5v-dgL" firstAttribute="centerX" secondItem="We4-mK-OTv" secondAttribute="centerX" id="cq0-an-8CV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Us8-7B-sUF" secondAttribute="bottom" constant="16" id="sjC-pn-yYU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Us8-7B-sUF" secondAttribute="bottom" constant="8" id="sjC-pn-yYU"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="trailing" secondItem="wPd-OH-fkl" secondAttribute="trailing" id="uAA-Cv-bpm"/>
-                                    <constraint firstAttribute="bottom" secondItem="c9R-3b-i35" secondAttribute="bottom" constant="16" id="us4-tU-uBt"/>
+                                    <constraint firstAttribute="bottom" secondItem="c9R-3b-i35" secondAttribute="bottom" constant="8" id="us4-tU-uBt"/>
                                     <constraint firstAttribute="trailing" secondItem="Us8-7B-sUF" secondAttribute="trailing" id="w4z-96-XLj"/>
                                     <constraint firstItem="wPd-OH-fkl" firstAttribute="top" secondItem="We4-mK-OTv" secondAttribute="top" constant="16" id="wIi-wa-ucf"/>
                                 </constraints>

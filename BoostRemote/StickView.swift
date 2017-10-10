@@ -12,15 +12,15 @@ import UIKit
 class StickView: UIView {
     
     private let verticalSlider = VerticalSlider()
-    private let label = UILabel()
+    private let imageView = UIImageView()
     
     var slider: UISlider {
         return verticalSlider.slider
     }
     
-    @IBInspectable var text: String? {
+    var port: Port? {
         didSet {
-            label.text = text
+            imageView.image = port.flatMap { UIImage(named: "port\($0)") }
         }
     }
     
@@ -38,13 +38,12 @@ class StickView: UIView {
     
     private func initialize() {
         setupSlider()
-        setupLabel()
         
         verticalSlider.translatesAutoresizingMaskIntoConstraints = false
-        label.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(verticalSlider)
-        addSubview(label)
+        addSubview(imageView)
         
         NSLayoutConstraint.activate([
             verticalSlider.topAnchor.constraint(equalTo: topAnchor),
@@ -53,10 +52,10 @@ class StickView: UIView {
             ])
         
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: verticalSlider.bottomAnchor, constant: 8),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor),
-            label.centerXAnchor.constraint(equalTo: centerXAnchor),
-            label.heightAnchor.constraint(equalToConstant: 30),
+            imageView.topAnchor.constraint(equalTo: verticalSlider.bottomAnchor, constant: 8),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 24),
             ])
     }
     
@@ -68,10 +67,5 @@ class StickView: UIView {
         slider.maximumValue = 10
         slider.minimumValue = -10
         slider.value = 0
-    }
-    
-    private func setupLabel() {
-        label.font = UIFont.systemFont(ofSize: 24)
-        label.textColor = .black
     }
 }

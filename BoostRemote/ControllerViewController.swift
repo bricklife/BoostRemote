@@ -28,7 +28,7 @@ class ControllerViewController: UIViewController {
         didSet {
             let alpha: CGFloat
             if let motor = centerMotor {
-                centerStick.text = motor.port.description
+                centerStick.port = motor.port
                 alpha = 1.0
             } else {
                 alpha = 0.0
@@ -43,6 +43,8 @@ class ControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        leftStick.port = .A
+        rightStick.port = .B
         centerStick.alpha = 0.0
 
         setupConnectButtonImageView()
