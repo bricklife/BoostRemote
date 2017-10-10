@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0BF7E51F8BD873004CCD4F /* VerticalSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BF7E41F8BD873004CCD4F /* VerticalSlider.swift */; };
+		CB0BF7E71F8BDD30004CCD4F /* StickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BF7E61F8BDD30004CCD4F /* StickView.swift */; };
 		CB385A4A1F4E35210061EBE4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB385A491F4E35210061EBE4 /* Settings.bundle */; };
 		CB3BE8B11F2FF2F4000561F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */; };
 		CB3BE8B31F2FF2F4000561F7 /* ControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB0BF7E41F8BD873004CCD4F /* VerticalSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSlider.swift; sourceTree = "<group>"; };
+		CB0BF7E61F8BDD30004CCD4F /* StickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickView.swift; sourceTree = "<group>"; };
 		CB385A491F4E35210061EBE4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CB3BE8AD1F2FF2F4000561F7 /* BoostRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */,
 				CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */,
 				CBF9D2B81F3CACA800B97E11 /* MoveHubManager.swift */,
+				CB0BF7E41F8BD873004CCD4F /* VerticalSlider.swift */,
+				CB0BF7E61F8BDD30004CCD4F /* StickView.swift */,
 				CBF9D2F51F3CDAC700B97E11 /* Data+HexString.swift */,
 				CBF9D2D81F3CB63300B97E11 /* Redux */,
 				CBF9D2D71F3CB62700B97E11 /* MoveHub */,
@@ -259,6 +265,8 @@
 			files = (
 				CBF9D2B91F3CACA800B97E11 /* MoveHubManager.swift in Sources */,
 				CB3BE8B31F2FF2F4000561F7 /* ControllerViewController.swift in Sources */,
+				CB0BF7E51F8BD873004CCD4F /* VerticalSlider.swift in Sources */,
+				CB0BF7E71F8BDD30004CCD4F /* StickView.swift in Sources */,
 				CBD94E8A1F392C310037ED71 /* Motor.swift in Sources */,
 				CBD94E861F391D7F0037ED71 /* Action.swift in Sources */,
 				CB3BE8B11F2FF2F4000561F7 /* AppDelegate.swift in Sources */,
