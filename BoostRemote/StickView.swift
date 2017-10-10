@@ -55,7 +55,7 @@ class StickView: UIView {
             imageView.topAnchor.constraint(equalTo: verticalSlider.bottomAnchor, constant: 8),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 24),
+            imageView.heightAnchor.constraint(equalToConstant: 28),
             ])
     }
     
