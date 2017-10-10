@@ -71,8 +71,7 @@ class ControllerViewController: UIViewController {
     private func setupConnectButtonImageView() {
         connectButtonImageView.animationDuration = 1
         connectButtonImageView.animationRepeatCount = -1
-        connectButtonImageView.animationImages = (1...4).map { "connecting\($0)" }
-            .flatMap { UIImage(named: $0)?.withRenderingMode(.alwaysTemplate) }
+        connectButtonImageView.animationImages = (1...4).map { "connecting\($0)" }.flatMap { UIImage(named: $0) }
         
         connectionState.producer.startWithValues { [weak self] (state) in
             if state == .connecting {
@@ -92,7 +91,7 @@ class ControllerViewController: UIViewController {
             case .offline, .unsupported:
                 imageName = "offline"
             }
-            self?.connectButtonImageView.image = UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate)
+            self?.connectButtonImageView.image = UIImage(named: imageName)
         }
     }
     

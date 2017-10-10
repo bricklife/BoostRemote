@@ -61,9 +61,9 @@ class StickView: UIView {
     }
     
     private func setupSlider() {
-        slider.setThumbImage(UIImage(named: "thumb")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        slider.setMinimumTrackImage(UIImage(named: "left")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        slider.setMaximumTrackImage(UIImage(named: "right")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        slider.setThumbImage(UIImage(named: "thumb"), for: .normal)
+        slider.setMinimumTrackImage(UIImage(named: "left"), for: .normal)
+        slider.setMaximumTrackImage(UIImage(named: "right"), for: .normal)
         
         slider.maximumValue = 10
         slider.minimumValue = -10
