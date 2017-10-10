@@ -11,9 +11,6 @@ import UIKit
 @IBDesignable
 class StickView: UIView {
     
-    private let verticalSlider = VerticalSlider()
-    private let imageView = UIImageView()
-    
     var slider: UISlider {
         return verticalSlider.slider
     }
@@ -37,12 +34,6 @@ class StickView: UIView {
     }
     
     private func initialize() {
-        setupSlider()
-        setupImageView()
-        
-        verticalSlider.translatesAutoresizingMaskIntoConstraints = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
         addSubview(verticalSlider)
         addSubview(imageView)
         
@@ -60,17 +51,26 @@ class StickView: UIView {
             ])
     }
     
-    private func setupSlider() {
-        slider.setThumbImage(UIImage(named: "thumb"), for: .normal)
-        slider.setMinimumTrackImage(UIImage(named: "left"), for: .normal)
-        slider.setMaximumTrackImage(UIImage(named: "right"), for: .normal)
+    private let verticalSlider: VerticalSlider = {
+        let verticalSlider = VerticalSlider()
+        verticalSlider.translatesAutoresizingMaskIntoConstraints = false
         
-        slider.maximumValue = 10
-        slider.minimumValue = -10
-        slider.value = 0
-    }
+        verticalSlider.slider.setThumbImage(UIImage(named: "thumb"), for: .normal)
+        verticalSlider.slider.setMinimumTrackImage(UIImage(named: "left"), for: .normal)
+        verticalSlider.slider.setMaximumTrackImage(UIImage(named: "right"), for: .normal)
+        
+        verticalSlider.slider.maximumValue = 10
+        verticalSlider.slider.minimumValue = -10
+        verticalSlider.slider.value = 0
+        
+        return verticalSlider
+    }()
     
-    private func setupImageView() {
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
         imageView.contentMode = .center
-    }
+        return imageView
+    }()
 }
