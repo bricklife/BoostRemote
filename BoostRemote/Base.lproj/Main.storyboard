@@ -36,40 +36,55 @@
                                             <action selector="connectButtonPushed:" destination="kVc-1C-KTk" eventType="touchUpInside" id="K67-9c-iy4"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9R-3b-i35" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="144" height="240"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3R-5v-dgL" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="168" y="64" width="144" height="240"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us8-7B-sUF" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="335.5" y="64" width="144" height="240"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EIW-UJ-Kge">
+                                        <rect key="frame" x="48" y="64" width="384" height="240"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9R-3b-i35" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="240"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="qku-Qk-Lox"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdi-dh-0jv" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
+                                                <rect key="frame" x="106.5" y="0.0" width="64" height="240"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="WLe-DJ-UnB"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3R-5v-dgL" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
+                                                <rect key="frame" x="213.5" y="0.0" width="64" height="240"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="YZL-Dv-5Mc"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us8-7B-sUF" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
+                                                <rect key="frame" x="320" y="0.0" width="64" height="240"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="WF6-K2-JI6"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Us8-7B-sUF" firstAttribute="top" secondItem="We4-mK-OTv" secondAttribute="top" constant="64" id="5zS-dD-O9G"/>
+                                    <constraint firstItem="EIW-UJ-Kge" firstAttribute="width" secondItem="qBy-zf-xfa" secondAttribute="width" multiplier="0.8" id="5bx-qy-zfL"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="leading" secondItem="wPd-OH-fkl" secondAttribute="leading" id="7p8-8Y-iYX"/>
-                                    <constraint firstItem="Us8-7B-sUF" firstAttribute="width" secondItem="c9R-3b-i35" secondAttribute="width" id="8v9-jS-05d"/>
-                                    <constraint firstAttribute="bottom" secondItem="C3R-5v-dgL" secondAttribute="bottom" constant="16" id="916-jL-vaM"/>
                                     <constraint firstAttribute="width" secondItem="We4-mK-OTv" secondAttribute="height" multiplier="2" id="C13-8d-Fzl"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="bottom" secondItem="wPd-OH-fkl" secondAttribute="bottom" id="IFE-lk-5Ww"/>
-                                    <constraint firstItem="C3R-5v-dgL" firstAttribute="width" secondItem="c9R-3b-i35" secondAttribute="width" id="LWT-pT-rAz"/>
-                                    <constraint firstItem="c9R-3b-i35" firstAttribute="top" secondItem="We4-mK-OTv" secondAttribute="top" constant="64" id="Nz8-9J-K2a"/>
+                                    <constraint firstAttribute="bottom" secondItem="EIW-UJ-Kge" secondAttribute="bottom" constant="16" id="M12-GC-95y"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="top" secondItem="wPd-OH-fkl" secondAttribute="top" id="Pay-mM-oTF"/>
                                     <constraint firstItem="wPd-OH-fkl" firstAttribute="centerX" secondItem="We4-mK-OTv" secondAttribute="centerX" id="Qp2-Rk-vIv"/>
-                                    <constraint firstItem="c9R-3b-i35" firstAttribute="leading" secondItem="We4-mK-OTv" secondAttribute="leading" id="bBg-2V-XGm"/>
-                                    <constraint firstItem="C3R-5v-dgL" firstAttribute="top" secondItem="aza-Df-HRh" secondAttribute="bottom" constant="16" id="bTe-fU-jL2"/>
-                                    <constraint firstItem="C3R-5v-dgL" firstAttribute="centerX" secondItem="We4-mK-OTv" secondAttribute="centerX" id="cq0-an-8CV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Us8-7B-sUF" secondAttribute="bottom" constant="16" id="sjC-pn-yYU"/>
+                                    <constraint firstItem="EIW-UJ-Kge" firstAttribute="top" secondItem="aza-Df-HRh" secondAttribute="bottom" constant="16" id="Qqz-mQ-e3R"/>
+                                    <constraint firstItem="EIW-UJ-Kge" firstAttribute="centerX" secondItem="We4-mK-OTv" secondAttribute="centerX" id="SJ8-df-uJG"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="trailing" secondItem="wPd-OH-fkl" secondAttribute="trailing" id="uAA-Cv-bpm"/>
-                                    <constraint firstAttribute="bottom" secondItem="c9R-3b-i35" secondAttribute="bottom" constant="16" id="us4-tU-uBt"/>
-                                    <constraint firstAttribute="trailing" secondItem="Us8-7B-sUF" secondAttribute="trailing" id="w4z-96-XLj"/>
                                     <constraint firstItem="wPd-OH-fkl" firstAttribute="top" secondItem="We4-mK-OTv" secondAttribute="top" constant="16" id="wIi-wa-ucf"/>
                                 </constraints>
+                                <viewLayoutGuide key="safeArea" id="qBy-zf-xfa"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="C13-8d-Fzl"/>
@@ -84,7 +99,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="c9R-3b-i35" firstAttribute="width" secondItem="kbG-H8-KSI" secondAttribute="width" multiplier="0.3" id="1Bf-Fl-fw6"/>
                             <constraint firstItem="gVb-u1-cf9" firstAttribute="trailing" secondItem="We4-mK-OTv" secondAttribute="trailing" id="50A-qB-eEI"/>
                             <constraint firstItem="We4-mK-OTv" firstAttribute="top" secondItem="gVb-u1-cf9" secondAttribute="top" id="CwK-Vb-fIh"/>
                             <constraint firstItem="We4-mK-OTv" firstAttribute="leading" secondItem="gVb-u1-cf9" secondAttribute="leading" id="buC-Sk-qtE"/>
@@ -109,15 +123,16 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="centerStick" destination="C3R-5v-dgL" id="yK0-oS-qkn"/>
                         <outlet property="connectButtonImageView" destination="aza-Df-HRh" id="4bC-Kt-Sdc"/>
-                        <outlet property="leftStick" destination="c9R-3b-i35" id="S0x-Dn-Kxw"/>
-                        <outlet property="rightStick" destination="Us8-7B-sUF" id="p7B-3Y-J5k"/>
+                        <outlet property="stickA" destination="c9R-3b-i35" id="5Sm-Qe-A0E"/>
+                        <outlet property="stickB" destination="Us8-7B-sUF" id="5C6-Ty-rnh"/>
+                        <outlet property="stickC" destination="Sdi-dh-0jv" id="5gx-W7-ab1"/>
+                        <outlet property="stickD" destination="C3R-5v-dgL" id="sNM-5u-fhh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vv-Nx-2GS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41" y="351"/>
+            <point key="canvasLocation" x="-41.25" y="350.625"/>
         </scene>
     </scenes>
 </document>

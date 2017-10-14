@@ -14,49 +14,46 @@ import ReSwift
 
 class ControllerViewController: UIViewController {
     
-    @IBOutlet private weak var leftStick: StickView!
-    @IBOutlet private weak var rightStick: StickView!
-    @IBOutlet private weak var centerStick: StickView!
+    @IBOutlet private weak var stickA: StickView!
+    @IBOutlet private weak var stickB: StickView!
+    @IBOutlet private weak var stickC: StickView!
+    @IBOutlet private weak var stickD: StickView!
     
     @IBOutlet private weak var connectButtonImageView: UIImageView!
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)
     
-    private var leftMotor: Motor? = Motor(port: .A)
-    private var rightMotor: Motor? = Motor(port: .B)
-    private var centerMotor: Motor? {
+    private var motors: [Port: Motor] = [:] {
         didSet {
-            let alpha: CGFloat
-            if let motor = centerMotor {
-                centerStick.port = motor.port
-                alpha = 1.0
-            } else {
-                alpha = 0.0
-            }
-            
-            UIView.animate(withDuration: 0.2) {
-                self.centerStick.alpha = alpha
-            }
+            stickC?.isHidden = !motors.keys.contains(.C)
+            stickD?.isHidden = !motors.keys.contains(.D)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        leftStick.port = .A
-        rightStick.port = .B
-        centerStick.alpha = 0.0
-
         setupConnectButtonImageView()
         
-        signal(for: leftStick.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(motor: self?.leftMotor, power: value)
+        stickA.port = .A
+        stickB.port = .B
+        stickC.port = .C
+        stickD.port = .D
+        
+        stickC.isHidden = true
+        stickD.isHidden = true
+        
+        signal(for: stickA.slider).observeValues { [weak self] (value) in
+            self?.sendCommand(port: .A, power: value)
         }
-        signal(for: rightStick.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(motor: self?.rightMotor, power: value)
+        signal(for: stickB.slider).observeValues { [weak self] (value) in
+            self?.sendCommand(port: .B, power: value)
         }
-        signal(for: centerStick.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(motor: self?.centerMotor, power: value)
+        signal(for: stickC.slider).observeValues { [weak self] (value) in
+            self?.sendCommand(port: .C, power: value)
+        }
+        signal(for: stickD.slider).observeValues { [weak self] (value) in
+            self?.sendCommand(port: .D, power: value)
         }
     }
     
@@ -109,8 +106,8 @@ class ControllerViewController: UIViewController {
         return Signal<Int8, NoError>.merge(valueSignal, touchUpSignal).skipRepeats()
     }
     
-    private func sendCommand(motor: Motor?, power: Int8) {
-        if let command = motor?.powerCommand(power: power) {
+    private func sendCommand(port: Port, power: Int8) {
+        if let command = motors[port]?.powerCommand(power: power) {
             ActionCenter.send(command: command)
         }
     }
@@ -142,14 +139,17 @@ extension ControllerViewController: StoreSubscriber {
     func newState(state: State) {
         connectionState.value = state.connectionState
         
-        if state.connectionState == .connected {
-            centerMotor = state.portState
-                .flatMap { (port, type) -> Motor? in
-                    return type == .interactiveMotor ? Motor(port: port) : nil
+        let ports: [Port] = [.A, .B, .C, .D]
+        for port in ports {
+            motors[port] = state.portState[port].flatMap { type -> Motor? in
+                guard state.connectionState == .connected else { return nil }
+                switch type {
+                case .builtInMotor, .interactiveMotor:
+                    return Motor(port: port)
+                default:
+                    return nil
                 }
-                .first
-        } else {
-            centerMotor = nil
+            }
         }
     }
 }
