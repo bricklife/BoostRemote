@@ -12,57 +12,48 @@ import ReactiveSwift
 import Result
 import ReSwift
 
-class ControllerViewController: UIViewController, StoreSubscriber {
+class ControllerViewController: UIViewController {
     
-    @IBOutlet weak var leftSlider: UISlider!
-    @IBOutlet weak var rightSlider: UISlider!
+    @IBOutlet private weak var stickA: StickView!
+    @IBOutlet private weak var stickB: StickView!
+    @IBOutlet private weak var stickC: StickView!
+    @IBOutlet private weak var stickD: StickView!
     
-    @IBOutlet weak var centerSlider: UISlider!
-    @IBOutlet weak var centerLabel: UILabel!
+    @IBOutlet private weak var connectButtonImageView: UIImageView!
     
-    @IBOutlet weak var connectButtonImageView: UIImageView!
+    private let connectionState = MutableProperty(ConnectionState.disconnected)
     
-    let connectionState = MutableProperty(ConnectionState.disconnected)
-    
-    var leftMotor: Motor? = Motor(port: .A)
-    var rightMotor: Motor? = Motor(port: .B)
-    var centerMotor: Motor? {
+    private var motors: [Port: Motor] = [:] {
         didSet {
-            let alpha: CGFloat
-            if let motor = centerMotor {
-                centerLabel.text = motor.port.description
-                alpha = 1.0
-            } else {
-                alpha = 0.0
-            }
-            
-            UIView.animate(withDuration: 0.2) {
-                self.centerSlider.alpha = alpha
-                self.centerLabel.alpha = alpha
-            }
+            stickC?.isHidden = !motors.keys.contains(.C)
+            stickD?.isHidden = !motors.keys.contains(.D)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup(slider: leftSlider)
-        setup(slider: rightSlider)
-        setup(slider: centerSlider)
-        
-        centerSlider.alpha = 0.0
-        centerLabel.alpha = 0.0
-
         setupConnectButtonImageView()
         
-        signal(for: leftSlider).observeValues { [weak self] (value) in
-            self?.sendCommand(motor: self?.leftMotor, power: value)
+        stickA.port = .A
+        stickB.port = .B
+        stickC.port = .C
+        stickD.port = .D
+        
+        stickC.isHidden = true
+        stickD.isHidden = true
+        
+        signal(for: stickA.slider).observeValues { [weak self] (value) in
+            self?.sendCommand(port: .A, power: value)
         }
-        signal(for: rightSlider).observeValues { [weak self] (value) in
-            self?.sendCommand(motor: self?.rightMotor, power: value)
+        signal(for: stickB.slider).observeValues { [weak self] (value) in
+            self?.sendCommand(port: .B, power: value)
         }
-        signal(for: centerSlider).observeValues { [weak self] (value) in
-            self?.sendCommand(motor: self?.centerMotor, power: value)
+        signal(for: stickC.slider).observeValues { [weak self] (value) in
+            self?.sendCommand(port: .C, power: value)
+        }
+        signal(for: stickD.slider).observeValues { [weak self] (value) in
+            self?.sendCommand(port: .D, power: value)
         }
     }
     
@@ -76,33 +67,10 @@ class ControllerViewController: UIViewController, StoreSubscriber {
         StoreCenter.store.unsubscribe(self)
     }
     
-    func newState(state: State) {
-        connectionState.value = state.connectionState
-        
-        if state.connectionState == .connected {
-            centerMotor = state.portState
-                .flatMap { (port, type) -> Motor? in
-                    return type == .interactiveMotor ? Motor(port: port) : nil
-                }
-                .first
-        } else {
-            centerMotor = nil
-        }
-    }
-    
-    private func setup(slider: UISlider) {
-        slider.setThumbImage(UIImage(named: "thumb")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        slider.setMinimumTrackImage(UIImage(named: "left")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        slider.setMaximumTrackImage(UIImage(named: "right")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        
-        slider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * -0.5))
-    }
-    
     private func setupConnectButtonImageView() {
         connectButtonImageView.animationDuration = 1
         connectButtonImageView.animationRepeatCount = -1
-        connectButtonImageView.animationImages = (1...4).map { "connecting\($0)" }
-            .flatMap { UIImage(named: $0)?.withRenderingMode(.alwaysTemplate) }
+        connectButtonImageView.animationImages = (1...4).map { "connecting\($0)" }.flatMap { UIImage(named: $0) }
         
         connectionState.producer.startWithValues { [weak self] (state) in
             if state == .connecting {
@@ -122,7 +90,7 @@ class ControllerViewController: UIViewController, StoreSubscriber {
             case .offline, .unsupported:
                 imageName = "offline"
             }
-            self?.connectButtonImageView.image = UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate)
+            self?.connectButtonImageView.image = UIImage(named: imageName)
         }
     }
     
@@ -138,8 +106,8 @@ class ControllerViewController: UIViewController, StoreSubscriber {
         return Signal<Int8, NoError>.merge(valueSignal, touchUpSignal).skipRepeats()
     }
     
-    private func sendCommand(motor: Motor?, power: Int8) {
-        if let command = motor?.powerCommand(power: power) {
+    private func sendCommand(port: Port, power: Int8) {
+        if let command = motors[port]?.powerCommand(power: power) {
             ActionCenter.send(command: command)
         }
     }
@@ -150,7 +118,7 @@ class ControllerViewController: UIViewController, StoreSubscriber {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func connectButtonPushed(_ sender: Any) {
+    @IBAction private func connectButtonPushed(_ sender: Any) {
         switch connectionState.value {
         case .disconnected:
             ActionCenter.startScan()
@@ -162,6 +130,26 @@ class ControllerViewController: UIViewController, StoreSubscriber {
             alert(message: "Turn on Bluetooth")
         case .unsupported:
             alert(message: "Unsupported Device")
+        }
+    }
+}
+
+extension ControllerViewController: StoreSubscriber {
+    
+    func newState(state: State) {
+        connectionState.value = state.connectionState
+        
+        let ports: [Port] = [.A, .B, .C, .D]
+        for port in ports {
+            motors[port] = state.portState[port].flatMap { type -> Motor? in
+                guard state.connectionState == .connected else { return nil }
+                switch type {
+                case .builtInMotor, .interactiveMotor:
+                    return Motor(port: port)
+                default:
+                    return nil
+                }
+            }
         }
     }
 }
