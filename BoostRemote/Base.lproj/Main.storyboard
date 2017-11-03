@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kVc-1C-KTk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kVc-1C-KTk">
     <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -43,28 +43,28 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="240"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="qku-Qk-Lox"/>
+                                                    <constraint firstAttribute="width" constant="64" id="qku-Qk-Lox"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdi-dh-0jv" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
                                                 <rect key="frame" x="106.5" y="0.0" width="64" height="240"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="WLe-DJ-UnB"/>
+                                                    <constraint firstAttribute="width" constant="64" id="WLe-DJ-UnB"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3R-5v-dgL" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
                                                 <rect key="frame" x="213.5" y="0.0" width="64" height="240"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="YZL-Dv-5Mc"/>
+                                                    <constraint firstAttribute="width" constant="64" id="YZL-Dv-5Mc"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us8-7B-sUF" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
                                                 <rect key="frame" x="320" y="0.0" width="64" height="240"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="WF6-K2-JI6"/>
+                                                    <constraint firstAttribute="width" constant="64" id="WF6-K2-JI6"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
