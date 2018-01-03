@@ -3,7 +3,7 @@ Remote Control iOS app for LEGO® Boost
 
 ## How to use this app
 1. Turn on Bluetooth on your iOS device
-2. Push the connecter button on this app
+2. Push the connector button on this app
 3. Push the green button on your Move Hub
 4. Enjoy!
 
