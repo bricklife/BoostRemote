@@ -1,2 +1,2 @@
-github "ReactiveCocoa/ReactiveCocoa" ~> 6.0
-github "ReSwift/ReSwift" ~> 4.0.0
+github "ReactiveCocoa/ReactiveCocoa"
+github "ReSwift/ReSwift"
