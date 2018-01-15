@@ -113,7 +113,7 @@ class ControllerViewController: UIViewController {
     }
     
     private func alert(message: String) {
-        let alert = UIAlertController(title: "CAUTION", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("CAUTION", comment: "CAUTION"), message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
@@ -127,9 +127,9 @@ class ControllerViewController: UIViewController {
         case .connecting:
             ActionCenter.stopScan()
         case .offline:
-            alert(message: "Turn on Bluetooth")
+            alert(message: NSLocalizedString("Turn on Bluetooth", comment: "Turn on Bluetooth"))
         case .unsupported:
-            alert(message: "Unsupported Device")
+            alert(message: NSLocalizedString("Unsupported Device", comment: "Unsupported Device"))
         }
     }
 }
