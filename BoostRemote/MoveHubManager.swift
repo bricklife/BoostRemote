@@ -9,6 +9,7 @@
 import Foundation
 import CoreBluetooth
 import ReSwift
+import BoostBLEKit
 
 class MoveHubManager: NSObject {
     

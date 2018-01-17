@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BoostBLEKit
 
 @IBDesignable
 class StickView: UIView {
@@ -15,7 +16,7 @@ class StickView: UIView {
         return verticalSlider.slider
     }
     
-    var port: Port? {
+    var port: BoostBLEKit.Port? {
         didSet {
             imageView.image = port.flatMap { UIImage(named: "port\($0)") }
         }

@@ -8,6 +8,7 @@
 
 import Foundation
 import ReSwift
+import BoostBLEKit
 
 struct State: StateType {
     
@@ -24,4 +25,4 @@ enum ConnectionState {
     case unsupported
 }
 
-typealias PortState = [Port: DeviceType]
+typealias PortState = [BoostBLEKit.Port: DeviceType]

@@ -11,6 +11,7 @@ import ReactiveCocoa
 import ReactiveSwift
 import Result
 import ReSwift
+import BoostBLEKit
 
 class ControllerViewController: UIViewController {
     
@@ -23,7 +24,7 @@ class ControllerViewController: UIViewController {
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)
     
-    private var motors: [Port: Motor] = [:] {
+    private var motors: [BoostBLEKit.Port: Motor] = [:] {
         didSet {
             stickC?.isHidden = !motors.keys.contains(.C)
             stickD?.isHidden = !motors.keys.contains(.D)
@@ -106,7 +107,7 @@ class ControllerViewController: UIViewController {
         return Signal<Int8, NoError>.merge(valueSignal, touchUpSignal).skipRepeats()
     }
     
-    private func sendCommand(port: Port, power: Int8) {
+    private func sendCommand(port: BoostBLEKit.Port, power: Int8) {
         if let command = motors[port]?.powerCommand(power: power) {
             ActionCenter.send(command: command)
         }
@@ -139,16 +140,11 @@ extension ControllerViewController: StoreSubscriber {
     func newState(state: State) {
         connectionState.value = state.connectionState
         
-        let ports: [Port] = [.A, .B, .C, .D]
+        let ports: [BoostBLEKit.Port] = [.A, .B, .C, .D]
         for port in ports {
             motors[port] = state.portState[port].flatMap { type -> Motor? in
                 guard state.connectionState == .connected else { return nil }
-                switch type {
-                case .builtInMotor, .interactiveMotor:
-                    return Motor(port: port)
-                default:
-                    return nil
-                }
+                return Motor(port: port, deviceType: type)
             }
         }
     }
