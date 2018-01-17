@@ -16,8 +16,8 @@ extension Data {
             .components(separatedBy: CharacterSet(charactersIn: "0123456789abcdefABCDEF").inverted)
             .joined()
         
-        let even = hexString.characters.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
-        let odd  = hexString.characters.enumerated().filter { $0.offset % 2 == 1 }.map { $0.element }
+        let even = hexString.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
+        let odd  = hexString.enumerated().filter { $0.offset % 2 == 1 }.map { $0.element }
         
         let bytes = zip(even, odd).flatMap { UInt8(String([$0.0, $0.1]), radix: 16) }
         

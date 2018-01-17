@@ -16,6 +16,8 @@
 		CB3BE8B81F2FF2F4000561F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE8B71F2FF2F4000561F7 /* Assets.xcassets */; };
 		CB3BE8BB1F2FF2F4000561F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE8B91F2FF2F4000561F7 /* LaunchScreen.storyboard */; };
 		CB44B8531F73C11400D0D250 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB44B8521F73C11400D0D250 /* Store.swift */; };
+		CB5891F1200D2C8700E15F92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB5891F3200D2C8700E15F92 /* Localizable.strings */; };
+		CB5891F9200D2DF300E15F92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB5891FB200D2DF300E15F92 /* InfoPlist.strings */; };
 		CBA46E781F882F0C0017E5C2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */; };
 		CBA46E7A1F882F0F0017E5C2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E791F882F0F0017E5C2 /* Result.framework */; };
 		CBA46E7D1F882F800017E5C2 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E7B1F882F800017E5C2 /* ReSwift.framework */; };
@@ -58,6 +60,8 @@
 		CB3BE8BA1F2FF2F4000561F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3BE8BC1F2FF2F4000561F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB44B8521F73C11400D0D250 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		CB5891F4200D2CEA00E15F92 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB5891FA200D2DF300E15F92 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		CBA46E791F882F0F0017E5C2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		CBA46E7B1F882F800017E5C2 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
@@ -121,8 +125,10 @@
 				CBF9D2D71F3CB62700B97E11 /* MoveHub */,
 				CB3BE8B71F2FF2F4000561F7 /* Assets.xcassets */,
 				CB3BE8B91F2FF2F4000561F7 /* LaunchScreen.storyboard */,
+				CB5891F3200D2C8700E15F92 /* Localizable.strings */,
 				CB385A491F4E35210061EBE4 /* Settings.bundle */,
 				CB3BE8BC1F2FF2F4000561F7 /* Info.plist */,
+				CB5891FB200D2DF300E15F92 /* InfoPlist.strings */,
 			);
 			path = BoostRemote;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = CB3BE8A41F2FF2F4000561F7;
 			productRefGroup = CB3BE8AE1F2FF2F4000561F7 /* Products */;
@@ -225,6 +232,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5891F1200D2C8700E15F92 /* Localizable.strings in Resources */,
+				CB5891F9200D2DF300E15F92 /* InfoPlist.strings in Resources */,
 				CB3BE8BB1F2FF2F4000561F7 /* LaunchScreen.storyboard in Resources */,
 				CB3BE8B81F2FF2F4000561F7 /* Assets.xcassets in Resources */,
 				CB385A4A1F4E35210061EBE4 /* Settings.bundle in Resources */,
@@ -301,6 +310,22 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		CB5891F3200D2C8700E15F92 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB5891F4200D2CEA00E15F92 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		CB5891FB200D2DF300E15F92 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB5891FA200D2DF300E15F92 /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -308,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -365,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -426,6 +453,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bricklife.ios.boost-remote";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -444,6 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bricklife.ios.boost-remote";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
