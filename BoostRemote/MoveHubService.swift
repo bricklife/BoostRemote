@@ -13,5 +13,5 @@ import BoostBLEKit
 struct MoveHubService {
     
     static let serviceUuid = CBUUID(string: GATT.serviceUuid)
-    static let characteristicUuid = CBUUID(string: GATT.serviceUuid)
+    static let characteristicUuid = CBUUID(string: GATT.characteristicUuid)
 }
