@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>File</key>
-			<string>com.mono0926.LicensePlist/ReactiveCocoa</string>
+			<string>com.mono0926.LicensePlist/BoostBLEKit</string>
 			<key>Title</key>
-			<string>ReactiveCocoa</string>
+			<string>BoostBLEKit</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
