@@ -96,7 +96,7 @@ class ControllerViewController: UIViewController {
     }
     
     private func signal(for slider: UISlider) -> Signal<Int8, NoError> {
-        let valueSignal = slider.reactive.values.map { Int8($0) * 10 }
+        let valueSignal = slider.reactive.values.map { Int8($0 * 10) * 10 }
         
         let touchUpSignal = Signal<UISlider, NoError>
             .merge(slider.reactive.controlEvents(.touchUpInside),

@@ -60,8 +60,8 @@ class StickView: UIView {
         verticalSlider.slider.setMinimumTrackImage(UIImage(named: "left"), for: .normal)
         verticalSlider.slider.setMaximumTrackImage(UIImage(named: "right"), for: .normal)
         
-        verticalSlider.slider.maximumValue = 10
-        verticalSlider.slider.minimumValue = -10
+        verticalSlider.slider.maximumValue = 1
+        verticalSlider.slider.minimumValue = -1
         verticalSlider.slider.value = 0
         
         return verticalSlider
