@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ReactiveCocoa
 import ReactiveSwift
 import Result
 import BoostBLEKit
@@ -15,23 +14,13 @@ import BoostBLEKit
 @IBDesignable
 class StickView: UIView {
     
+    let (signal, observer) = Signal<CGFloat, NoError>.pipe()
+    
     var port: BoostBLEKit.Port? {
         didSet {
             imageView.image = port.flatMap { UIImage(named: "port\($0)") }
         }
     }
-    
-    lazy var signal: Signal<Float, NoError> = {
-        let valueSignal = self.verticalSlider.slider.reactive.values
-        
-        let touchUpSignal = Signal<UISlider, NoError>
-            .merge(self.verticalSlider.slider.reactive.controlEvents(.touchUpInside),
-                   self.verticalSlider.slider.reactive.controlEvents(.touchUpOutside))
-            .on(value: { $0.value = 0 })
-            .map { _ in Float(0) }
-        
-        return Signal<Float, NoError>.merge(valueSignal, touchUpSignal)
-    }()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -61,19 +50,15 @@ class StickView: UIView {
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 32),
             ])
+        
+        verticalSlider.update = { [weak self] (value) in
+            self?.observer.send(value: -value)
+        }
     }
     
     private let verticalSlider: VerticalSlider = {
         let verticalSlider = VerticalSlider()
         verticalSlider.translatesAutoresizingMaskIntoConstraints = false
-        
-        verticalSlider.slider.setThumbImage(UIImage(named: "thumb"), for: .normal)
-        verticalSlider.slider.setMinimumTrackImage(UIImage(named: "left"), for: .normal)
-        verticalSlider.slider.setMaximumTrackImage(UIImage(named: "right"), for: .normal)
-        
-        verticalSlider.slider.maximumValue = 1
-        verticalSlider.slider.minimumValue = -1
-        verticalSlider.slider.value = 0
         
         return verticalSlider
     }()
@@ -83,6 +68,7 @@ class StickView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         imageView.contentMode = .center
+        
         return imageView
     }()
 }
