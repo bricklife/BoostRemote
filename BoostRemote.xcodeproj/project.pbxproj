@@ -22,7 +22,6 @@
 		CBA46E781F882F0C0017E5C2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */; };
 		CBA46E7A1F882F0F0017E5C2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E791F882F0F0017E5C2 /* Result.framework */; };
 		CBA46E7D1F882F800017E5C2 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E7B1F882F800017E5C2 /* ReSwift.framework */; };
-		CBA46E7E1F882F800017E5C2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E7C1F882F800017E5C2 /* ReactiveCocoa.framework */; };
 		CBD94E841F391B3F0037ED71 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E831F391B3F0037ED71 /* State.swift */; };
 		CBD94E861F391D7F0037ED71 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E851F391D7F0037ED71 /* Action.swift */; };
 		CBD94E881F391E2E0037ED71 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E871F391E2E0037ED71 /* Reducer.swift */; };
@@ -62,7 +61,6 @@
 		CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		CBA46E791F882F0F0017E5C2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		CBA46E7B1F882F800017E5C2 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
-		CBA46E7C1F882F800017E5C2 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		CBD94E831F391B3F0037ED71 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		CBD94E851F391D7F0037ED71 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		CBD94E871F391E2E0037ED71 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 				CB4345A8200FC0D200D82D7D /* BoostBLEKit.framework in Frameworks */,
 				CBA46E7A1F882F0F0017E5C2 /* Result.framework in Frameworks */,
 				CBA46E781F882F0C0017E5C2 /* ReactiveSwift.framework in Frameworks */,
-				CBA46E7E1F882F800017E5C2 /* ReactiveCocoa.framework in Frameworks */,
 				CBA46E7D1F882F800017E5C2 /* ReSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				CB4345A7200FC0D100D82D7D /* BoostBLEKit.framework */,
-				CBA46E7C1F882F800017E5C2 /* ReactiveCocoa.framework */,
 				CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */,
 				CBA46E791F882F0F0017E5C2 /* Result.framework */,
 				CBA46E7B1F882F800017E5C2 /* ReSwift.framework */,
