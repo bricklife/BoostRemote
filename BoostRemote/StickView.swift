@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import ReactiveCocoa
+import ReactiveSwift
+import Result
 import BoostBLEKit
 
 @IBDesignable
@@ -21,6 +24,18 @@ class StickView: UIView {
             imageView.image = port.flatMap { UIImage(named: "port\($0)") }
         }
     }
+    
+    lazy var signal: Signal<Float, NoError> = {
+        let valueSignal = self.slider.reactive.values
+        
+        let touchUpSignal = Signal<UISlider, NoError>
+            .merge(self.slider.reactive.controlEvents(.touchUpInside),
+                   self.slider.reactive.controlEvents(.touchUpOutside))
+            .on(value: { $0.value = 0 })
+            .map { _ in Float(0) }
+        
+        return Signal<Float, NoError>.merge(valueSignal, touchUpSignal)
+    }()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import ReactiveCocoa
 import ReactiveSwift
-import Result
 import ReSwift
 import BoostBLEKit
 
@@ -35,27 +33,7 @@ class ControllerViewController: UIViewController {
         super.viewDidLoad()
         
         setupConnectButtonImageView()
-        
-        stickA.port = .A
-        stickB.port = .B
-        stickC.port = .C
-        stickD.port = .D
-        
-        stickC.isHidden = true
-        stickD.isHidden = true
-        
-        signal(for: stickA.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(port: .A, power: value)
-        }
-        signal(for: stickB.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(port: .B, power: value)
-        }
-        signal(for: stickC.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(port: .C, power: value)
-        }
-        signal(for: stickD.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(port: .D, power: value)
-        }
+        setupSticks()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,16 +73,23 @@ class ControllerViewController: UIViewController {
         }
     }
     
-    private func signal(for slider: UISlider) -> Signal<Int8, NoError> {
-        let valueSignal = slider.reactive.values.map { Int8($0 * 10) * 10 }
+    private func setupSticks() {
+        stickA.port = .A
+        stickB.port = .B
+        stickC.port = .C
+        stickD.port = .D
         
-        let touchUpSignal = Signal<UISlider, NoError>
-            .merge(slider.reactive.controlEvents(.touchUpInside),
-                   slider.reactive.controlEvents(.touchUpOutside))
-            .on(value: { $0.value = 0 })
-            .map { _ in Int8(0) }
+        stickC.isHidden = true
+        stickD.isHidden = true
         
-        return Signal<Int8, NoError>.merge(valueSignal, touchUpSignal).skipRepeats()
+        [stickA, stickB, stickC, stickD].forEach { (stick) in
+            guard let port = stick?.port else { return }
+            stick?.signal.map { Int8($0 * 10) * 10 }
+                .skipRepeats()
+                .observeValues { [weak self] (value) in
+                    self?.sendCommand(port: port, power: value)
+            }
+        }
     }
     
     private func sendCommand(port: BoostBLEKit.Port, power: Int8) {
