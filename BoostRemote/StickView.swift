@@ -15,10 +15,6 @@ import BoostBLEKit
 @IBDesignable
 class StickView: UIView {
     
-    var slider: UISlider {
-        return verticalSlider.slider
-    }
-    
     var port: BoostBLEKit.Port? {
         didSet {
             imageView.image = port.flatMap { UIImage(named: "port\($0)") }
@@ -26,11 +22,11 @@ class StickView: UIView {
     }
     
     lazy var signal: Signal<Float, NoError> = {
-        let valueSignal = self.slider.reactive.values
+        let valueSignal = self.verticalSlider.slider.reactive.values
         
         let touchUpSignal = Signal<UISlider, NoError>
-            .merge(self.slider.reactive.controlEvents(.touchUpInside),
-                   self.slider.reactive.controlEvents(.touchUpOutside))
+            .merge(self.verticalSlider.slider.reactive.controlEvents(.touchUpInside),
+                   self.verticalSlider.slider.reactive.controlEvents(.touchUpOutside))
             .on(value: { $0.value = 0 })
             .map { _ in Float(0) }
         
