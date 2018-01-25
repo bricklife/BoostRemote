@@ -132,7 +132,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vv-Nx-2GS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41.25" y="350.625"/>
+            <point key="canvasLocation" x="-463" y="283"/>
+        </scene>
+        <!--Four Sticks View Controller-->
+        <scene sceneID="mk4-ag-ueO">
+            <objects>
+                <viewController id="joY-yf-IKF" customClass="FourSticksViewController" customModule="BoostRemote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eJj-ac-Wgz">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kdE-rI-9fe">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lQ-my-zdb" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="320"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="JE5-Ti-fFR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2o-VH-3GC" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
+                                        <rect key="frame" x="138.5" y="0.0" width="64" height="320"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="LL7-Dd-g7i"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huh-wt-7be" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
+                                        <rect key="frame" x="277.5" y="0.0" width="64" height="320"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="XDP-n1-FU3"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEu-vQ-bJV" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
+                                        <rect key="frame" x="416" y="0.0" width="64" height="320"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="Eqf-zm-0GJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LWO-Dm-UXs" firstAttribute="trailing" secondItem="kdE-rI-9fe" secondAttribute="trailing" id="AT3-7e-XpL"/>
+                            <constraint firstItem="LWO-Dm-UXs" firstAttribute="bottom" secondItem="kdE-rI-9fe" secondAttribute="bottom" id="AiI-M7-Q4M"/>
+                            <constraint firstItem="kdE-rI-9fe" firstAttribute="top" secondItem="LWO-Dm-UXs" secondAttribute="top" id="M1f-k1-Z8w"/>
+                            <constraint firstItem="kdE-rI-9fe" firstAttribute="leading" secondItem="eJj-ac-Wgz" secondAttribute="leading" id="cga-iq-24E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LWO-Dm-UXs"/>
+                    </view>
+                    <connections>
+                        <outlet property="stickA" destination="2lQ-my-zdb" id="xhg-4s-3dk"/>
+                        <outlet property="stickB" destination="aEu-vQ-bJV" id="PO2-ZJ-B6R"/>
+                        <outlet property="stickC" destination="K2o-VH-3GC" id="Ntg-hL-LX9"/>
+                        <outlet property="stickD" destination="huh-wt-7be" id="PKM-Yi-oTH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAp-hh-c8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="281"/>
         </scene>
     </scenes>
 </document>

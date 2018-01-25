@@ -17,6 +17,7 @@
 		CB3BE8BB1F2FF2F4000561F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3BE8B91F2FF2F4000561F7 /* LaunchScreen.storyboard */; };
 		CB4345A8200FC0D200D82D7D /* BoostBLEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4345A7200FC0D100D82D7D /* BoostBLEKit.framework */; };
 		CB44B8531F73C11400D0D250 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB44B8521F73C11400D0D250 /* Store.swift */; };
+		CB547EBB201A62A400B00D8C /* FourSticksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB547EBA201A62A400B00D8C /* FourSticksViewController.swift */; };
 		CB5891F1200D2C8700E15F92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB5891F3200D2C8700E15F92 /* Localizable.strings */; };
 		CB5891F9200D2DF300E15F92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB5891FB200D2DF300E15F92 /* InfoPlist.strings */; };
 		CBA46E781F882F0C0017E5C2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */; };
@@ -56,6 +57,7 @@
 		CB3BE8BC1F2FF2F4000561F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB4345A7200FC0D100D82D7D /* BoostBLEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BoostBLEKit.framework; path = Carthage/Build/iOS/BoostBLEKit.framework; sourceTree = "<group>"; };
 		CB44B8521F73C11400D0D250 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		CB547EBA201A62A400B00D8C /* FourSticksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSticksViewController.swift; sourceTree = "<group>"; };
 		CB5891F4200D2CEA00E15F92 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB5891FA200D2DF300E15F92 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */,
 				CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */,
 				CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */,
+				CB547EBA201A62A400B00D8C /* FourSticksViewController.swift */,
 				CB0BF7E41F8BD873004CCD4F /* VerticalSlider.swift */,
 				CB0BF7E61F8BDD30004CCD4F /* StickView.swift */,
 				CBF9D2B81F3CACA800B97E11 /* MoveHubManager.swift */,
@@ -256,6 +259,7 @@
 				CB0BF7E51F8BD873004CCD4F /* VerticalSlider.swift in Sources */,
 				CB0BF7E71F8BDD30004CCD4F /* StickView.swift in Sources */,
 				CBD94E861F391D7F0037ED71 /* Action.swift in Sources */,
+				CB547EBB201A62A400B00D8C /* FourSticksViewController.swift in Sources */,
 				CB3BE8B11F2FF2F4000561F7 /* AppDelegate.swift in Sources */,
 				CBF9D2F61F3CDAC700B97E11 /* Data+HexString.swift in Sources */,
 				CB44B8531F73C11400D0D250 /* Store.swift in Sources */,
