@@ -18,19 +18,12 @@ class FourSticksViewController: UIViewController {
     @IBOutlet private weak var stickC: StickView!
     @IBOutlet private weak var stickD: StickView!
     
-    var motors: [BoostBLEKit.Port: Motor] = [:] {
-        didSet {
-            stickC?.isHidden = !motors.keys.contains(.C)
-            stickD?.isHidden = !motors.keys.contains(.D)
-        }
-    }
-    
     private let (signalA, observerA) = Signal<CGFloat, NoError>.pipe()
     private let (signalB, observerB) = Signal<CGFloat, NoError>.pipe()
     private let (signalC, observerC) = Signal<CGFloat, NoError>.pipe()
     private let (signalD, observerD) = Signal<CGFloat, NoError>.pipe()
     
-    lazy var signal: [BoostBLEKit.Port: Signal<CGFloat, NoError>] = [
+    lazy var signals: [BoostBLEKit.Port: Signal<CGFloat, NoError>] = [
         .A: self.signalA,
         .B: self.signalB,
         .C: self.signalC,
@@ -56,5 +49,16 @@ class FourSticksViewController: UIViewController {
         
         stickC.isHidden = true
         stickD.isHidden = true
+    }
+    
+    func setEnable(_ enable: Bool, port: BoostBLEKit.Port) {
+        switch port {
+        case .B:
+            stickB.isHidden = !enable
+        case .C:
+            stickC.isHidden = !enable
+        default:
+            break
+        }
     }
 }

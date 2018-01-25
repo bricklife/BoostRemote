@@ -13,19 +13,18 @@ import BoostBLEKit
 
 class ControllerViewController: UIViewController {
     
-    @IBOutlet private weak var stickA: StickView!
-    @IBOutlet private weak var stickB: StickView!
-    @IBOutlet private weak var stickC: StickView!
-    @IBOutlet private weak var stickD: StickView!
-    
     @IBOutlet private weak var connectButtonImageView: UIImageView!
+    
+    private var stickViewController: FourSticksViewController? {
+        return childViewControllers.first as? FourSticksViewController
+    }
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)
     
     private var motors: [BoostBLEKit.Port: Motor] = [:] {
         didSet {
-            stickC?.isHidden = !motors.keys.contains(.C)
-            stickD?.isHidden = !motors.keys.contains(.D)
+            stickViewController?.setEnable(motors.keys.contains(.C), port: .C)
+            stickViewController?.setEnable(motors.keys.contains(.D), port: .D)
         }
     }
     
@@ -84,17 +83,8 @@ class ControllerViewController: UIViewController {
     }
     
     private func setupSticks() {
-        stickA.port = .A
-        stickB.port = .B
-        stickC.port = .C
-        stickD.port = .D
-        
-        stickC.isHidden = true
-        stickD.isHidden = true
-        
-        [stickA, stickB, stickC, stickD].forEach { (stick) in
-            guard let port = stick?.port else { return }
-            stick?.signal.map { Int8($0 * 10) * 10 }
+        stickViewController?.signals.forEach { (port, signal) in
+            signal.map { Int8($0 * 10) * 10 }
                 .skipRepeats()
                 .observeValues { [weak self] (value) in
                     self?.sendCommand(port: port, power: value)
