@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class VerticalSlider: UIView {
     
     var update: ((CGFloat) -> Void)?

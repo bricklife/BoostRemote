@@ -11,7 +11,6 @@ import ReactiveSwift
 import Result
 import BoostBLEKit
 
-@IBDesignable
 class StickView: UIView {
     
     let (signal, observer) = Signal<CGFloat, NoError>.pipe()
