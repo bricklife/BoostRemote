@@ -20,6 +20,7 @@
 		CB547EBB201A62A400B00D8C /* FourSticksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB547EBA201A62A400B00D8C /* FourSticksViewController.swift */; };
 		CB5891F1200D2C8700E15F92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB5891F3200D2C8700E15F92 /* Localizable.strings */; };
 		CB5891F9200D2DF300E15F92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB5891FB200D2DF300E15F92 /* InfoPlist.strings */; };
+		CB70D813201A82D500EAB1D6 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB70D812201A82D500EAB1D6 /* FeedbackGenerator.swift */; };
 		CBA46E781F882F0C0017E5C2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */; };
 		CBA46E7A1F882F0F0017E5C2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E791F882F0F0017E5C2 /* Result.framework */; };
 		CBA46E7D1F882F800017E5C2 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E7B1F882F800017E5C2 /* ReSwift.framework */; };
@@ -60,6 +61,7 @@
 		CB547EBA201A62A400B00D8C /* FourSticksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSticksViewController.swift; sourceTree = "<group>"; };
 		CB5891F4200D2CEA00E15F92 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB5891FA200D2DF300E15F92 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB70D812201A82D500EAB1D6 /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		CBA46E791F882F0F0017E5C2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		CBA46E7B1F882F800017E5C2 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				CB547EBA201A62A400B00D8C /* FourSticksViewController.swift */,
 				CB0BF7E41F8BD873004CCD4F /* VerticalSlider.swift */,
 				CB0BF7E61F8BDD30004CCD4F /* StickView.swift */,
+				CB70D812201A82D500EAB1D6 /* FeedbackGenerator.swift */,
 				CBF9D2B81F3CACA800B97E11 /* MoveHubManager.swift */,
 				CBF9D2D51F3CB52800B97E11 /* MoveHubService.swift */,
 				CBF9D2F51F3CDAC700B97E11 /* Data+HexString.swift */,
@@ -261,6 +264,7 @@
 				CBD94E861F391D7F0037ED71 /* Action.swift in Sources */,
 				CB547EBB201A62A400B00D8C /* FourSticksViewController.swift in Sources */,
 				CB3BE8B11F2FF2F4000561F7 /* AppDelegate.swift in Sources */,
+				CB70D813201A82D500EAB1D6 /* FeedbackGenerator.swift in Sources */,
 				CBF9D2F61F3CDAC700B97E11 /* Data+HexString.swift in Sources */,
 				CB44B8531F73C11400D0D250 /* Store.swift in Sources */,
 				CBD94E881F391E2E0037ED71 /* Reducer.swift in Sources */,

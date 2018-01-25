@@ -28,16 +28,6 @@ class ControllerViewController: UIViewController {
         }
     }
     
-    private let feedbackGenerator: Any? = {
-        if #available(iOS 10.0, *) {
-            let generator = UISelectionFeedbackGenerator()
-            generator.prepare()
-            return generator
-        } else {
-            return nil
-        }
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,17 +84,11 @@ class ControllerViewController: UIViewController {
     
     private func sendCommand(port: BoostBLEKit.Port, power: Int8) {
         if power == 100 || power == -100 {
-            feedback()
+            FeedbackGenerator.feedback()
         }
         
         if let command = motors[port]?.powerCommand(power: power) {
             ActionCenter.send(command: command)
-        }
-    }
-    
-    private func feedback() {
-        if #available(iOS 10.0, *), let generator = feedbackGenerator as? UISelectionFeedbackGenerator {
-            generator.selectionChanged()
         }
     }
     
