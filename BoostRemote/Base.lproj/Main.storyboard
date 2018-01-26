@@ -52,20 +52,20 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pby-uk-nh5" secondAttribute="bottom" constant="16" id="0qe-4s-FoH"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="leading" secondItem="wPd-OH-fkl" secondAttribute="leading" id="7p8-8Y-iYX"/>
                                     <constraint firstAttribute="width" secondItem="We4-mK-OTv" secondAttribute="height" multiplier="2" id="C13-8d-Fzl"/>
                                     <constraint firstItem="2Mm-uc-Hcs" firstAttribute="centerX" secondItem="We4-mK-OTv" secondAttribute="centerX" id="DzZ-Cb-vcT"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="bottom" secondItem="wPd-OH-fkl" secondAttribute="bottom" id="IFE-lk-5Ww"/>
                                     <constraint firstItem="pby-uk-nh5" firstAttribute="width" secondItem="We4-mK-OTv" secondAttribute="width" multiplier="0.8" id="KSP-CG-qw8"/>
-                                    <constraint firstItem="pby-uk-nh5" firstAttribute="top" secondItem="wPd-OH-fkl" secondAttribute="bottom" constant="16" id="MGk-aD-7LK"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="top" secondItem="wPd-OH-fkl" secondAttribute="top" id="Pay-mM-oTF"/>
                                     <constraint firstItem="wPd-OH-fkl" firstAttribute="centerX" secondItem="We4-mK-OTv" secondAttribute="centerX" id="Qp2-Rk-vIv"/>
+                                    <constraint firstItem="2Mm-uc-Hcs" firstAttribute="top" secondItem="wPd-OH-fkl" secondAttribute="bottom" constant="16" id="SSS-ak-1Ls"/>
+                                    <constraint firstItem="pby-uk-nh5" firstAttribute="top" secondItem="wPd-OH-fkl" secondAttribute="bottom" constant="16" id="aLz-JL-Hh8"/>
                                     <constraint firstItem="pby-uk-nh5" firstAttribute="centerX" secondItem="We4-mK-OTv" secondAttribute="centerX" id="cEf-D6-NPW"/>
-                                    <constraint firstItem="2Mm-uc-Hcs" firstAttribute="top" secondItem="aza-Df-HRh" secondAttribute="bottom" constant="16" id="kTq-PM-G9n"/>
-                                    <constraint firstItem="qBy-zf-xfa" firstAttribute="bottom" secondItem="pby-uk-nh5" secondAttribute="bottom" constant="16" id="nQH-6B-oa3"/>
                                     <constraint firstItem="aza-Df-HRh" firstAttribute="trailing" secondItem="wPd-OH-fkl" secondAttribute="trailing" id="uAA-Cv-bpm"/>
                                     <constraint firstItem="wPd-OH-fkl" firstAttribute="top" secondItem="We4-mK-OTv" secondAttribute="top" constant="16" id="wIi-wa-ucf"/>
-                                    <constraint firstItem="qBy-zf-xfa" firstAttribute="bottom" secondItem="2Mm-uc-Hcs" secondAttribute="bottom" constant="16" id="yaO-DK-zYb"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Mm-uc-Hcs" secondAttribute="bottom" constant="16" id="xzx-Ra-chB"/>
                                     <constraint firstItem="2Mm-uc-Hcs" firstAttribute="width" secondItem="We4-mK-OTv" secondAttribute="width" multiplier="0.8" id="yrm-uE-Hto"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="qBy-zf-xfa"/>
@@ -84,9 +84,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gVb-u1-cf9" firstAttribute="trailing" secondItem="We4-mK-OTv" secondAttribute="trailing" id="50A-qB-eEI"/>
-                            <constraint firstItem="We4-mK-OTv" firstAttribute="top" secondItem="gVb-u1-cf9" secondAttribute="top" id="CwK-Vb-fIh"/>
+                            <constraint firstItem="We4-mK-OTv" firstAttribute="top" secondItem="kbG-H8-KSI" secondAttribute="top" id="CwK-Vb-fIh"/>
                             <constraint firstItem="We4-mK-OTv" firstAttribute="leading" secondItem="gVb-u1-cf9" secondAttribute="leading" id="buC-Sk-qtE"/>
-                            <constraint firstItem="gVb-u1-cf9" firstAttribute="bottom" secondItem="We4-mK-OTv" secondAttribute="bottom" id="i2a-bZ-mSz"/>
+                            <constraint firstAttribute="bottom" secondItem="We4-mK-OTv" secondAttribute="bottom" id="i2a-bZ-mSz"/>
                             <constraint firstItem="We4-mK-OTv" firstAttribute="centerY" secondItem="kbG-H8-KSI" secondAttribute="centerY" id="uSJ-uz-32X"/>
                             <constraint firstItem="We4-mK-OTv" firstAttribute="centerX" secondItem="gVb-u1-cf9" secondAttribute="centerX" id="zmh-dD-BOc"/>
                         </constraints>
