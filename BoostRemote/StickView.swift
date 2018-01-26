@@ -13,7 +13,7 @@ import BoostBLEKit
 
 class StickView: UIView {
     
-    let (signal, observer) = Signal<CGFloat, NoError>.pipe()
+    let (signal, observer) = Signal<Double, NoError>.pipe()
     
     var port: BoostBLEKit.Port? {
         didSet {

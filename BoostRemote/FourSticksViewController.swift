@@ -18,12 +18,12 @@ class FourSticksViewController: UIViewController {
     @IBOutlet private weak var stickC: StickView!
     @IBOutlet private weak var stickD: StickView!
     
-    private let (signalA, observerA) = Signal<CGFloat, NoError>.pipe()
-    private let (signalB, observerB) = Signal<CGFloat, NoError>.pipe()
-    private let (signalC, observerC) = Signal<CGFloat, NoError>.pipe()
-    private let (signalD, observerD) = Signal<CGFloat, NoError>.pipe()
+    private let (signalA, observerA) = Signal<Double, NoError>.pipe()
+    private let (signalB, observerB) = Signal<Double, NoError>.pipe()
+    private let (signalC, observerC) = Signal<Double, NoError>.pipe()
+    private let (signalD, observerD) = Signal<Double, NoError>.pipe()
     
-    lazy var signals: [BoostBLEKit.Port: Signal<CGFloat, NoError>] = [
+    lazy var signals: [BoostBLEKit.Port: Signal<Double, NoError>] = [
         .A: self.signalA,
         .B: self.signalB,
         .C: self.signalC,
