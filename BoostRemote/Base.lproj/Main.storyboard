@@ -99,9 +99,9 @@
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
                                 <exclude reference="CwK-Vb-fIh"/>
+                                <exclude reference="i2a-bZ-mSz"/>
                                 <include reference="uSJ-uz-32X"/>
                                 <exclude reference="zmh-dD-BOc"/>
-                                <exclude reference="i2a-bZ-mSz"/>
                             </mask>
                         </variation>
                     </view>
@@ -225,6 +225,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="YUI-ih-rCB" firstAttribute="centerX" secondItem="qSz-nm-d2I" secondAttribute="centerX" id="A7r-s5-fPe"/>
+                                    <constraint firstAttribute="width" secondItem="qSz-nm-d2I" secondAttribute="height" constant="-48" id="NvI-DW-4jr"/>
                                     <constraint firstAttribute="bottom" secondItem="YUI-ih-rCB" secondAttribute="bottom" id="R9F-e5-OY7"/>
                                     <constraint firstItem="kpP-1i-h95" firstAttribute="top" secondItem="qSz-nm-d2I" secondAttribute="top" id="X71-g1-SiM"/>
                                     <constraint firstItem="kpP-1i-h95" firstAttribute="leading" secondItem="qSz-nm-d2I" secondAttribute="leading" id="dIr-Nb-Cpu"/>
@@ -232,18 +233,25 @@
                                     <constraint firstAttribute="bottom" secondItem="kpP-1i-h95" secondAttribute="bottom" constant="48" id="qwo-kb-xrq"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="bCh-Bk-bmk">
-                                <rect key="frame" x="224" y="0.0" width="160" height="240"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bCh-Bk-bmk">
+                                <rect key="frame" x="192" y="0.0" width="192" height="240"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8c2-EM-4Pm" userLabel="Dummy">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="240"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" id="x0a-tp-LUi"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42E-Dh-16j" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="240"/>
+                                        <rect key="frame" x="32" y="0.0" width="64" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="Ahf-0K-d1b"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRn-9f-3gQ" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="96" y="0.0" width="64" height="240"/>
+                                        <rect key="frame" x="128" y="0.0" width="64" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="cSV-r5-Mbr"/>
@@ -260,7 +268,9 @@
                             <constraint firstItem="qSz-nm-d2I" firstAttribute="top" secondItem="Tce-Ul-WSQ" secondAttribute="topMargin" id="QLi-NF-hhy"/>
                             <constraint firstAttribute="trailing" secondItem="bCh-Bk-bmk" secondAttribute="trailing" id="WJ3-7L-Y4l"/>
                             <constraint firstItem="bCh-Bk-bmk" firstAttribute="top" secondItem="Tce-Ul-WSQ" secondAttribute="top" id="dRg-ji-5d8"/>
+                            <constraint firstItem="bCh-Bk-bmk" firstAttribute="leading" secondItem="qSz-nm-d2I" secondAttribute="trailing" id="iMd-AD-It8"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="KRd-Dq-wTR"/>
                     </view>
                     <connections>
                         <outlet property="stickC" destination="42E-Dh-16j" id="YeJ-Na-PPh"/>
