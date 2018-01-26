@@ -11,7 +11,7 @@ import ReactiveSwift
 import Result
 import BoostBLEKit
 
-class FourSticksViewController: UIViewController {
+class FourSticksViewController: UIViewController, Controller {
     
     @IBOutlet private weak var stickA: StickView!
     @IBOutlet private weak var stickB: StickView!

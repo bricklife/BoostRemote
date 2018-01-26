@@ -15,16 +15,18 @@ class ControllerViewController: UIViewController {
     
     @IBOutlet private weak var connectButtonImageView: UIImageView!
     
-    private var stickViewController: FourSticksViewController? {
-        return childViewControllers.first as? FourSticksViewController
+    private var controllers: [Controller] {
+        return childViewControllers.flatMap { $0 as? Controller }
     }
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)
     
     private var motors: [BoostBLEKit.Port: Motor] = [:] {
         didSet {
-            stickViewController?.setEnable(motors.keys.contains(.C), port: .C)
-            stickViewController?.setEnable(motors.keys.contains(.D), port: .D)
+            controllers.forEach {
+                $0.setEnable(motors.keys.contains(.C), port: .C)
+                $0.setEnable(motors.keys.contains(.D), port: .D)
+            }
         }
     }
     
@@ -61,11 +63,13 @@ class ControllerViewController: UIViewController {
     }
     
     private func setupSticks() {
-        stickViewController?.signals.forEach { (port, signal) in
-            signal.map { Int8($0 * 10) * 10 }
-                .skipRepeats()
-                .observeValues { [weak self] (value) in
-                    self?.sendCommand(port: port, power: value)
+        controllers.forEach {
+            $0.signals.forEach { (port, signal) in
+                signal.map { Int8($0 * 10) * 10 }
+                    .skipRepeats()
+                    .observeValues { [weak self] (value) in
+                        self?.sendCommand(port: port, power: value)
+                }
             }
         }
     }
