@@ -1,8 +1,8 @@
 //
-//  FourSticksViewController.swift
+//  JoystickViewController.swift
 //  BoostRemote
 //
-//  Created by ooba on 25/01/2018.
+//  Created by ooba on 26/01/2018.
 //  Copyright © 2018 bricklife.com. All rights reserved.
 //
 
@@ -11,10 +11,8 @@ import ReactiveSwift
 import Result
 import BoostBLEKit
 
-class FourSticksViewController: UIViewController, Controller {
+class JoystickViewController: UIViewController, Controller {
     
-    @IBOutlet private weak var stickA: StickView!
-    @IBOutlet private weak var stickB: StickView!
     @IBOutlet private weak var stickC: StickView!
     @IBOutlet private weak var stickD: StickView!
     
@@ -28,7 +26,7 @@ class FourSticksViewController: UIViewController, Controller {
         .B: self.signalB,
         .C: self.signalC,
         .D: self.signalD,
-    ]
+        ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +35,9 @@ class FourSticksViewController: UIViewController, Controller {
     }
     
     private func setupSticks() {
-        stickA.port = .A
-        stickB.port = .B
         stickC.port = .C
         stickD.port = .D
         
-        stickA.signal.observe(observerA)
-        stickB.signal.observe(observerB)
         stickC.signal.observe(observerC)
         stickD.signal.observe(observerD)
     }

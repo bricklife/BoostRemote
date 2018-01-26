@@ -41,6 +41,8 @@ class VerticalSlider: UIView {
         
         NSLayoutConstraint.activate([
             thumbView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            thumbView.widthAnchor.constraint(equalTo: widthAnchor),
+            thumbView.heightAnchor.constraint(equalTo: widthAnchor),
             thumbCenterYConstraint,
             ])
     }
