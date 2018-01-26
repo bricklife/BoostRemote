@@ -53,10 +53,10 @@ class FourSticksViewController: UIViewController, Controller {
     
     func setEnable(_ enable: Bool, port: BoostBLEKit.Port) {
         switch port {
-        case .B:
-            stickB.isHidden = !enable
         case .C:
             stickC.isHidden = !enable
+        case .D:
+            stickD.isHidden = !enable
         default:
             break
         }
