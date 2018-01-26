@@ -48,7 +48,7 @@ class ControllerViewController: UIViewController {
     private func setupConnectButtonImageView() {
         connectButtonImageView.animationDuration = 1
         connectButtonImageView.animationRepeatCount = -1
-        connectButtonImageView.animationImages = (1...4).map { "connecting\($0)" }.flatMap { UIImage(named: $0) }
+        connectButtonImageView.animationImages = UIImage.connectingImages()
         
         connectionState.producer.startWithValues { [weak self] (state) in
             if state == .connecting {
@@ -56,19 +56,7 @@ class ControllerViewController: UIViewController {
             } else {
                 self?.connectButtonImageView.stopAnimating()
             }
-            
-            let imageName: String
-            switch state {
-            case .disconnected:
-                imageName = "disconnected"
-            case .connecting:
-                imageName = "disconnected"
-            case .connected:
-                imageName = "connected"
-            case .offline, .unsupported:
-                imageName = "offline"
-            }
-            self?.connectButtonImageView.image = UIImage(named: imageName)
+            self?.connectButtonImageView.image = UIImage(connectionState: state)
         }
     }
     

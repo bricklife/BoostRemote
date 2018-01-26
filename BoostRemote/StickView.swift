@@ -17,7 +17,7 @@ class StickView: UIView {
     
     var port: BoostBLEKit.Port? {
         didSet {
-            imageView.image = port.flatMap { UIImage(named: "port\($0)") }
+            imageView.image = port.flatMap(UIImage.init(port:))
         }
     }
     
