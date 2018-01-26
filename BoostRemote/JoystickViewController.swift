@@ -13,6 +13,7 @@ import BoostBLEKit
 
 class JoystickViewController: UIViewController, Controller {
     
+    @IBOutlet private weak var joystickView: JoystickView!
     @IBOutlet private weak var stickC: StickView!
     @IBOutlet private weak var stickD: StickView!
     
@@ -30,8 +31,28 @@ class JoystickViewController: UIViewController, Controller {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupJoystick()
         setupSticks()
+    }
+    
+    private func setupJoystick() {
+        joystickView.update = { [weak self] (x, y) in
+            func calc(x: Double, y: Double) -> Double {
+                if x > 0, y > 0 {
+                    return max(x, y)
+                } else if x < 0, y < 0 {
+                    return min(x, y)
+                } else {
+                    return x + y
+                }
+            }
+            let valueA = calc(x: x, y: -y)
+            let valueB = calc(x: -x, y: -y)
+            
+            self?.observerA.send(value: valueA)
+            self?.observerB.send(value: valueB)
+        }
     }
     
     private func setupSticks() {
