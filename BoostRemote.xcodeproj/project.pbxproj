@@ -24,6 +24,7 @@
 		CB70D813201A82D500EAB1D6 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB70D812201A82D500EAB1D6 /* FeedbackGenerator.swift */; };
 		CB7390C9201AB89900EAE3A7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7390C8201AB89900EAE3A7 /* UIImage+Extension.swift */; };
 		CB84A382201BA3D300C02CD8 /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84A381201BA3D300C02CD8 /* JoystickView.swift */; };
+		CB84A384201BADEC00C02CD8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84A383201BADEC00C02CD8 /* Settings.swift */; };
 		CBA46E781F882F0C0017E5C2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */; };
 		CBA46E7A1F882F0F0017E5C2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E791F882F0F0017E5C2 /* Result.framework */; };
 		CBA46E7D1F882F800017E5C2 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA46E7B1F882F800017E5C2 /* ReSwift.framework */; };
@@ -69,6 +70,7 @@
 		CB70D812201A82D500EAB1D6 /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		CB7390C8201AB89900EAE3A7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		CB84A381201BA3D300C02CD8 /* JoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
+		CB84A383201BADEC00C02CD8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		CBA46E791F882F0F0017E5C2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		CBA46E7B1F882F800017E5C2 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */,
 				CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */,
+				CB84A383201BADEC00C02CD8 /* Settings.swift */,
 				CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */,
 				CBC72DF9201AC35C00ABE096 /* Controller.swift */,
 				CB547EBA201A62A400B00D8C /* FourSticksViewController.swift */,
@@ -275,6 +278,7 @@
 				CB3BE8B31F2FF2F4000561F7 /* ControllerViewController.swift in Sources */,
 				CB0BF7E51F8BD873004CCD4F /* VerticalSlider.swift in Sources */,
 				CB0BF7E71F8BDD30004CCD4F /* StickView.swift in Sources */,
+				CB84A384201BADEC00C02CD8 /* Settings.swift in Sources */,
 				CB547EBD201B5C3D00B00D8C /* JoystickViewController.swift in Sources */,
 				CBD94E861F391D7F0037ED71 /* Action.swift in Sources */,
 				CB547EBB201A62A400B00D8C /* FourSticksViewController.swift in Sources */,

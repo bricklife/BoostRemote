@@ -65,7 +65,7 @@ class ControllerViewController: UIViewController {
     private func setupSticks() {
         controllers.forEach {
             $0.signals.forEach { (port, signal) in
-                signal.map { Int8($0 * 10) * 10 }
+                signal.map { Int8(round($0 * Settings.step) * 100 / Settings.step) }
                     .skipRepeats()
                     .observeValues { [weak self] (value) in
                         self?.sendCommand(port: port, power: value)
