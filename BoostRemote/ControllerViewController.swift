@@ -14,9 +14,11 @@ import BoostBLEKit
 class ControllerViewController: UIViewController {
     
     @IBOutlet private weak var connectButtonImageView: UIImageView!
-    
-    private var controllers: [Controller & UIViewController] {
-        return childViewControllers.flatMap { $0 as? (Controller & UIViewController) }
+    @IBOutlet private weak var joystickView: UIView!
+    @IBOutlet private weak var twinSticksView: UIView!
+
+    private var controllers: [Controller] {
+        return childViewControllers.flatMap { $0 as? Controller }
     }
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)
@@ -124,7 +126,8 @@ extension ControllerViewController: StoreSubscriber {
             }
         }
         
-        controllers.forEach { $0.view.isHidden = ($0.mode != state.settingsState.mode) }
+        joystickView.isHidden = state.settingsState.mode != .joystick
+        twinSticksView.isHidden = state.settingsState.mode != .twinsticks
         step.value = state.settingsState.step
     }
 }

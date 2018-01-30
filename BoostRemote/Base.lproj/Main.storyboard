@@ -130,6 +130,8 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="connectButtonImageView" destination="aza-Df-HRh" id="4bC-Kt-Sdc"/>
+                        <outlet property="joystickView" destination="pby-uk-nh5" id="zbX-SN-Ajb"/>
+                        <outlet property="twinSticksView" destination="2Mm-uc-Hcs" id="Bq7-c2-g0i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vv-Nx-2GS" sceneMemberID="firstResponder"/>
