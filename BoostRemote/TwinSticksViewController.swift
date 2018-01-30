@@ -1,5 +1,5 @@
 //
-//  FourSticksViewController.swift
+//  TwinSticksViewController.swift
 //  BoostRemote
 //
 //  Created by ooba on 25/01/2018.
@@ -11,7 +11,7 @@ import ReactiveSwift
 import Result
 import BoostBLEKit
 
-class FourSticksViewController: UIViewController, Controller {
+class TwinSticksViewController: UIViewController, Controller {
     
     let mode = Settings.Mode.twinsticks
     

@@ -257,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="630" y="-741"/>
         </scene>
-        <!--Four Sticks View Controller-->
+        <!--Twin Sticks View Controller-->
         <scene sceneID="mk4-ag-ueO">
             <objects>
-                <viewController id="joY-yf-IKF" customClass="FourSticksViewController" customModule="BoostRemote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="joY-yf-IKF" customClass="TwinSticksViewController" customModule="BoostRemote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eJj-ac-Wgz">
                         <rect key="frame" x="0.0" y="0.0" width="432" height="240"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
