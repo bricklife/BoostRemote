@@ -15,11 +15,12 @@ class ControllerViewController: UIViewController {
     
     @IBOutlet private weak var connectButtonImageView: UIImageView!
     
-    private var controllers: [Controller] {
-        return childViewControllers.flatMap { $0 as? Controller }
+    private var controllers: [Controller & UIViewController] {
+        return childViewControllers.flatMap { $0 as? (Controller & UIViewController) }
     }
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)
+    private let step = MutableProperty<Settings.Step>(Settings.defaultStep)
     
     private var motors: [BoostBLEKit.Port: Motor] = [:] {
         didSet {
@@ -65,7 +66,9 @@ class ControllerViewController: UIViewController {
     private func setupSticks() {
         controllers.forEach {
             $0.signals.forEach { (port, signal) in
-                signal.map { Int8(round($0 * Settings.step) * 100 / Settings.step) }
+                signal
+                    .withLatest(from: step.signal)
+                    .map { (value, step) in Int8(round(value * step) * 100 / step) }
                     .skipRepeats()
                     .observeValues { [weak self] (value) in
                         self?.sendCommand(port: port, power: value)
@@ -89,6 +92,8 @@ class ControllerViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func close(_ segue: UIStoryboardSegue) {}
     
     @IBAction private func connectButtonPushed(_ sender: Any) {
         switch connectionState.value {
@@ -118,5 +123,8 @@ extension ControllerViewController: StoreSubscriber {
                 return Motor(port: port, deviceType: type)
             }
         }
+        
+        controllers.forEach { $0.view.isHidden = ($0.mode != state.settingsState.mode) }
+        step.value = state.settingsState.step
     }
 }

@@ -14,6 +14,7 @@ struct State: StateType {
     
     var connectionState: ConnectionState
     var portState: PortState
+    var settingsState: SettingsState
 }
 
 enum ConnectionState {
@@ -26,3 +27,9 @@ enum ConnectionState {
 }
 
 typealias PortState = [BoostBLEKit.Port: DeviceType]
+
+struct SettingsState {
+    
+    var mode: Settings.Mode
+    var step: Settings.Step
+}

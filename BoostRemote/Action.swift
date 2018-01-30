@@ -24,6 +24,13 @@ struct NotificationAction: Action {
     let notification: BoostBLEKit.Notification
 }
 
+enum SettingsAction: Action {
+    
+    case incrementStep
+    case decrementStep
+    case selectMode(Settings.Mode)
+}
+
 struct ActionCenter {
     
     static func startScan() {

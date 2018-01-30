@@ -13,6 +13,8 @@ import BoostBLEKit
 
 protocol Controller {
     
+    var mode: Settings.Mode { get }
+    
     var signals: [BoostBLEKit.Port: Signal<Double, NoError>] { get }
     
     func setEnable(_ enable: Bool, port: BoostBLEKit.Port)

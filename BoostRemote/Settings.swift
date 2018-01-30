@@ -10,12 +10,17 @@ import Foundation
 
 final class Settings {
     
+    typealias Step = Double
+    
+    static let defaultMode: Mode = .joystick
+    static let defaultStep: Step = 5
+    
     private static var userDefaults: UserDefaults = {
-        UserDefaults.standard.register(defaults: ["step": Double(5)])
+        UserDefaults.standard.register(defaults: ["step": Double(defaultStep)])
         return UserDefaults.standard
     }()
     
-    static var step: Double {
+    static var step: Step {
         get { return userDefaults.double(forKey: "step") }
         set { userDefaults.set(newValue, forKey: "step") }
     }
@@ -26,7 +31,7 @@ final class Settings {
     }
     
     static var mode: Mode {
-        get { return userDefaults.string(forKey: "mode").flatMap(Mode.init(rawValue:)) ?? .joystick }
+        get { return userDefaults.string(forKey: "mode").flatMap(Mode.init(rawValue:)) ?? defaultMode }
         set { userDefaults.set(newValue.rawValue, forKey: "mode") }
     }
 }
