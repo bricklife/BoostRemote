@@ -11,5 +11,10 @@ import ReSwift
 
 struct StoreCenter {
     
-    static let store = Store<State>(reducer: Reducer.appReducer, state: nil)
+    static let store: Store<State> = {
+        let initialState = State(connectionState: .disconnected,
+                                 portState: [:],
+                                 settingsState: SettingsState(mode: Settings.mode, step: Settings.step))
+        return Store<State>(reducer: Reducer.appReducer, state: nil)
+    }()
 }

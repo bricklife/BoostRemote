@@ -13,11 +13,11 @@ import BoostBLEKit
 
 class StickView: UIView {
     
-    let (signal, observer) = Signal<CGFloat, NoError>.pipe()
+    let (signal, observer) = Signal<Double, NoError>.pipe()
     
     var port: BoostBLEKit.Port? {
         didSet {
-            imageView.image = port.flatMap { UIImage(named: "port\($0)") }
+            imageView.image = port.flatMap(UIImage.init(port:))
         }
     }
     
@@ -46,7 +46,8 @@ class StickView: UIView {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: verticalSlider.bottomAnchor, constant: 16),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.leftAnchor.constraint(equalTo: leftAnchor),
+            imageView.rightAnchor.constraint(equalTo: rightAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 32),
             ])
         

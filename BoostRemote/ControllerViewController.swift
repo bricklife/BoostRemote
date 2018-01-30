@@ -13,31 +13,25 @@ import BoostBLEKit
 
 class ControllerViewController: UIViewController {
     
-    @IBOutlet private weak var stickA: StickView!
-    @IBOutlet private weak var stickB: StickView!
-    @IBOutlet private weak var stickC: StickView!
-    @IBOutlet private weak var stickD: StickView!
-    
     @IBOutlet private weak var connectButtonImageView: UIImageView!
+    @IBOutlet private weak var joystickView: UIView!
+    @IBOutlet private weak var twinSticksView: UIView!
+
+    private var controllers: [Controller] {
+        return childViewControllers.flatMap { $0 as? Controller }
+    }
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)
+    private let step = MutableProperty<Settings.Step>(Settings.defaultStep)
     
     private var motors: [BoostBLEKit.Port: Motor] = [:] {
         didSet {
-            stickC?.isHidden = !motors.keys.contains(.C)
-            stickD?.isHidden = !motors.keys.contains(.D)
+            controllers.forEach {
+                $0.setEnable(motors.keys.contains(.C), port: .C)
+                $0.setEnable(motors.keys.contains(.D), port: .D)
+            }
         }
     }
-    
-    private let feedbackGenerator: Any? = {
-        if #available(iOS 10.0, *) {
-            let generator = UISelectionFeedbackGenerator()
-            generator.prepare()
-            return generator
-        } else {
-            return nil
-        }
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +53,7 @@ class ControllerViewController: UIViewController {
     private func setupConnectButtonImageView() {
         connectButtonImageView.animationDuration = 1
         connectButtonImageView.animationRepeatCount = -1
-        connectButtonImageView.animationImages = (1...4).map { "connecting\($0)" }.flatMap { UIImage(named: $0) }
+        connectButtonImageView.animationImages = UIImage.connectingImages()
         
         connectionState.producer.startWithValues { [weak self] (state) in
             if state == .connecting {
@@ -67,54 +61,31 @@ class ControllerViewController: UIViewController {
             } else {
                 self?.connectButtonImageView.stopAnimating()
             }
-            
-            let imageName: String
-            switch state {
-            case .disconnected:
-                imageName = "disconnected"
-            case .connecting:
-                imageName = "disconnected"
-            case .connected:
-                imageName = "connected"
-            case .offline, .unsupported:
-                imageName = "offline"
-            }
-            self?.connectButtonImageView.image = UIImage(named: imageName)
+            self?.connectButtonImageView.image = UIImage(connectionState: state)
         }
     }
     
     private func setupSticks() {
-        stickA.port = .A
-        stickB.port = .B
-        stickC.port = .C
-        stickD.port = .D
-        
-        stickC.isHidden = true
-        stickD.isHidden = true
-        
-        [stickA, stickB, stickC, stickD].forEach { (stick) in
-            guard let port = stick?.port else { return }
-            stick?.signal.map { Int8($0 * 10) * 10 }
-                .skipRepeats()
-                .observeValues { [weak self] (value) in
-                    self?.sendCommand(port: port, power: value)
+        controllers.forEach {
+            $0.signals.forEach { (port, signal) in
+                signal
+                    .withLatest(from: step.signal)
+                    .map { (value, step) in Int8(round(value * step) * 100 / step) }
+                    .skipRepeats()
+                    .observeValues { [weak self] (value) in
+                        self?.sendCommand(port: port, power: value)
+                }
             }
         }
     }
     
     private func sendCommand(port: BoostBLEKit.Port, power: Int8) {
         if power == 100 || power == -100 {
-            feedback()
+            FeedbackGenerator.feedback()
         }
         
         if let command = motors[port]?.powerCommand(power: power) {
             ActionCenter.send(command: command)
-        }
-    }
-    
-    private func feedback() {
-        if #available(iOS 10.0, *), let generator = feedbackGenerator as? UISelectionFeedbackGenerator {
-            generator.selectionChanged()
         }
     }
     
@@ -123,6 +94,8 @@ class ControllerViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func close(_ segue: UIStoryboardSegue) {}
     
     @IBAction private func connectButtonPushed(_ sender: Any) {
         switch connectionState.value {
@@ -152,5 +125,9 @@ extension ControllerViewController: StoreSubscriber {
                 return Motor(port: port, deviceType: type)
             }
         }
+        
+        joystickView.isHidden = state.settingsState.mode != .joystick
+        twinSticksView.isHidden = state.settingsState.mode != .twinsticks
+        step.value = state.settingsState.step
     }
 }

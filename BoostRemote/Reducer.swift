@@ -14,7 +14,8 @@ struct Reducer {
     static func appReducer(action: Action, state: State?) -> State {
         return State(
             connectionState: connectionReducer(state: state?.connectionState, action: action),
-            portState: portReducer(state: state?.portState, action: action)
+            portState: portReducer(state: state?.portState, action: action),
+            settingsState: settingsReducer(state: state?.settingsState, action: action)
         )
     }
     
@@ -48,6 +49,31 @@ struct Reducer {
         case .disconnected(let port):
             state[port] = nil
         }
+        
+        return state
+    }
+    
+    static func settingsReducer(state: SettingsState?, action: Action) -> SettingsState {
+        var state = state ?? SettingsState(mode: Settings.defaultMode, step: Settings.defaultStep)
+        
+        guard let action = action as? SettingsAction else { return state }
+        
+        switch action {
+        case .incrementStep:
+            if state.step < 100 {
+                state.step += 1
+            }
+        case .decrementStep:
+            if state.step > 1 {
+                state.step -= 1
+            }
+        case .selectMode(let mode):
+            state.mode = mode
+        }
+        
+        // ToDo: Avoid side-effect
+        Settings.mode = state.mode
+        Settings.step = state.step
         
         return state
     }
