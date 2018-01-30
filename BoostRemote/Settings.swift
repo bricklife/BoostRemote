@@ -19,4 +19,14 @@ final class Settings {
         get { return userDefaults.double(forKey: "step") }
         set { userDefaults.set(newValue, forKey: "step") }
     }
+    
+    enum Mode: String {
+        case joystick = "joystick"
+        case twinsticks = "twinsticks"
+    }
+    
+    static var mode: Mode {
+        get { return userDefaults.string(forKey: "mode").flatMap(Mode.init(rawValue:)) ?? .joystick }
+        set { userDefaults.set(newValue.rawValue, forKey: "mode") }
+    }
 }
