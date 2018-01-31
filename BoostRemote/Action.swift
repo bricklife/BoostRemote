@@ -26,9 +26,8 @@ struct NotificationAction: Action {
 
 enum SettingsAction: Action {
     
-    case incrementStep
-    case decrementStep
-    case selectMode(SettingsState.Mode)
+    case step(SettingsState.Step)
+    case mode(SettingsState.Mode)
 }
 
 struct ActionCenter {

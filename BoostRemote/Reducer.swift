@@ -59,15 +59,16 @@ struct Reducer {
         guard let action = action as? SettingsAction else { return state }
         
         switch action {
-        case .incrementStep:
-            if state.step < 100 {
-                state.step += 1
+        case .step(let step):
+            state.step = step
+            if state.step < 1 {
+                state.step = 1
             }
-        case .decrementStep:
-            if state.step > 1 {
-                state.step -= 1
+            if state.step > 100 {
+                state.step = 100
             }
-        case .selectMode(let mode):
+            
+        case .mode(let mode):
             state.mode = mode
         }
         

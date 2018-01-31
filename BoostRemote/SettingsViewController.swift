@@ -35,9 +35,9 @@ class SettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            StoreCenter.store.dispatch(SettingsAction.selectMode(.joystick))
+            StoreCenter.store.dispatch(SettingsAction.mode(.joystick))
         case 1:
-            StoreCenter.store.dispatch(SettingsAction.selectMode(.twinsticks))
+            StoreCenter.store.dispatch(SettingsAction.mode(.twinsticks))
         default:
             break
         }
@@ -45,11 +45,7 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func tappedStepper(_ sender: Any) {
-        if stepStepper.value > settingsState.step {
-            StoreCenter.store.dispatch(SettingsAction.incrementStep)
-        } else if stepStepper.value < settingsState.step {
-            StoreCenter.store.dispatch(SettingsAction.decrementStep)
-        }
+        StoreCenter.store.dispatch(SettingsAction.step(stepStepper.value))
     }
 }
 
