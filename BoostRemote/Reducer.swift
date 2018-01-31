@@ -54,7 +54,7 @@ struct Reducer {
     }
     
     static func settingsReducer(state: SettingsState?, action: Action) -> SettingsState {
-        var state = state ?? SettingsState(mode: Settings.defaultMode, step: Settings.defaultStep)
+        var state = state ?? SettingsState()
         
         guard let action = action as? SettingsAction else { return state }
         
@@ -70,10 +70,6 @@ struct Reducer {
         case .selectMode(let mode):
             state.mode = mode
         }
-        
-        // ToDo: Avoid side-effect
-        Settings.mode = state.mode
-        Settings.step = state.step
         
         return state
     }

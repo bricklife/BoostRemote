@@ -13,8 +13,6 @@ import BoostBLEKit
 
 class JoystickViewController: UIViewController, Controller {
     
-    let mode = Settings.Mode.joystick
-    
     @IBOutlet private weak var joystickView: JoystickView!
     @IBOutlet private weak var stickC: StickView!
     @IBOutlet private weak var stickD: StickView!

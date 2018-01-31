@@ -22,7 +22,7 @@ class ControllerViewController: UIViewController {
     }
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)
-    private let step = MutableProperty<Settings.Step>(Settings.defaultStep)
+    private let settingsState = MutableProperty<SettingsState>(SettingsState())
     
     private var motors: [BoostBLEKit.Port: Motor] = [:] {
         didSet {
@@ -69,13 +69,18 @@ class ControllerViewController: UIViewController {
         controllers.forEach {
             $0.signals.forEach { (port, signal) in
                 signal
-                    .withLatest(from: step.signal)
+                    .withLatest(from: settingsState.signal.map { $0.step })
                     .map { (value, step) in Int8(round(value * step) * 100 / step) }
                     .skipRepeats()
                     .observeValues { [weak self] (value) in
                         self?.sendCommand(port: port, power: value)
                 }
             }
+        }
+        
+        settingsState.signal.observeValues { [weak self] (state) in
+            self?.joystickView.isHidden = state.mode != .joystick
+            self?.twinSticksView.isHidden = state.mode != .twinsticks
         }
     }
     
@@ -126,8 +131,6 @@ extension ControllerViewController: StoreSubscriber {
             }
         }
         
-        joystickView.isHidden = state.settingsState.mode != .joystick
-        twinSticksView.isHidden = state.settingsState.mode != .twinsticks
-        step.value = state.settingsState.step
+        settingsState.value = state.settingsState
     }
 }

@@ -12,9 +12,38 @@ import ReSwift
 struct StoreCenter {
     
     static let store: Store<State> = {
-        let initialState = State(connectionState: .disconnected,
-                                 portState: [:],
-                                 settingsState: SettingsState(mode: Settings.mode, step: Settings.step))
-        return Store<State>(reducer: Reducer.appReducer, state: nil)
+        let state = PersistentManager.shared.load()
+        let store = Store<State>(reducer: Reducer.appReducer, state: state)
+        store.subscribe(PersistentManager.shared)
+        
+        return store
     }()
+
+    final class PersistentManager: StoreSubscriber {
+        
+        static let shared = PersistentManager()
+        
+        func newState(state: State) {
+            save(state: state)
+        }
+        
+        func load() -> State {
+            var settingsState = SettingsState()
+            if let step = UserDefaults.standard.object(forKey: "step") as? SettingsState.Step {
+                settingsState.step = step
+            }
+            if let rawValue = UserDefaults.standard.string(forKey: "mode"), let mode = SettingsState.Mode(rawValue: rawValue) {
+                settingsState.mode = mode
+            }
+            
+            return State(connectionState: .disconnected,
+                         portState: [:],
+                         settingsState: settingsState)
+        }
+        
+        func save(state: State) {
+            UserDefaults.standard.set(state.settingsState.step, forKey: "step")
+            UserDefaults.standard.set(state.settingsState.mode.rawValue, forKey: "mode")
+        }
+    }
 }

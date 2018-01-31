@@ -61,7 +61,7 @@ extension SettingsViewController: StoreSubscriber {
         joystickModeCell.accessoryType = (settings.mode == .joystick) ? .checkmark : .none
         twinsticksModeCell.accessoryType = (settings.mode == .twinsticks) ? .checkmark : .none
         stepStepper.value = settings.step
-        stepLabel.text = "\(settings.step)"
+        stepLabel.text = "\(Int(settings.step))"
         
         settingsState = settings
     }

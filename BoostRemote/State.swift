@@ -30,6 +30,18 @@ typealias PortState = [BoostBLEKit.Port: DeviceType]
 
 struct SettingsState {
     
-    var mode: Settings.Mode
-    var step: Settings.Step
+    enum Mode: String {
+        case joystick = "joystick"
+        case twinsticks = "twinsticks"
+    }
+    
+    typealias Step = Double
+    
+    var mode: Mode
+    var step: Step
+    
+    init(mode: Mode = .joystick, step: Step = 5) {
+        self.mode = mode
+        self.step = step
+    }
 }

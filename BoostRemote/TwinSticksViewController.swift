@@ -13,8 +13,6 @@ import BoostBLEKit
 
 class TwinSticksViewController: UIViewController, Controller {
     
-    let mode = Settings.Mode.twinsticks
-    
     @IBOutlet private weak var stickA: StickView!
     @IBOutlet private weak var stickB: StickView!
     @IBOutlet private weak var stickC: StickView!

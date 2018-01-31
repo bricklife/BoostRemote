@@ -28,7 +28,7 @@ enum SettingsAction: Action {
     
     case incrementStep
     case decrementStep
-    case selectMode(Settings.Mode)
+    case selectMode(SettingsState.Mode)
 }
 
 struct ActionCenter {
