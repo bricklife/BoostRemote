@@ -38,10 +38,19 @@ struct SettingsState {
     typealias Step = Double
     
     var mode: Mode
-    var step: Step
+    var step: Step {
+        didSet {
+            if step < 1 {
+                step = 1
+            }
+            if step > 100 {
+                step = 100
+            }
+        }
+    }
     
-    init(mode: Mode = .joystick, step: Step = 5) {
-        self.mode = mode
-        self.step = step
+    init() {
+        self.mode = .joystick
+        self.step = 5
     }
 }

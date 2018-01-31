@@ -61,13 +61,6 @@ struct Reducer {
         switch action {
         case .step(let step):
             state.step = step
-            if state.step < 1 {
-                state.step = 1
-            }
-            if state.step > 100 {
-                state.step = 100
-            }
-            
         case .mode(let mode):
             state.mode = mode
         }
