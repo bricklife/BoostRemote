@@ -18,7 +18,7 @@ class ControllerViewController: UIViewController {
     @IBOutlet private weak var twinSticksView: UIView!
 
     private var controllers: [Controller] {
-        return childViewControllers.flatMap { $0 as? Controller }
+        return childViewControllers.compactMap { $0 as? Controller }
     }
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)

@@ -13,8 +13,8 @@ Remote Control iOS app for LEGO® Boost
 - LEGO® Boost Move Hub
 
 ## Development Environment
-- Xcode 9
-- Swift 4
+- Xcode 9.3
+- Swift 4.1
 
 ## App Store
 https://itunes.apple.com/us/app/boost-remote/id1270503610?ls=1&mt=8

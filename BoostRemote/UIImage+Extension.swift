@@ -31,6 +31,6 @@ extension UIImage {
     }
     
     static func connectingImages() -> [UIImage] {
-        return (1...4).map { "connecting\($0)" }.flatMap(UIImage.init(named:))
+        return (1...4).map { "connecting\($0)" }.compactMap(UIImage.init(named:))
     }
 }
