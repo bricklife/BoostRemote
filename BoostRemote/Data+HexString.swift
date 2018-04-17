@@ -19,7 +19,7 @@ extension Data {
         let even = hexString.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
         let odd  = hexString.enumerated().filter { $0.offset % 2 == 1 }.map { $0.element }
         
-        let bytes = zip(even, odd).flatMap { UInt8(String([$0.0, $0.1]), radix: 16) }
+        let bytes = zip(even, odd).compactMap { UInt8(String([$0.0, $0.1]), radix: 16) }
         
         self.init(bytes: bytes)
     }
