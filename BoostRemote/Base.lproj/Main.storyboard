@@ -62,15 +62,28 @@
                                     <constraint firstItem="2Mm-uc-Hcs" firstAttribute="leading" secondItem="B9M-vd-LV6" secondAttribute="leading" id="vUk-gq-shx"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuE-Ps-1PZ">
+                                <rect key="frame" x="392" y="16" width="64" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="EhX-Qz-xcr"/>
+                                    <constraint firstAttribute="height" constant="32" id="y5q-BN-31E"/>
+                                </constraints>
+                                <state key="normal" image="settings"/>
+                                <connections>
+                                    <segue destination="p2l-rE-U9k" kind="show" id="218-dN-iNi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aza-Df-HRh" firstAttribute="height" secondItem="wPd-OH-fkl" secondAttribute="height" id="7Hr-yx-jg8"/>
+                            <constraint firstItem="gVb-u1-cf9" firstAttribute="trailing" secondItem="OuE-Ps-1PZ" secondAttribute="trailing" constant="24" id="9gt-Yj-4Ow"/>
                             <constraint firstItem="aza-Df-HRh" firstAttribute="centerX" secondItem="wPd-OH-fkl" secondAttribute="centerX" id="IcP-HK-arc"/>
                             <constraint firstItem="gVb-u1-cf9" firstAttribute="trailing" secondItem="B9M-vd-LV6" secondAttribute="trailing" constant="24" id="N9C-mY-Xwj"/>
                             <constraint firstItem="wPd-OH-fkl" firstAttribute="centerX" secondItem="kbG-H8-KSI" secondAttribute="centerX" id="NPe-0W-wdJ"/>
                             <constraint firstItem="aza-Df-HRh" firstAttribute="width" secondItem="wPd-OH-fkl" secondAttribute="width" id="PIL-0c-0lv"/>
                             <constraint firstItem="wPd-OH-fkl" firstAttribute="top" secondItem="gVb-u1-cf9" secondAttribute="top" constant="16" id="Tix-pN-jzk"/>
+                            <constraint firstItem="OuE-Ps-1PZ" firstAttribute="top" secondItem="gVb-u1-cf9" secondAttribute="top" constant="16" id="feD-bs-D4t"/>
                             <constraint firstItem="B9M-vd-LV6" firstAttribute="centerY" secondItem="kbG-H8-KSI" secondAttribute="centerY" constant="24" id="jWL-o6-ujG"/>
                             <constraint firstItem="B9M-vd-LV6" firstAttribute="leading" secondItem="gVb-u1-cf9" secondAttribute="leading" constant="24" id="sHY-93-xCp"/>
                             <constraint firstItem="aza-Df-HRh" firstAttribute="centerY" secondItem="wPd-OH-fkl" secondAttribute="centerY" id="w6G-hh-nEm"/>
@@ -369,6 +382,7 @@
     </scenes>
     <resources>
         <image name="portAB" width="54" height="28"/>
+        <image name="settings" width="32" height="32"/>
     </resources>
     <color key="tintColor" red="0.20784313725490194" green="0.2196078431372549" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
 </document>
