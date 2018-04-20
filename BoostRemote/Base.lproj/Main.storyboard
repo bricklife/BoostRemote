@@ -110,7 +110,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Controller for Motor A &amp; B" id="1vK-ll-SMg">
+                            <tableViewSection headerTitle="Controller Type for Motor A &amp; B" id="1vK-ll-SMg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" textLabel="IYt-gU-rJE" style="IBUITableViewCellStyleDefault" id="Ta0-xP-3QW">
                                         <rect key="frame" x="0.0" y="55.5" width="480" height="44"/>
@@ -148,7 +148,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Motor Power Output" id="9KN-vQ-WBx">
+                            <tableViewSection headerTitle="Number of Steps of Motor Power" id="9KN-vQ-WBx">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="KN2-f2-CaD" detailTextLabel="GlZ-SD-hQJ" style="IBUITableViewCellStyleSubtitle" id="pLT-b8-K7y">
                                         <rect key="frame" x="0.0" y="199.5" width="480" height="44"/>
@@ -230,14 +230,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="10 steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="epo-Yh-8UX">
-                                                    <rect key="frame" x="16" y="5" width="64.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="5" width="64.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4mv-L9-8oW">
-                                                    <rect key="frame" x="16" y="25.5" width="226.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="25.5" width="226.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>

@@ -53,6 +53,7 @@
 /* Begin PBXFileReference section */
 		CB0BF7E41F8BD873004CCD4F /* VerticalSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSlider.swift; sourceTree = "<group>"; };
 		CB0BF7E61F8BDD30004CCD4F /* StickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickView.swift; sourceTree = "<group>"; };
+		CB28BF14208A2C9700F5C15B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		CB385A491F4E35210061EBE4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CB3BE8AD1F2FF2F4000561F7 /* BoostRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -298,6 +299,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CB3BE8B51F2FF2F4000561F7 /* Base */,
+				CB28BF14208A2C9700F5C15B /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
