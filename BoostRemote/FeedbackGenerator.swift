@@ -12,7 +12,7 @@ final class FeedbackGenerator {
     
     private static let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {
-            let generator = UISelectionFeedbackGenerator()
+            let generator = UIImpactFeedbackGenerator(style: .light)
             generator.prepare()
             return generator
         } else {
@@ -22,7 +22,7 @@ final class FeedbackGenerator {
     
     static func feedback() {
         if #available(iOS 10.0, *) {
-            (feedbackGenerator as? UISelectionFeedbackGenerator)?.selectionChanged()
+            (feedbackGenerator as? UIImpactFeedbackGenerator)?.impactOccurred()
         }
     }
 }
