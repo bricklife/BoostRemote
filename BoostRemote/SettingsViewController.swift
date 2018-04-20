@@ -13,8 +13,11 @@ class SettingsViewController: UITableViewController {
 
     @IBOutlet private weak var joystickModeCell: UITableViewCell!
     @IBOutlet private weak var twinsticksModeCell: UITableViewCell!
-    @IBOutlet private weak var stepStepper: UIStepper!
-    @IBOutlet private weak var stepLabel: UILabel!
+    
+    @IBOutlet private weak var step1Cell: UITableViewCell!
+    @IBOutlet private weak var step2Cell: UITableViewCell!
+    @IBOutlet private weak var step5Cell: UITableViewCell!
+    @IBOutlet private weak var step10Cell: UITableViewCell!
 
     private var settingsState: SettingsState!
     
@@ -33,19 +36,28 @@ class SettingsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        switch cell {
+        case joystickModeCell:
             StoreCenter.store.dispatch(SettingsAction.mode(.joystick))
-        case 1:
+        case twinsticksModeCell:
             StoreCenter.store.dispatch(SettingsAction.mode(.twinsticks))
+            
+        case step1Cell:
+            StoreCenter.store.dispatch(SettingsAction.step(1))
+        case step2Cell:
+            StoreCenter.store.dispatch(SettingsAction.step(2))
+        case step5Cell:
+            StoreCenter.store.dispatch(SettingsAction.step(5))
+        case step10Cell:
+            StoreCenter.store.dispatch(SettingsAction.step(10))
+            
         default:
             break
         }
+        
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    @IBAction func tappedStepper(_ sender: Any) {
-        StoreCenter.store.dispatch(SettingsAction.step(stepStepper.value))
     }
 }
 
@@ -56,8 +68,11 @@ extension SettingsViewController: StoreSubscriber {
         
         joystickModeCell.accessoryType = (settings.mode == .joystick) ? .checkmark : .none
         twinsticksModeCell.accessoryType = (settings.mode == .twinsticks) ? .checkmark : .none
-        stepStepper.value = settings.step
-        stepLabel.text = "\(Int(settings.step))"
+        
+        step1Cell.accessoryType = (settings.step == 1) ? .checkmark : .none
+        step2Cell.accessoryType = (settings.step == 2) ? .checkmark : .none
+        step5Cell.accessoryType = (settings.step == 5) ? .checkmark : .none
+        step10Cell.accessoryType = (settings.step == 10) ? .checkmark : .none
         
         settingsState = settings
     }
