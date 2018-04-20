@@ -10,6 +10,9 @@ import UIKit
 
 class JoystickView: UIView {
     
+    private(set) var x: Double = 0
+    private(set) var y: Double = 0
+    
     var update: ((Double, Double) -> Void)?
     
     private var thumbCenterXConstraint: NSLayoutConstraint!
@@ -84,7 +87,20 @@ class JoystickView: UIView {
         thumbCenterXConstraint.constant = x * width
         thumbCenterYConstraint.constant = y * height
         
-        update?(Double(x), Double(y))
+        let newX = Double(x)
+        let newY = Double(y)
+        
+        if (newX == 1 || newX == -1) && self.x != newX {
+            FeedbackGenerator.feedback()
+        }
+        if (newY == 1 || newY == -1) && self.y != newY {
+            FeedbackGenerator.feedback()
+        }
+        
+        self.x = newX
+        self.y = newY
+        
+        update?(newX, newY)
     }
     
     private func reset() {

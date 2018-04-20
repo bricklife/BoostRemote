@@ -85,10 +85,6 @@ class ControllerViewController: UIViewController {
     }
     
     private func sendCommand(port: BoostBLEKit.Port, power: Int8) {
-        if power == 100 || power == -100 {
-            FeedbackGenerator.feedback()
-        }
-        
         if let command = motors[port]?.powerCommand(power: power) {
             ActionCenter.send(command: command)
         }

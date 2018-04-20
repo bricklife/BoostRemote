@@ -10,6 +10,8 @@ import UIKit
 
 class VerticalSlider: UIView {
     
+    private(set) var value: Double = 0
+    
     var update: ((Double) -> Void)?
     
     private var thumbCenterYConstraint: NSLayoutConstraint!
@@ -73,7 +75,16 @@ class VerticalSlider: UIView {
         }
         
         thumbCenterYConstraint.constant = base * value
-        update?(Double(value))
+        
+        let newValue = Double(value)
+        
+        if (newValue == 1 || newValue == -1) && self.value != newValue {
+            FeedbackGenerator.feedback()
+        }
+        
+        self.value = newValue
+        
+        update?(newValue)
     }
     
     private func reset() {
