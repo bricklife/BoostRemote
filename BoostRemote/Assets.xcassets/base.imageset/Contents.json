@@ -2,16 +2,19 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "left.pdf",
+      "filename" : "base.pdf",
       "resizing" : {
-        "mode" : "3-part-horizontal",
+        "mode" : "9-part",
         "center" : {
           "mode" : "tile",
-          "width" : 1
+          "width" : 1,
+          "height" : 1
         },
         "cap-insets" : {
-          "right" : 32,
-          "left" : 31
+          "bottom" : 15,
+          "top" : 15,
+          "right" : 15,
+          "left" : 15
         }
       }
     }

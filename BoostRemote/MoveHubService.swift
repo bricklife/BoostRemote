@@ -8,9 +8,10 @@
 
 import Foundation
 import CoreBluetooth
+import BoostBLEKit
 
 struct MoveHubService {
     
-    static let serviceUuid = CBUUID(string: "00001623-1212-EFDE-1623-785FEABCD123")
-    static let characteristicUuid = CBUUID(string: "00001624-1212-EFDE-1623-785FEABCD123")
+    static let serviceUuid = CBUUID(string: GATT.serviceUuid)
+    static let characteristicUuid = CBUUID(string: GATT.characteristicUuid)
 }

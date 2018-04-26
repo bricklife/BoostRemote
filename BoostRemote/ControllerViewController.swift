@@ -7,26 +7,29 @@
 //
 
 import UIKit
-import ReactiveCocoa
 import ReactiveSwift
-import Result
 import ReSwift
+import BoostBLEKit
 
 class ControllerViewController: UIViewController {
     
-    @IBOutlet private weak var stickA: StickView!
-    @IBOutlet private weak var stickB: StickView!
-    @IBOutlet private weak var stickC: StickView!
-    @IBOutlet private weak var stickD: StickView!
-    
     @IBOutlet private weak var connectButtonImageView: UIImageView!
+    @IBOutlet private weak var joystickView: UIView!
+    @IBOutlet private weak var twinSticksView: UIView!
+
+    private var controllers: [Controller] {
+        return childViewControllers.compactMap { $0 as? Controller }
+    }
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)
+    private let settingsState = MutableProperty<SettingsState>(SettingsState())
     
-    private var motors: [Port: Motor] = [:] {
+    private var motors: [BoostBLEKit.Port: Motor] = [:] {
         didSet {
-            stickC?.isHidden = !motors.keys.contains(.C)
-            stickD?.isHidden = !motors.keys.contains(.D)
+            controllers.forEach {
+                $0.setEnable(motors.keys.contains(.C), port: .C)
+                $0.setEnable(motors.keys.contains(.D), port: .D)
+            }
         }
     }
     
@@ -34,27 +37,7 @@ class ControllerViewController: UIViewController {
         super.viewDidLoad()
         
         setupConnectButtonImageView()
-        
-        stickA.port = .A
-        stickB.port = .B
-        stickC.port = .C
-        stickD.port = .D
-        
-        stickC.isHidden = true
-        stickD.isHidden = true
-        
-        signal(for: stickA.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(port: .A, power: value)
-        }
-        signal(for: stickB.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(port: .B, power: value)
-        }
-        signal(for: stickC.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(port: .C, power: value)
-        }
-        signal(for: stickD.slider).observeValues { [weak self] (value) in
-            self?.sendCommand(port: .D, power: value)
-        }
+        setupSticks()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +53,7 @@ class ControllerViewController: UIViewController {
     private func setupConnectButtonImageView() {
         connectButtonImageView.animationDuration = 1
         connectButtonImageView.animationRepeatCount = -1
-        connectButtonImageView.animationImages = (1...4).map { "connecting\($0)" }.flatMap { UIImage(named: $0) }
+        connectButtonImageView.animationImages = UIImage.connectingImages()
         
         connectionState.producer.startWithValues { [weak self] (state) in
             if state == .connecting {
@@ -78,35 +61,30 @@ class ControllerViewController: UIViewController {
             } else {
                 self?.connectButtonImageView.stopAnimating()
             }
-            
-            let imageName: String
-            switch state {
-            case .disconnected:
-                imageName = "disconnected"
-            case .connecting:
-                imageName = "disconnected"
-            case .connected:
-                imageName = "connected"
-            case .offline, .unsupported:
-                imageName = "offline"
-            }
-            self?.connectButtonImageView.image = UIImage(named: imageName)
+            self?.connectButtonImageView.image = UIImage(connectionState: state)
         }
     }
     
-    private func signal(for slider: UISlider) -> Signal<Int8, NoError> {
-        let valueSignal = slider.reactive.values.map { Int8($0) * 10 }
+    private func setupSticks() {
+        controllers.forEach {
+            $0.signals.forEach { (port, signal) in
+                signal
+                    .withLatest(from: settingsState.signal.map { $0.step })
+                    .map { (value, step) in Int8(round(value * step) * 100 / step) }
+                    .skipRepeats()
+                    .observeValues { [weak self] (value) in
+                        self?.sendCommand(port: port, power: value)
+                }
+            }
+        }
         
-        let touchUpSignal = Signal<UISlider, NoError>
-            .merge(slider.reactive.controlEvents(.touchUpInside),
-                   slider.reactive.controlEvents(.touchUpOutside))
-            .on(value: { $0.value = 0 })
-            .map { _ in Int8(0) }
-        
-        return Signal<Int8, NoError>.merge(valueSignal, touchUpSignal).skipRepeats()
+        settingsState.signal.observeValues { [weak self] (state) in
+            self?.joystickView.isHidden = state.mode != .joystick
+            self?.twinSticksView.isHidden = state.mode != .twinsticks
+        }
     }
     
-    private func sendCommand(port: Port, power: Int8) {
+    private func sendCommand(port: BoostBLEKit.Port, power: Int8) {
         if let command = motors[port]?.powerCommand(power: power) {
             ActionCenter.send(command: command)
         }
@@ -117,6 +95,8 @@ class ControllerViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func close(_ segue: UIStoryboardSegue) {}
     
     @IBAction private func connectButtonPushed(_ sender: Any) {
         switch connectionState.value {
@@ -139,17 +119,14 @@ extension ControllerViewController: StoreSubscriber {
     func newState(state: State) {
         connectionState.value = state.connectionState
         
-        let ports: [Port] = [.A, .B, .C, .D]
+        let ports: [BoostBLEKit.Port] = [.A, .B, .C, .D]
         for port in ports {
             motors[port] = state.portState[port].flatMap { type -> Motor? in
                 guard state.connectionState == .connected else { return nil }
-                switch type {
-                case .builtInMotor, .interactiveMotor:
-                    return Motor(port: port)
-                default:
-                    return nil
-                }
+                return Motor(port: port, deviceType: type)
             }
         }
+        
+        settingsState.value = state.settingsState
     }
 }

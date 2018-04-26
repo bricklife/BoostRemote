@@ -7,17 +7,17 @@
 //
 
 import UIKit
+import ReactiveSwift
+import Result
+import BoostBLEKit
 
-@IBDesignable
 class StickView: UIView {
     
-    var slider: UISlider {
-        return verticalSlider.slider
-    }
+    let (signal, observer) = Signal<Double, NoError>.pipe()
     
-    var port: Port? {
+    var port: BoostBLEKit.Port? {
         didSet {
-            imageView.image = port.flatMap { UIImage(named: "port\($0)") }
+            imageView.image = port.flatMap(UIImage.init(port:))
         }
     }
     
@@ -46,22 +46,19 @@ class StickView: UIView {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: verticalSlider.bottomAnchor, constant: 16),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.leftAnchor.constraint(equalTo: leftAnchor),
+            imageView.rightAnchor.constraint(equalTo: rightAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 32),
             ])
+        
+        verticalSlider.update = { [weak self] (value) in
+            self?.observer.send(value: -value)
+        }
     }
     
     private let verticalSlider: VerticalSlider = {
         let verticalSlider = VerticalSlider()
         verticalSlider.translatesAutoresizingMaskIntoConstraints = false
-        
-        verticalSlider.slider.setThumbImage(UIImage(named: "thumb"), for: .normal)
-        verticalSlider.slider.setMinimumTrackImage(UIImage(named: "left"), for: .normal)
-        verticalSlider.slider.setMaximumTrackImage(UIImage(named: "right"), for: .normal)
-        
-        verticalSlider.slider.maximumValue = 10
-        verticalSlider.slider.minimumValue = -10
-        verticalSlider.slider.value = 0
         
         return verticalSlider
     }()
@@ -71,6 +68,7 @@ class StickView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         imageView.contentMode = .center
+        
         return imageView
     }()
 }

@@ -8,11 +8,13 @@
 
 import Foundation
 import ReSwift
+import BoostBLEKit
 
 struct State: StateType {
     
     var connectionState: ConnectionState
     var portState: PortState
+    var settingsState: SettingsState
 }
 
 enum ConnectionState {
@@ -24,4 +26,31 @@ enum ConnectionState {
     case unsupported
 }
 
-typealias PortState = [Port: DeviceType]
+typealias PortState = [BoostBLEKit.Port: DeviceType]
+
+struct SettingsState {
+    
+    enum Mode: String {
+        case joystick = "joystick"
+        case twinsticks = "twinsticks"
+    }
+    
+    typealias Step = Double
+    
+    var mode: Mode
+    var step: Step {
+        didSet {
+            if step < 1 {
+                step = 1
+            }
+            if step > 100 {
+                step = 100
+            }
+        }
+    }
+    
+    init() {
+        self.mode = .joystick
+        self.step = 5
+    }
+}

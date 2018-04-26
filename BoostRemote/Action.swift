@@ -8,6 +8,7 @@
 
 import Foundation
 import ReSwift
+import BoostBLEKit
 
 enum ConnectAction: Action {
     
@@ -20,7 +21,13 @@ enum ConnectAction: Action {
 
 struct NotificationAction: Action {
     
-    let notification: Notification
+    let notification: BoostBLEKit.Notification
+}
+
+enum SettingsAction: Action {
+    
+    case step(SettingsState.Step)
+    case mode(SettingsState.Mode)
 }
 
 struct ActionCenter {
