@@ -13,7 +13,7 @@ import BoostBLEKit
 enum ConnectAction: Action {
     
     case scan
-    case connect
+    case connect(Hub)
     case disconnect
     case offline
     case unsupported
