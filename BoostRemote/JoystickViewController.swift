@@ -14,6 +14,7 @@ import BoostBLEKit
 class JoystickViewController: UIViewController, Controller {
     
     @IBOutlet private weak var joystickView: JoystickView!
+    @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var stickC: StickView!
     @IBOutlet private weak var stickD: StickView!
     
@@ -21,6 +22,9 @@ class JoystickViewController: UIViewController, Controller {
     private let (signalB, observerB) = Signal<Double, NoError>.pipe()
     private let (signalC, observerC) = Signal<Double, NoError>.pipe()
     private let (signalD, observerD) = Signal<Double, NoError>.pipe()
+    
+    private var isEnableA: Bool = true
+    private var isEnableB: Bool = true
     
     lazy var signals: [BoostBLEKit.Port: Signal<Double, NoError>] = [
         .A: self.signalA,
@@ -65,12 +69,18 @@ class JoystickViewController: UIViewController, Controller {
     
     func setEnable(_ enable: Bool, port: BoostBLEKit.Port) {
         switch port {
+        case .A:
+            isEnableA = enable
+        case .B:
+            isEnableB = enable
         case .C:
-            stickC.isHidden = !enable
+            stickC.isEnabled = enable
         case .D:
-            stickD.isHidden = !enable
+            stickD.isEnabled = enable
         default:
             break
         }
+        
+        imageView.alpha = isEnableA && isEnableB ? 1.0 : 0.25
     }
 }

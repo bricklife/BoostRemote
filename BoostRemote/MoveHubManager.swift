@@ -20,6 +20,8 @@ class MoveHubManager: NSObject {
     private var peripheral: CBPeripheral?
     private var characteristic: CBCharacteristic?
     
+    private var connectedHub: Hub?
+    
     override init() {
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
@@ -38,11 +40,23 @@ class MoveHubManager: NSObject {
         centralManager.stopScan()
     }
     
-    func connect(peripheral: CBPeripheral) {
-        if self.peripheral == nil {
-            self.peripheral = peripheral
-            centralManager.connect(peripheral, options: nil)
+    func connect(peripheral: CBPeripheral, advertisementData: [String : Any]) -> Bool {
+        guard self.peripheral == nil else { return false }
+        
+        guard let manufacturerData = advertisementData["kCBAdvDataManufacturerData"] as? Data else { return false }
+        guard let hubType = HubType(manufacturerData: manufacturerData) else { return false }
+        
+        switch hubType {
+        case .boost:
+            self.connectedHub = Boost.MoveHub()
+        case .poweredUp:
+            self.connectedHub = PoweredUp.SmartHub()
         }
+        
+        self.peripheral = peripheral
+        centralManager.connect(peripheral, options: nil)
+        
+        return true
     }
     
     func disconnect() {
@@ -50,14 +64,15 @@ class MoveHubManager: NSObject {
             centralManager.cancelPeripheralConnection(peripheral)
             self.peripheral = nil
             self.characteristic = nil
+            self.connectedHub = nil
         }
     }
     
     func set(characteristic: CBCharacteristic) {
-        if let peripheral = peripheral, characteristic.properties.contains([.write, .notify]) {
+        if let hub = connectedHub, let peripheral = peripheral, characteristic.properties.contains([.write, .notify]) {
             self.characteristic = characteristic
             peripheral.setNotifyValue(true, for: characteristic)
-            StoreCenter.store.dispatch(ConnectAction.connect)
+            StoreCenter.store.dispatch(ConnectAction.connect(hub))
         }
     }
     
@@ -88,8 +103,9 @@ extension MoveHubManager: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        connect(peripheral: peripheral)
-        stopScan()
+        if connect(peripheral: peripheral, advertisementData: advertisementData) {
+            stopScan()
+        }
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
@@ -123,6 +139,13 @@ extension MoveHubManager: CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         if let data = characteristic.value, let notification = Notification(data: data) {
             StoreCenter.store.dispatch(NotificationAction(notification: notification))
+            
+            switch notification {
+            case .connected(let portId, let ioType):
+                connectedHub?.connectedIOs[portId] = ioType
+            case .disconnected(let portId):
+                connectedHub?.connectedIOs[portId] = nil
+            }
         }
     }
 }

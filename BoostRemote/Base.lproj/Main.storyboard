@@ -283,32 +283,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="432" height="240"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kdE-rI-9fe">
-                                <rect key="frame" x="0.0" y="0.0" width="432" height="240"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="3QW-qt-ENd">
+                                <rect key="frame" x="0.0" y="0.0" width="176" height="240"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lQ-my-zdb" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyO-fc-bZ8" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="JE5-Ti-fFR"/>
+                                            <constraint firstAttribute="width" constant="64" id="0gd-jD-Mg1"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2o-VH-3GC" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="122.5" y="0.0" width="64" height="240"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cB-nw-vst" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
+                                        <rect key="frame" x="112" y="0.0" width="64" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="LL7-Dd-g7i"/>
+                                            <constraint firstAttribute="width" constant="64" id="q8d-df-7VP"/>
                                         </constraints>
                                     </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="kdE-rI-9fe">
+                                <rect key="frame" x="256" y="0.0" width="176" height="240"/>
+                                <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huh-wt-7be" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="245.5" y="0.0" width="64" height="240"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="XDP-n1-FU3"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEu-vQ-bJV" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="368" y="0.0" width="64" height="240"/>
+                                        <rect key="frame" x="112" y="0.0" width="64" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="Eqf-zm-0GJ"/>
@@ -319,17 +324,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3QW-qt-ENd" firstAttribute="top" secondItem="LWO-Dm-UXs" secondAttribute="top" id="4ww-0m-6OK"/>
                             <constraint firstItem="LWO-Dm-UXs" firstAttribute="trailing" secondItem="kdE-rI-9fe" secondAttribute="trailing" id="AT3-7e-XpL"/>
                             <constraint firstItem="LWO-Dm-UXs" firstAttribute="bottom" secondItem="kdE-rI-9fe" secondAttribute="bottom" id="AiI-M7-Q4M"/>
+                            <constraint firstItem="3QW-qt-ENd" firstAttribute="bottom" secondItem="LWO-Dm-UXs" secondAttribute="bottom" id="L7f-Ts-9gA"/>
                             <constraint firstItem="kdE-rI-9fe" firstAttribute="top" secondItem="LWO-Dm-UXs" secondAttribute="top" id="M1f-k1-Z8w"/>
-                            <constraint firstItem="kdE-rI-9fe" firstAttribute="leading" secondItem="eJj-ac-Wgz" secondAttribute="leading" id="cga-iq-24E"/>
+                            <constraint firstItem="3QW-qt-ENd" firstAttribute="leading" secondItem="LWO-Dm-UXs" secondAttribute="leading" id="zsE-sk-IjN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LWO-Dm-UXs"/>
                     </view>
                     <connections>
-                        <outlet property="stickA" destination="2lQ-my-zdb" id="xhg-4s-3dk"/>
+                        <outlet property="stickA" destination="dyO-fc-bZ8" id="tS3-PE-4Eh"/>
                         <outlet property="stickB" destination="aEu-vQ-bJV" id="PO2-ZJ-B6R"/>
-                        <outlet property="stickC" destination="K2o-VH-3GC" id="Ntg-hL-LX9"/>
+                        <outlet property="stickC" destination="8cB-nw-vst" id="UTH-CM-nth"/>
                         <outlet property="stickD" destination="huh-wt-7be" id="PKM-Yi-oTH"/>
                     </connections>
                 </viewController>
@@ -373,8 +380,8 @@
                                     <constraint firstAttribute="bottom" secondItem="kpP-1i-h95" secondAttribute="bottom" constant="48" id="qwo-kb-xrq"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="bCh-Bk-bmk">
-                                <rect key="frame" x="272" y="0.0" width="160" height="240"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="bCh-Bk-bmk">
+                                <rect key="frame" x="256" y="0.0" width="176" height="240"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42E-Dh-16j" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="240"/>
@@ -384,7 +391,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRn-9f-3gQ" customClass="StickView" customModule="BoostRemote" customModuleProvider="target">
-                                        <rect key="frame" x="96" y="0.0" width="64" height="240"/>
+                                        <rect key="frame" x="112" y="0.0" width="64" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="cSV-r5-Mbr"/>
@@ -405,6 +412,7 @@
                         <viewLayoutGuide key="safeArea" id="KRd-Dq-wTR"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="YUI-ih-rCB" id="LIH-xH-2Ah"/>
                         <outlet property="joystickView" destination="kpP-1i-h95" id="gwB-fd-Ph1"/>
                         <outlet property="stickC" destination="42E-Dh-16j" id="YeJ-Na-PPh"/>
                         <outlet property="stickD" destination="iRn-9f-3gQ" id="SnE-24-MT4"/>

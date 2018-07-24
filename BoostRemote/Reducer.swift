@@ -27,8 +27,13 @@ struct Reducer {
         switch action {
         case .scan:
             return .connecting
-        case .connect:
-            return state == .connecting ? .connected : state
+        case .connect(let hub):
+            switch state {
+            case .connecting:
+                return .connected(hub)
+            default:
+                return state
+            }
         case .disconnect:
             return .disconnected
         case .offline:
@@ -44,10 +49,10 @@ struct Reducer {
         guard let action = action as? NotificationAction else { return state }
         
         switch action.notification {
-        case .connected(let port, let deviceType):
-            state[port] = deviceType
-        case .disconnected(let port):
-            state[port] = nil
+        case .connected(let portId, let ioType):
+            state[portId] = ioType
+        case .disconnected(let portId):
+            state[portId] = nil
         }
         
         return state

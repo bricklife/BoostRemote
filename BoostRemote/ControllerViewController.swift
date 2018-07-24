@@ -16,7 +16,9 @@ class ControllerViewController: UIViewController {
     @IBOutlet private weak var connectButtonImageView: UIImageView!
     @IBOutlet private weak var joystickView: UIView!
     @IBOutlet private weak var twinSticksView: UIView!
-
+    
+    let supportedPorts: [BoostBLEKit.Port] = [.A, .B, .C, .D]
+    
     private var controllers: [Controller] {
         return childViewControllers.compactMap { $0 as? Controller }
     }
@@ -24,11 +26,13 @@ class ControllerViewController: UIViewController {
     private let connectionState = MutableProperty(ConnectionState.disconnected)
     private let settingsState = MutableProperty<SettingsState>(SettingsState())
     
-    private var motors: [BoostBLEKit.Port: Motor] = [:] {
+    private var connectedHub: Hub?
+    private var connectedPorts: [BoostBLEKit.Port] = [] {
         didSet {
-            controllers.forEach {
-                $0.setEnable(motors.keys.contains(.C), port: .C)
-                $0.setEnable(motors.keys.contains(.D), port: .D)
+            for controller in controllers {
+                for port in supportedPorts {
+                    controller.setEnable(connectedPorts.contains(port), port: port)
+                }
             }
         }
     }
@@ -42,11 +46,13 @@ class ControllerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         StoreCenter.store.subscribe(self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         StoreCenter.store.unsubscribe(self)
     }
     
@@ -56,9 +62,10 @@ class ControllerViewController: UIViewController {
         connectButtonImageView.animationImages = UIImage.connectingImages()
         
         connectionState.producer.startWithValues { [weak self] (state) in
-            if state == .connecting {
+            switch state {
+            case .connecting:
                 self?.connectButtonImageView.startAnimating()
-            } else {
+            default:
                 self?.connectButtonImageView.stopAnimating()
             }
             self?.connectButtonImageView.image = UIImage(connectionState: state)
@@ -85,7 +92,7 @@ class ControllerViewController: UIViewController {
     }
     
     private func sendCommand(port: BoostBLEKit.Port, power: Int8) {
-        if let command = motors[port]?.powerCommand(power: power) {
+        if let command = connectedHub?.motorPowerCommand(port: port, power: power) {
             ActionCenter.send(command: command)
         }
     }
@@ -118,15 +125,19 @@ extension ControllerViewController: StoreSubscriber {
     
     func newState(state: State) {
         connectionState.value = state.connectionState
-        
-        let ports: [BoostBLEKit.Port] = [.A, .B, .C, .D]
-        for port in ports {
-            motors[port] = state.portState[port].flatMap { type -> Motor? in
-                guard state.connectionState == .connected else { return nil }
-                return Motor(port: port, deviceType: type)
-            }
-        }
-        
         settingsState.value = state.settingsState
+        
+        switch state.connectionState {
+        case .connected(let hub):
+            connectedHub = hub
+            connectedPorts = state.portState
+                .filter { hub.canSupportAsMotor(ioType: $0.value) }
+                .compactMap { hub.port(for: $0.key) }
+                .filter { supportedPorts.contains($0) }
+            
+        default:
+            connectedHub = nil
+            connectedPorts = []
+        }
     }
 }
