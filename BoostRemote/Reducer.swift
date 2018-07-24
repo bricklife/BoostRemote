@@ -68,6 +68,8 @@ struct Reducer {
             state.step = step
         case .mode(let mode):
             state.mode = mode
+        case .direction(let port, let direction):
+            state.directions[port] = direction
         }
         
         return state
