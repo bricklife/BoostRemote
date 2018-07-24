@@ -29,9 +29,10 @@ class ControllerViewController: UIViewController {
     private var connectedHub: Hub?
     private var connectedPorts: [BoostBLEKit.Port] = [] {
         didSet {
-            controllers.forEach {
-                $0.setEnable(connectedPorts.contains(.C), port: .C)
-                $0.setEnable(connectedPorts.contains(.D), port: .D)
+            for controller in controllers {
+                for port in supportedPorts {
+                    controller.setEnable(connectedPorts.contains(port), port: port)
+                }
             }
         }
     }

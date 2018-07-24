@@ -50,10 +50,14 @@ class TwinSticksViewController: UIViewController, Controller {
     
     func setEnable(_ enable: Bool, port: BoostBLEKit.Port) {
         switch port {
+        case .A:
+            stickA.isEnabled = enable
+        case .B:
+            stickB.isEnabled = enable
         case .C:
-            stickC.isHidden = !enable
+            stickC.isEnabled = enable
         case .D:
-            stickD.isHidden = !enable
+            stickD.isEnabled = enable
         default:
             break
         }

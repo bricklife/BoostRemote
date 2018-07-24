@@ -21,6 +21,12 @@ class StickView: UIView {
         }
     }
     
+    var isEnabled: Bool = true {
+        didSet {
+            imageView.alpha = isEnabled ? 1.0 : 0.25
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
