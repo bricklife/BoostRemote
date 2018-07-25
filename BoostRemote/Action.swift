@@ -28,6 +28,7 @@ enum SettingsAction: Action {
     
     case step(SettingsState.Step)
     case mode(SettingsState.Mode)
+    case direction(BoostBLEKit.Port, Bool)
 }
 
 struct ActionCenter {

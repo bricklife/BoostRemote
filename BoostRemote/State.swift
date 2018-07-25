@@ -48,9 +48,11 @@ struct SettingsState {
             }
         }
     }
-    
+    var directions: [BoostBLEKit.Port: Bool]
+
     init() {
         self.mode = .joystick
         self.step = 5
+        self.directions = [.A: true, .B: true, .C: true, .D: true]
     }
 }
