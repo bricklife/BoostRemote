@@ -73,12 +73,14 @@ class ControllerViewController: UIViewController {
     }
     
     private func setupSticks() {
-        controllers.forEach {
-            $0.signals.forEach { (port, signal) in
+        for controller in controllers {
+            for (port, signal) in controller.signals {
                 signal
                     .withLatest(from: settingsState.signal.map { $0.step })
-                    .map { (value, step) in Int8(round(value * step) * 100 / step) }
+                    .map { (value: Double, step: Double) in Int8(round(value * step) * 100 / step) }
                     .skipRepeats()
+                    .withLatest(from: settingsState.signal.map { $0.directions[port] ?? true })
+                    .map { (power: Int8, direction: Bool) in direction ? power : -power }
                     .observeValues { [weak self] (value) in
                         self?.sendCommand(port: port, power: value)
                 }
