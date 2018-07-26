@@ -1,5 +1,5 @@
 # Boost Remote
-Remote Control iOS app for LEGO® Boost
+Remote Control iOS app for LEGO® BOOST
 
 ## How to use this app
 1. Turn on Bluetooth on your iOS device
@@ -10,7 +10,7 @@ Remote Control iOS app for LEGO® Boost
 ## Requirements
 - iOS 9 or higher
 - iOS device supporting Bluetooth Low Energy (BLE)
-- LEGO® Boost Move Hub
+- LEGO® BOOST Move Hub
 
 ## Development Environment
 - Xcode 9.3
