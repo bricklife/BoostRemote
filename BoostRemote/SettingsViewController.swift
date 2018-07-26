@@ -10,15 +10,20 @@ import UIKit
 import ReSwift
 
 class SettingsViewController: UITableViewController {
-
+    
     @IBOutlet private weak var joystickModeCell: UITableViewCell!
     @IBOutlet private weak var twinsticksModeCell: UITableViewCell!
+    
+    @IBOutlet private weak var portASegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var portBSegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var portCSegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var portDSegmentedControl: UISegmentedControl!
     
     @IBOutlet private weak var step1Cell: UITableViewCell!
     @IBOutlet private weak var step2Cell: UITableViewCell!
     @IBOutlet private weak var step5Cell: UITableViewCell!
     @IBOutlet private weak var step10Cell: UITableViewCell!
-
+    
     private var settingsState: SettingsState!
     
     override func viewDidLoad() {
@@ -59,6 +64,22 @@ class SettingsViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    @IBAction func directionChanged(_ sender: UISegmentedControl) {
+        let direction = sender.selectedSegmentIndex == 1
+        switch sender {
+        case portASegmentedControl:
+            StoreCenter.store.dispatch(SettingsAction.direction(.A, direction))
+        case portBSegmentedControl:
+            StoreCenter.store.dispatch(SettingsAction.direction(.B, direction))
+        case portCSegmentedControl:
+            StoreCenter.store.dispatch(SettingsAction.direction(.C, direction))
+        case portDSegmentedControl:
+            StoreCenter.store.dispatch(SettingsAction.direction(.D, direction))
+        default:
+            break
+        }
+    }
 }
 
 extension SettingsViewController: StoreSubscriber {
@@ -73,6 +94,11 @@ extension SettingsViewController: StoreSubscriber {
         step2Cell.accessoryType = (settings.step == 2) ? .checkmark : .none
         step5Cell.accessoryType = (settings.step == 5) ? .checkmark : .none
         step10Cell.accessoryType = (settings.step == 10) ? .checkmark : .none
+        
+        portASegmentedControl.selectedSegmentIndex = (settings.directions[.A] ?? true) ? 1 : 0
+        portBSegmentedControl.selectedSegmentIndex = (settings.directions[.B] ?? true) ? 1 : 0
+        portCSegmentedControl.selectedSegmentIndex = (settings.directions[.C] ?? true) ? 1 : 0
+        portDSegmentedControl.selectedSegmentIndex = (settings.directions[.D] ?? true) ? 1 : 0
         
         settingsState = settings
     }

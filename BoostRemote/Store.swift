@@ -8,6 +8,7 @@
 
 import Foundation
 import ReSwift
+import BoostBLEKit
 
 struct StoreCenter {
     
@@ -18,10 +19,12 @@ struct StoreCenter {
         
         return store
     }()
-
+    
     final class PersistentManager: StoreSubscriber {
         
         static let shared = PersistentManager()
+        
+        private let allPorts: [BoostBLEKit.Port] = [.A, .B, .C, .D]
         
         func newState(state: State) {
             save(state: state)
@@ -29,11 +32,20 @@ struct StoreCenter {
         
         func load() -> State {
             var settingsState = SettingsState()
+            
+            if let rawValue = UserDefaults.standard.string(forKey: "mode"), let mode = SettingsState.Mode(rawValue: rawValue) {
+                settingsState.mode = mode
+            }
+            
             if let step = UserDefaults.standard.object(forKey: "step") as? SettingsState.Step {
                 settingsState.step = step
             }
-            if let rawValue = UserDefaults.standard.string(forKey: "mode"), let mode = SettingsState.Mode(rawValue: rawValue) {
-                settingsState.mode = mode
+            
+            for port in allPorts {
+                let key = "direction-\(port)"
+                if let direction = UserDefaults.standard.object(forKey: key) as? Bool {
+                    settingsState.directions[port] = direction
+                }
             }
             
             return State(connectionState: .disconnected,
@@ -42,8 +54,12 @@ struct StoreCenter {
         }
         
         func save(state: State) {
-            UserDefaults.standard.set(state.settingsState.step, forKey: "step")
             UserDefaults.standard.set(state.settingsState.mode.rawValue, forKey: "mode")
+            UserDefaults.standard.set(state.settingsState.step, forKey: "step")
+            for (port, direction) in state.settingsState.directions {
+                let key = "direction-\(port)"
+                UserDefaults.standard.set(direction, forKey: key)
+            }
         }
     }
 }

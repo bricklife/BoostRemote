@@ -20,13 +20,13 @@ struct State: StateType {
 enum ConnectionState {
     
     case disconnected
-    case connected
+    case connected(Hub)
     case connecting
     case offline
     case unsupported
 }
 
-typealias PortState = [BoostBLEKit.Port: DeviceType]
+typealias PortState = [PortId: IOType]
 
 struct SettingsState {
     
@@ -48,9 +48,11 @@ struct SettingsState {
             }
         }
     }
-    
+    var directions: [BoostBLEKit.Port: Bool]
+
     init() {
         self.mode = .joystick
         self.step = 5
+        self.directions = [.A: true, .B: true, .C: true, .D: true]
     }
 }
