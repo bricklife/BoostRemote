@@ -1,0 +1,44 @@
+/* Class = "UITableViewSection"; headerTitle = "Controller Type for Motor A & B"; ObjectID = "1vK-ll-SMg"; */
+"1vK-ll-SMg.headerTitle" = "Reglertyp für Motoren A & B";
+
+/* Class = "UITableViewSection"; headerTitle = "Motor Directions"; ObjectID = "9KN-vQ-WBx"; */
+"9KN-vQ-WBx.headerTitle" = "Laufrichtungen der Motoren";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "EDE-ue-qdZ"; */
+"EDE-ue-qdZ.title" = "Einstellungen";
+
+/* Class = "UILabel"; text = "Port D"; ObjectID = "fYO-cN-YCM"; */
+"fYO-cN-YCM.text" = "Anschluss D";
+
+/* Class = "UILabel"; text = "Joystick type"; ObjectID = "IYt-gU-rJE"; */
+"IYt-gU-rJE.text" = "Joystick";
+
+/* Class = "UILabel"; text = "Twin Sticks type"; ObjectID = "kHV-9y-xeo"; */
+"kHV-9y-xeo.text" = "Schieberegler";
+
+/* Class = "UILabel"; text = "Port A"; ObjectID = "nxb-Sh-8Vf"; */
+"nxb-Sh-8Vf.text" = "Anschluss A";
+
+/* Class = "UILabel"; text = "Port C"; ObjectID = "QQF-LJ-BZe"; */
+"QQF-LJ-BZe.text" = "Anschluss C";
+
+/* Class = "UILabel"; text = "Port B"; ObjectID = "t51-4l-aJ5"; */
+"t51-4l-aJ5.text" = "Anschluss B";
+
+/* Class = "UITableViewSection"; headerTitle = "Number of Steps of Motor Power"; ObjectID = "XP7-lg-vY3"; */
+"XP7-lg-vY3.headerTitle" = "Schritte der Motorleistung";
+
+/* Class = "UILabel"; headerTitle = "1 step (On / Off)"; ObjectID = "pYf-8e-0Vh"; */
+"pYf-8e-0Vh.text" = "1 Schritt (Ein / Aus)";
+
+/* Class = "UILabel"; headerTitle = "0 or 100"; ObjectID = "uoD-Hx-d61"; */
+"uoD-Hx-d61.text" = "0 oder 100";
+
+/* Class = "UILabel"; headerTitle = "2 steps"; ObjectID = "pGG-TU-DN3"; */
+"pGG-TU-DN3.text" = "2 Schritte";
+
+/* Class = "UILabel"; headerTitle = "5 steps"; ObjectID = "EH8-DP-72E"; */
+"EH8-DP-72E.text" = "5 Schritte";
+
+/* Class = "UILabel"; headerTitle = "10 steps"; ObjectID = "L74-lo-xZR"; */
+"L74-lo-xZR.text" = "10 Schritte";
