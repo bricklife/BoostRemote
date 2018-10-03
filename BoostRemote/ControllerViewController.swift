@@ -20,7 +20,7 @@ class ControllerViewController: UIViewController {
     let supportedPorts: [BoostBLEKit.Port] = [.A, .B, .C, .D]
     
     private var controllers: [Controller] {
-        return childViewControllers.compactMap { $0 as? Controller }
+        return children.compactMap { $0 as? Controller }
     }
     
     private let connectionState = MutableProperty(ConnectionState.disconnected)

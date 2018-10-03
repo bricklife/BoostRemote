@@ -53,6 +53,8 @@ struct Reducer {
             state[portId] = ioType
         case .disconnected(let portId):
             state[portId] = nil
+        default:
+            break
         }
         
         return state
