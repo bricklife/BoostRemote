@@ -1,4 +1,4 @@
 github "ReSwift/ReSwift" "4.0.1"
 github "ReactiveCocoa/ReactiveSwift" "4.0.0"
 github "antitypical/Result" "4.0.0"
-github "bricklife/BoostBLEKit" "2.0.1"
+github "bricklife/BoostBLEKit" "2.1.0"
