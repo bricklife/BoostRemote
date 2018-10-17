@@ -35,6 +35,7 @@
 		CBF9D2B91F3CACA800B97E11 /* MoveHubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2B81F3CACA800B97E11 /* MoveHubManager.swift */; };
 		CBF9D2D61F3CB52800B97E11 /* MoveHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2D51F3CB52800B97E11 /* MoveHubService.swift */; };
 		CBF9D2F61F3CDAC700B97E11 /* Data+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2F51F3CDAC700B97E11 /* Data+HexString.swift */; };
+		DC1E38FB2111EE4900DA9522 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC1E38F92111EE4900DA9522 /* Main.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,7 +72,7 @@
 		CB70D812201A82D500EAB1D6 /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		CB7390C8201AB89900EAE3A7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		CB84A381201BA3D300C02CD8 /* JoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
-		CB8C7EB3201FEF6500274A09 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CB8C7EB3201FEF6500274A09 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CBA46E771F882F0C0017E5C2 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		CBA46E791F882F0F0017E5C2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		CBA46E7B1F882F800017E5C2 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
@@ -82,6 +83,10 @@
 		CBF9D2B81F3CACA800B97E11 /* MoveHubManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveHubManager.swift; sourceTree = "<group>"; };
 		CBF9D2D51F3CB52800B97E11 /* MoveHubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveHubService.swift; sourceTree = "<group>"; };
 		CBF9D2F51F3CDAC700B97E11 /* Data+HexString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+HexString.swift"; sourceTree = "<group>"; };
+		DC1E38F82111EE2D00DA9522 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC1E38FA2111EE4900DA9522 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		DC1E38FC2111EE8100DA9522 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		DCEE1D2B2111EDFC00FFCFAF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +126,7 @@
 			children = (
 				CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */,
 				CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */,
+				DC1E38F92111EE4900DA9522 /* Main.strings */,
 				CB8C7EB3201FEF6500274A09 /* SettingsViewController.swift */,
 				CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */,
 				CBC72DF9201AC35C00ABE096 /* Controller.swift */,
@@ -215,6 +221,7 @@
 				en,
 				Base,
 				ja,
+				de,
 			);
 			mainGroup = CB3BE8A41F2FF2F4000561F7;
 			productRefGroup = CB3BE8AE1F2FF2F4000561F7 /* Products */;
@@ -235,6 +242,7 @@
 				CB5891F9200D2DF300E15F92 /* InfoPlist.strings in Resources */,
 				CB3BE8BB1F2FF2F4000561F7 /* LaunchScreen.storyboard in Resources */,
 				CB3BE8B81F2FF2F4000561F7 /* Assets.xcassets in Resources */,
+				DC1E38FB2111EE4900DA9522 /* Main.strings in Resources */,
 				CB385A4A1F4E35210061EBE4 /* Settings.bundle in Resources */,
 				CB3BE8B61F2FF2F4000561F7 /* Main.storyboard in Resources */,
 			);
@@ -300,6 +308,7 @@
 			children = (
 				CB3BE8B51F2FF2F4000561F7 /* Base */,
 				CB28BF14208A2C9700F5C15B /* ja */,
+				DC1E38FC2111EE8100DA9522 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -316,6 +325,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CB5891F4200D2CEA00E15F92 /* ja */,
+				DCEE1D2B2111EDFC00FFCFAF /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -324,8 +334,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				CB5891FA200D2DF300E15F92 /* ja */,
+				DC1E38F82111EE2D00DA9522 /* de */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DC1E38F92111EE4900DA9522 /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC1E38FA2111EE4900DA9522 /* de */,
+			);
+			name = Main.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
