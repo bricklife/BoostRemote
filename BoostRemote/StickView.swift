@@ -8,12 +8,11 @@
 
 import UIKit
 import ReactiveSwift
-import Result
 import BoostBLEKit
 
 class StickView: UIView {
     
-    let (signal, observer) = Signal<Double, NoError>.pipe()
+    let (signal, observer) = Signal<Double, Never>.pipe()
     
     var port: BoostBLEKit.Port? {
         didSet {

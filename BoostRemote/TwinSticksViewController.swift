@@ -8,7 +8,6 @@
 
 import UIKit
 import ReactiveSwift
-import Result
 import BoostBLEKit
 
 class TwinSticksViewController: UIViewController, Controller {
@@ -18,12 +17,12 @@ class TwinSticksViewController: UIViewController, Controller {
     @IBOutlet private weak var stickC: StickView!
     @IBOutlet private weak var stickD: StickView!
     
-    private let (signalA, observerA) = Signal<Double, NoError>.pipe()
-    private let (signalB, observerB) = Signal<Double, NoError>.pipe()
-    private let (signalC, observerC) = Signal<Double, NoError>.pipe()
-    private let (signalD, observerD) = Signal<Double, NoError>.pipe()
+    private let (signalA, observerA) = Signal<Double, Never>.pipe()
+    private let (signalB, observerB) = Signal<Double, Never>.pipe()
+    private let (signalC, observerC) = Signal<Double, Never>.pipe()
+    private let (signalD, observerD) = Signal<Double, Never>.pipe()
     
-    lazy var signals: [BoostBLEKit.Port: Signal<Double, NoError>] = [
+    lazy var signals: [BoostBLEKit.Port: Signal<Double, Never>] = [
         .A: self.signalA,
         .B: self.signalB,
         .C: self.signalC,

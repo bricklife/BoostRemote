@@ -4,9 +4,6 @@
 [submodule "Carthage/Checkouts/ReactiveSwift"]
 	path = Carthage/Checkouts/ReactiveSwift
 	url = https://github.com/ReactiveCocoa/ReactiveSwift.git
-[submodule "Carthage/Checkouts/Result"]
-	path = Carthage/Checkouts/Result
-	url = https://github.com/antitypical/Result.git
 [submodule "Carthage/Checkouts/BoostBLEKit"]
 	path = Carthage/Checkouts/BoostBLEKit
 	url = https://github.com/bricklife/BoostBLEKit.git

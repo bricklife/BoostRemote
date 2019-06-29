@@ -29,8 +29,6 @@
 		CBD2D09E217790ED0036C5C8 /* BoostBLEKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D037217790320036C5C8 /* BoostBLEKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBD2D0A1217790F20036C5C8 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D061217790420036C5C8 /* ReactiveSwift.framework */; };
 		CBD2D0A2217790F20036C5C8 /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D061217790420036C5C8 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CBD2D0A5217790FD0036C5C8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D079217790520036C5C8 /* Result.framework */; };
-		CBD2D0A6217790FD0036C5C8 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D079217790520036C5C8 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBD2D0A9217791060036C5C8 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D08E217790580036C5C8 /* ReSwift.framework */; };
 		CBD2D0AA217791060036C5C8 /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D08E217790580036C5C8 /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBD94E841F391B3F0037ED71 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E831F391B3F0037ED71 /* State.swift */; };
@@ -105,55 +103,6 @@
 			remoteGlobalIDString = 7DFBED031CDB8C9500EE435B;
 			remoteInfo = "ReactiveSwift-tvOSTests";
 		};
-		CBD2D074217790520036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D06A217790510036C5C8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480571A9572F5009D7229;
-			remoteInfo = "Result-Mac";
-		};
-		CBD2D076217790520036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D06A217790510036C5C8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480671A9572F5009D7229;
-			remoteInfo = "Result-MacTests";
-		};
-		CBD2D078217790520036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D06A217790510036C5C8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D454807D1A957361009D7229;
-			remoteInfo = "Result-iOS";
-		};
-		CBD2D07A217790520036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D06A217790510036C5C8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D45480871A957362009D7229;
-			remoteInfo = "Result-iOSTests";
-		};
-		CBD2D07C217790520036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D06A217790510036C5C8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57FCDE471BA280DC00130C48;
-			remoteInfo = "Result-tvOS";
-		};
-		CBD2D07E217790520036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D06A217790510036C5C8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57FCDE541BA280E000130C48;
-			remoteInfo = "Result-tvOSTests";
-		};
-		CBD2D080217790520036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D06A217790510036C5C8 /* Result.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D03579A31B2B788F005D26AE;
-			remoteInfo = "Result-watchOS";
-		};
 		CBD2D08D217790580036C5C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
@@ -224,13 +173,6 @@
 			remoteGlobalIDString = D047260B19E49F82006002AA;
 			remoteInfo = "ReactiveSwift-iOS";
 		};
-		CBD2D0A7217790FD0036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D06A217790510036C5C8 /* Result.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D454807C1A957361009D7229;
-			remoteInfo = "Result-iOS";
-		};
 		CBD2D0AB217791060036C5C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
@@ -247,7 +189,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CBD2D0A6217790FD0036C5C8 /* Result.framework in Embed Frameworks */,
 				CBD2D0AA217791060036C5C8 /* ReSwift.framework in Embed Frameworks */,
 				CBD2D09E217790ED0036C5C8 /* BoostBLEKit.framework in Embed Frameworks */,
 				CBD2D0A2217790F20036C5C8 /* ReactiveSwift.framework in Embed Frameworks */,
@@ -282,7 +223,6 @@
 		CBD2D02F217790160036C5C8 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		CBD2D031217790310036C5C8 /* BoostBLEKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BoostBLEKit.xcodeproj; path = Carthage/Checkouts/BoostBLEKit/BoostBLEKit.xcodeproj; sourceTree = "<group>"; };
 		CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveSwift.xcodeproj; path = Carthage/Checkouts/ReactiveSwift/ReactiveSwift.xcodeproj; sourceTree = "<group>"; };
-		CBD2D06A217790510036C5C8 /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
 		CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReSwift.xcodeproj; path = Carthage/Checkouts/ReSwift/ReSwift.xcodeproj; sourceTree = "<group>"; };
 		CBD94E831F391B3F0037ED71 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		CBD94E851F391D7F0037ED71 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -300,7 +240,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBD2D0A5217790FD0036C5C8 /* Result.framework in Frameworks */,
 				CBD2D0A9217791060036C5C8 /* ReSwift.framework in Frameworks */,
 				CBD2D09D217790ED0036C5C8 /* BoostBLEKit.framework in Frameworks */,
 				CBD2D0A1217790F20036C5C8 /* ReactiveSwift.framework in Frameworks */,
@@ -362,7 +301,6 @@
 				CBD2D02F217790160036C5C8 /* Cartfile */,
 				CBD2D031217790310036C5C8 /* BoostBLEKit.xcodeproj */,
 				CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */,
-				CBD2D06A217790510036C5C8 /* Result.xcodeproj */,
 				CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */,
 			);
 			name = Carthage;
@@ -387,20 +325,6 @@
 				CBD2D065217790420036C5C8 /* ReactiveSwift.framework */,
 				CBD2D067217790420036C5C8 /* ReactiveSwift.framework */,
 				CBD2D069217790420036C5C8 /* ReactiveSwiftTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CBD2D06B217790510036C5C8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CBD2D075217790520036C5C8 /* Result.framework */,
-				CBD2D077217790520036C5C8 /* Result-MacTests.xctest */,
-				CBD2D079217790520036C5C8 /* Result.framework */,
-				CBD2D07B217790520036C5C8 /* Result-iOSTests.xctest */,
-				CBD2D07D217790520036C5C8 /* Result.framework */,
-				CBD2D07F217790520036C5C8 /* Result-tvOSTests.xctest */,
-				CBD2D081217790520036C5C8 /* Result.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -448,7 +372,6 @@
 			dependencies = (
 				CBD2D0A0217790ED0036C5C8 /* PBXTargetDependency */,
 				CBD2D0A4217790F20036C5C8 /* PBXTargetDependency */,
-				CBD2D0A8217790FD0036C5C8 /* PBXTargetDependency */,
 				CBD2D0AC217791060036C5C8 /* PBXTargetDependency */,
 			);
 			name = BoostRemote;
@@ -479,6 +402,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				ja,
@@ -495,10 +419,6 @@
 				{
 					ProductGroup = CBD2D053217790420036C5C8 /* Products */;
 					ProjectRef = CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */;
-				},
-				{
-					ProductGroup = CBD2D06B217790510036C5C8 /* Products */;
-					ProjectRef = CBD2D06A217790510036C5C8 /* Result.xcodeproj */;
 				},
 				{
 					ProductGroup = CBD2D083217790570036C5C8 /* Products */;
@@ -574,55 +494,6 @@
 			fileType = wrapper.cfbundle;
 			path = ReactiveSwiftTests.xctest;
 			remoteRef = CBD2D068217790420036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D075217790520036C5C8 /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = CBD2D074217790520036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D077217790520036C5C8 /* Result-MacTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-MacTests.xctest";
-			remoteRef = CBD2D076217790520036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D079217790520036C5C8 /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = CBD2D078217790520036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D07B217790520036C5C8 /* Result-iOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-iOSTests.xctest";
-			remoteRef = CBD2D07A217790520036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D07D217790520036C5C8 /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = CBD2D07C217790520036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D07F217790520036C5C8 /* Result-tvOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Result-tvOSTests.xctest";
-			remoteRef = CBD2D07E217790520036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D081217790520036C5C8 /* Result.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Result.framework;
-			remoteRef = CBD2D080217790520036C5C8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		CBD2D08E217790580036C5C8 /* ReSwift.framework */ = {
@@ -737,11 +608,6 @@
 			isa = PBXTargetDependency;
 			name = "ReactiveSwift-iOS";
 			targetProxy = CBD2D0A3217790F20036C5C8 /* PBXContainerItemProxy */;
-		};
-		CBD2D0A8217790FD0036C5C8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Result-iOS";
-			targetProxy = CBD2D0A7217790FD0036C5C8 /* PBXContainerItemProxy */;
 		};
 		CBD2D0AC217791060036C5C8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
