@@ -49,8 +49,12 @@ class MoveHubManager: NSObject {
         switch hubType {
         case .boost:
             self.connectedHub = Boost.MoveHub()
+        case .boostV1:
+            self.connectedHub = Boost.MoveHubV1()
         case .poweredUp:
             self.connectedHub = PoweredUp.SmartHub()
+        case .duploTrain:
+            self.connectedHub = Duplo.TrainBase()
         }
         
         self.peripheral = peripheral
