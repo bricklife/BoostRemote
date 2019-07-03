@@ -67,7 +67,6 @@ class MoveHubManager: NSObject {
     
     func disconnect() {
         write(data: Data([0x04, 0x00, 0x02, 0x01])) // Switch Off Hub
-        reset()
     }
     
     func reset() {
