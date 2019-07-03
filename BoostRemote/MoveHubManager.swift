@@ -103,6 +103,8 @@ extension MoveHubManager: CBCentralManagerDelegate {
             StoreCenter.store.dispatch(ConnectAction.unsupported)
         case .unsupported:
             StoreCenter.store.dispatch(ConnectAction.unsupported)
+        @unknown default:
+            StoreCenter.store.dispatch(ConnectAction.unsupported)
         }
     }
     

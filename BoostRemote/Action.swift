@@ -34,11 +34,8 @@ enum SettingsAction: Action {
 struct ActionCenter {
     
     static func startScan() {
-        let action: Store<State>.ActionCreator = { state, store in
-            MoveHubManager.shared.startScan()
-            return ConnectAction.scan
-        }
-        StoreCenter.store.dispatch(action)
+        MoveHubManager.shared.startScan()
+        StoreCenter.store.dispatch(ConnectAction.scan)
     }
     
     static func stopScan() {
