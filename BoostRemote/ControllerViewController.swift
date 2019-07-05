@@ -94,7 +94,7 @@ class ControllerViewController: UIViewController {
     }
     
     private func sendCommand(port: BoostBLEKit.Port, power: Int8) {
-        if let command = connectedHub?.motorPowerCommand(port: port, power: power) {
+        if let command = connectedHub?.motorStartPowerCommand(port: port, power: power) {
             ActionCenter.send(command: command)
         }
     }
