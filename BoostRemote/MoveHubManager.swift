@@ -21,6 +21,7 @@ class MoveHubManager: NSObject {
     private var characteristic: CBCharacteristic?
     
     private var connectedHub: Hub?
+    private var isInitializingHub = false
     
     override init() {
         super.init()
@@ -49,10 +50,15 @@ class MoveHubManager: NSObject {
         switch hubType {
         case .boost:
             self.connectedHub = Boost.MoveHub()
+        case .boostV1:
+            self.connectedHub = Boost.MoveHubV1()
         case .poweredUp:
             self.connectedHub = PoweredUp.SmartHub()
+        case .duploTrain:
+            self.connectedHub = Duplo.TrainBase()
         }
         
+        self.isInitializingHub = true
         self.peripheral = peripheral
         centralManager.connect(peripheral, options: nil)
         
@@ -60,12 +66,15 @@ class MoveHubManager: NSObject {
     }
     
     func disconnect() {
-        if let peripheral = peripheral {
-            centralManager.cancelPeripheralConnection(peripheral)
-            self.peripheral = nil
-            self.characteristic = nil
-            self.connectedHub = nil
-        }
+        write(data: Data([0x04, 0x00, 0x02, 0x01])) // Switch Off Hub
+        reset()
+    }
+    
+    func reset() {
+        self.peripheral = nil
+        self.characteristic = nil
+        self.connectedHub = nil
+        self.isInitializingHub = false
     }
     
     func set(characteristic: CBCharacteristic) {
@@ -99,6 +108,8 @@ extension MoveHubManager: CBCentralManagerDelegate {
             StoreCenter.store.dispatch(ConnectAction.unsupported)
         case .unsupported:
             StoreCenter.store.dispatch(ConnectAction.unsupported)
+        @unknown default:
+            StoreCenter.store.dispatch(ConnectAction.unsupported)
         }
     }
     
@@ -114,10 +125,12 @@ extension MoveHubManager: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        reset()
         StoreCenter.store.dispatch(ConnectAction.disconnect)
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        reset()
         StoreCenter.store.dispatch(ConnectAction.disconnect)
     }
 }
@@ -148,6 +161,12 @@ extension MoveHubManager: CBPeripheralDelegate {
             default:
                 break
             }
+            
+            if isInitializingHub {
+                isInitializingHub = false
+                write(data: HubPropertiesCommand(property: .batteryVoltage, operation: .enableUpdates).data)
+            }
+
         }
     }
 }

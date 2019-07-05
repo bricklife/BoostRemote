@@ -21,7 +21,7 @@ extension Data {
         
         let bytes = zip(even, odd).compactMap { UInt8(String([$0.0, $0.1]), radix: 16) }
         
-        self.init(bytes: bytes)
+        self.init(bytes)
     }
     
     public var hexString: String {

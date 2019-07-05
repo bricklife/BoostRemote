@@ -8,12 +8,11 @@
 
 import Foundation
 import ReactiveSwift
-import Result
 import BoostBLEKit
 
 protocol Controller {
     
-    var signals: [BoostBLEKit.Port: Signal<Double, NoError>] { get }
+    var signals: [BoostBLEKit.Port: Signal<Double, Never>] { get }
     
     func setEnable(_ enable: Bool, port: BoostBLEKit.Port)
 }
