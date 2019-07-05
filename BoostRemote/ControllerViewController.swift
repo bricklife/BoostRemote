@@ -93,10 +93,28 @@ class ControllerViewController: UIViewController {
         }
     }
     
+    private var timers: [BoostBLEKit.Port: Timer] = [:]
+    private var waitingCommands: [BoostBLEKit.Port: Command] = [:]
+    
     private func sendCommand(port: BoostBLEKit.Port, power: Int8) {
-        if let command = connectedHub?.motorStartPowerCommand(port: port, power: power) {
+        guard let command = connectedHub?.motorStartPowerCommand(port: port, power: power) else { return }
+        
+        if timers[port] != nil {
+            waitingCommands[port] = command
+        } else {
             ActionCenter.send(command: command)
+            timers[port] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(sendWaitingCommand), userInfo: port, repeats: false)
         }
+    }
+    
+    @objc private func sendWaitingCommand(_ timer: Timer) {
+        guard let port = timer.userInfo as? BoostBLEKit.Port else { return }
+        timers[port] = nil
+        
+        guard let command = waitingCommands[port] else { return }
+        waitingCommands[port] = nil
+        
+        ActionCenter.send(command: command)
     }
     
     private func alert(message: String) {
