@@ -151,7 +151,7 @@ extension ControllerViewController: StoreSubscriber {
         case .connected(let hub):
             connectedHub = hub
             connectedPorts = state.portState
-                .filter { hub.canSupportAsMotor(ioType: $0.value) }
+                .filter { $0.value.canSupportMotorStartPowerCommand }
                 .compactMap { hub.port(for: $0.key) }
                 .filter { supportedPorts.contains($0) }
             
