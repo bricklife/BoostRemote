@@ -10,7 +10,7 @@ Remote Control iOS app for LEGO® BOOST
 ## Requirements
 - iOS 9 or higher
 - iOS device supporting Bluetooth Low Energy (BLE)
-- LEGO® BOOST Move Hub or Powered Up Hub
+- LEGO® BOOST Move Hub, Powered Up Smart Hub, or Technic CONTROL+ Smart Hub
 
 ## App Store
 https://itunes.apple.com/us/app/boost-remote/id1270503610?ls=1&mt=8
