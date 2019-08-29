@@ -58,6 +58,8 @@ class MoveHubManager: NSObject {
             self.connectedHub = Duplo.TrainBase()
         case .controlPlus:
             self.connectedHub = ControlPlus.SmartHub()
+        case .remoteControl:
+            return false
         }
         
         self.isInitializingHub = true
