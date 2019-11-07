@@ -132,6 +132,8 @@ class ControllerViewController: UIViewController {
             ActionCenter.stopScan()
         case .offline:
             alert(message: NSLocalizedString("Turn on Bluetooth", comment: "Turn on Bluetooth"))
+        case .unauthorized:
+            alert(message: NSLocalizedString("Allow to use Bluetooth", comment: "Allow to use Bluetooth"))
         case .unsupported:
             alert(message: NSLocalizedString("Unsupported Device", comment: "Unsupported Device"))
         }

@@ -24,7 +24,7 @@ extension UIImage {
             imageName = "disconnected"
         case .connected:
             imageName = "connected"
-        case .offline, .unsupported:
+        case .offline, .unauthorized, .unsupported:
             imageName = "offline"
         }
         self.init(named: imageName)
