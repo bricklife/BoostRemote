@@ -1,1 +1,2 @@
 NSBluetoothPeripheralUsageDescription="LEGO BOOST Move Hubを操作するためにBluetooth LEが必要です";
+NSBluetoothAlwaysUsageDescription="LEGO BOOST Move Hubを操作するためにBluetooth LEが必要です";
