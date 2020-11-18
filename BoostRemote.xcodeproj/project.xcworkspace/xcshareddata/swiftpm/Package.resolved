@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BoostBLEKit",
+        "repositoryURL": "https://github.com/bricklife/BoostBLEKit.git",
+        "state": {
+          "branch": null,
+          "revision": "c4decf716c4cd17ef340efc9852561009b88a585",
+          "version": "3.3.0"
+        }
+      },
+      {
+        "package": "ReactiveSwift",
+        "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "e03cda84105ba707de039b757e2b2de868c65a3e",
+          "version": "6.5.0"
+        }
+      },
+      {
+        "package": "ReSwift",
+        "repositoryURL": "https://github.com/ReSwift/ReSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "26d3095bdf55f093501bf3a749bb2718bab671b3",
+          "version": "6.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
