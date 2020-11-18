@@ -500,7 +500,7 @@
 			repositoryURL = "https://github.com/ReSwift/ReSwift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 		CB312AFD2564BB710057368F /* XCRemoteSwiftPackageReference "ReactiveSwift" */ = {
