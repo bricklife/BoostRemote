@@ -38,6 +38,8 @@ struct Reducer {
             return .disconnected
         case .offline:
             return .offline
+        case .unauthorized:
+            return .unauthorized
         case .unsupported:
             return .unsupported
         }

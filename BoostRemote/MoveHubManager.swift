@@ -106,7 +106,7 @@ extension MoveHubManager: CBCentralManagerDelegate {
         case .resetting:
             StoreCenter.store.dispatch(ConnectAction.disconnect)
         case .unauthorized:
-            StoreCenter.store.dispatch(ConnectAction.unsupported)
+            StoreCenter.store.dispatch(ConnectAction.unauthorized)
         case .unknown:
             StoreCenter.store.dispatch(ConnectAction.unsupported)
         case .unsupported:

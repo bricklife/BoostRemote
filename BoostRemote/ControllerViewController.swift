@@ -40,6 +40,8 @@ class ControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .background
+        
         setupConnectButtonImageView()
         setupSticks()
     }
@@ -57,18 +59,13 @@ class ControllerViewController: UIViewController {
     }
     
     private func setupConnectButtonImageView() {
-        connectButtonImageView.animationDuration = 1
-        connectButtonImageView.animationRepeatCount = -1
-        connectButtonImageView.animationImages = UIImage.connectingImages()
-        
         connectionState.producer.startWithValues { [weak self] (state) in
             switch state {
             case .connecting:
-                self?.connectButtonImageView.startAnimating()
+                self?.connectButtonImageView.image = UIImage.animatedImageNamed("connecting", duration: 1.0)
             default:
-                self?.connectButtonImageView.stopAnimating()
+                self?.connectButtonImageView.image = UIImage(connectionState: state)
             }
-            self?.connectButtonImageView.image = UIImage(connectionState: state)
         }
     }
     
@@ -135,6 +132,8 @@ class ControllerViewController: UIViewController {
             ActionCenter.stopScan()
         case .offline:
             alert(message: NSLocalizedString("Turn on Bluetooth", comment: "Turn on Bluetooth"))
+        case .unauthorized:
+            alert(message: NSLocalizedString("Allow to use Bluetooth", comment: "Allow to use Bluetooth"))
         case .unsupported:
             alert(message: NSLocalizedString("Unsupported Device", comment: "Unsupported Device"))
         }

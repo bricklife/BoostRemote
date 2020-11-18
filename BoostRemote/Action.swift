@@ -16,6 +16,7 @@ enum ConnectAction: Action {
     case connect(Hub)
     case disconnect
     case offline
+    case unauthorized
     case unsupported
 }
 

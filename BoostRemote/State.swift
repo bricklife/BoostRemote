@@ -23,6 +23,7 @@ enum ConnectionState {
     case connected(Hub)
     case connecting
     case offline
+    case unauthorized
     case unsupported
 }
 
