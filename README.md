@@ -20,8 +20,8 @@ https://youtu.be/WuvGT8WqLrQ
 
 ## How to build
 1. Install [Xcode 12.2](https://developer.apple.com/xcode/)
-2. Clone this repository
+2. Clone this repository including submodules
 3. Open `BoostRemote.xcodeproj`
-4. Build `BoostRemote` scheme after updating Swift packages
+4. Build `BoostRemote` scheme
 
 LEGO is a trademark of the LEGO Group.
