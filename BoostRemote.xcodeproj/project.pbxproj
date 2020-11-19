@@ -235,7 +235,6 @@
 				CB3BE8AF1F2FF2F4000561F7 /* BoostRemote */,
 				CB3BE8AE1F2FF2F4000561F7 /* Products */,
 				CB95418A25660B7800E34129 /* Carthage */,
-				CB9541D625660BCD00E34129 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,13 +322,6 @@
 				CB9541D025660BAE00E34129 /* ReactiveSwiftTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CB9541D625660BCD00E34129 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CBF9D2D81F3CB63300B97E11 /* Redux */ = {
