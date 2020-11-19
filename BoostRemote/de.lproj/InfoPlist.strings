@@ -1,1 +1,2 @@
 NSBluetoothPeripheralUsageDescription="Diese App verwendet Bluetooth LE zur Steuerung des LEGO BOOST Move Hub";
+NSBluetoothAlwaysUsageDescription="Diese App verwendet Bluetooth LE zur Steuerung des LEGO BOOST Move Hub";

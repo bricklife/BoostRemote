@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		CB0BF7E51F8BD873004CCD4F /* VerticalSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BF7E41F8BD873004CCD4F /* VerticalSlider.swift */; };
 		CB0BF7E71F8BDD30004CCD4F /* StickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BF7E61F8BDD30004CCD4F /* StickView.swift */; };
 		CB2276C5236C292A008C1307 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2276C4236C292A008C1307 /* UIColor+Extension.swift */; };
+		CB312AF92564BB300057368F /* BoostBLEKit in Frameworks */ = {isa = PBXBuildFile; productRef = CB312AF82564BB300057368F /* BoostBLEKit */; };
+		CB312AFC2564BB490057368F /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CB312AFB2564BB490057368F /* ReSwift */; };
+		CB312AFF2564BB710057368F /* ReactiveSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CB312AFE2564BB710057368F /* ReactiveSwift */; };
 		CB385A4A1F4E35210061EBE4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB385A491F4E35210061EBE4 /* Settings.bundle */; };
 		CB3BE8B11F2FF2F4000561F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE8B01F2FF2F4000561F7 /* AppDelegate.swift */; };
 		CB3BE8B31F2FF2F4000561F7 /* ControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BE8B21F2FF2F4000561F7 /* ControllerViewController.swift */; };
@@ -26,12 +29,6 @@
 		CB84A382201BA3D300C02CD8 /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84A381201BA3D300C02CD8 /* JoystickView.swift */; };
 		CB8C7EB4201FEF6500274A09 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C7EB3201FEF6500274A09 /* SettingsViewController.swift */; };
 		CBC72DFA201AC35C00ABE096 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC72DF9201AC35C00ABE096 /* Controller.swift */; };
-		CBD2D09D217790ED0036C5C8 /* BoostBLEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D037217790320036C5C8 /* BoostBLEKit.framework */; };
-		CBD2D09E217790ED0036C5C8 /* BoostBLEKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D037217790320036C5C8 /* BoostBLEKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CBD2D0A1217790F20036C5C8 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D061217790420036C5C8 /* ReactiveSwift.framework */; };
-		CBD2D0A2217790F20036C5C8 /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D061217790420036C5C8 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CBD2D0A9217791060036C5C8 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D08E217790580036C5C8 /* ReSwift.framework */; };
-		CBD2D0AA217791060036C5C8 /* ReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2D08E217790580036C5C8 /* ReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBD94E841F391B3F0037ED71 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E831F391B3F0037ED71 /* State.swift */; };
 		CBD94E861F391D7F0037ED71 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E851F391D7F0037ED71 /* Action.swift */; };
 		CBD94E881F391E2E0037ED71 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD94E871F391E2E0037ED71 /* Reducer.swift */; };
@@ -40,149 +37,6 @@
 		CBF9D2F61F3CDAC700B97E11 /* Data+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9D2F51F3CDAC700B97E11 /* Data+HexString.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CBD2D036217790320036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D031217790310036C5C8 /* BoostBLEKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "BoostBLEKit::BoostBLEKit::Product";
-			remoteInfo = BoostBLEKit;
-		};
-		CBD2D038217790320036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D031217790310036C5C8 /* BoostBLEKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "BoostBLEKit::BoostBLEKitTests::Product";
-			remoteInfo = BoostBLEKitTests;
-		};
-		CBD2D05C217790420036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D04725EA19E49ED7006002AA;
-			remoteInfo = "ReactiveSwift-macOS";
-		};
-		CBD2D05E217790420036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D04725F519E49ED7006002AA;
-			remoteInfo = "ReactiveSwift-macOSTests";
-		};
-		CBD2D060217790420036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D047260C19E49F82006002AA;
-			remoteInfo = "ReactiveSwift-iOS";
-		};
-		CBD2D062217790420036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D047261619E49F82006002AA;
-			remoteInfo = "ReactiveSwift-iOSTests";
-		};
-		CBD2D064217790420036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A9B315541B3940610001CB9C;
-			remoteInfo = "ReactiveSwift-watchOS";
-		};
-		CBD2D066217790420036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57A4D2411BA13D7A00F7D4B1;
-			remoteInfo = "ReactiveSwift-tvOS";
-		};
-		CBD2D068217790420036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7DFBED031CDB8C9500EE435B;
-			remoteInfo = "ReactiveSwift-tvOSTests";
-		};
-		CBD2D08D217790580036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 625E66831C1FF97E0027C288;
-			remoteInfo = "ReSwift-iOS";
-		};
-		CBD2D08F217790580036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 625E669A1C1FFA3C0027C288;
-			remoteInfo = "ReSwift-iOSTests";
-		};
-		CBD2D091217790580036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25DBCF7B1C30C4AA00D63A58;
-			remoteInfo = "ReSwift-macOS";
-		};
-		CBD2D093217790580036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25DBCF871C30C4DB00D63A58;
-			remoteInfo = "ReSwift-macOSTests";
-		};
-		CBD2D095217790580036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25DBCF4E1C30C18D00D63A58;
-			remoteInfo = "ReSwift-tvOS";
-		};
-		CBD2D097217790580036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25DBCF641C30C1AC00D63A58;
-			remoteInfo = "ReSwift-tvOSTests";
-		};
-		CBD2D099217790580036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25DBCF371C30BF2B00D63A58;
-			remoteInfo = "ReSwift-watchOS";
-		};
-		CBD2D09B217790580036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3F13C0E81E7B3E4000D8442C;
-			remoteInfo = SwiftLintIntegration;
-		};
-		CBD2D09F217790ED0036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D031217790310036C5C8 /* BoostBLEKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = "BoostBLEKit::BoostBLEKit";
-			remoteInfo = BoostBLEKit;
-		};
-		CBD2D0A3217790F20036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D047260B19E49F82006002AA;
-			remoteInfo = "ReactiveSwift-iOS";
-		};
-		CBD2D0AB217791060036C5C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 625E66821C1FF97E0027C288;
-			remoteInfo = "ReSwift-iOS";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		CB3BE8CB1F2FF3AC000561F7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -190,9 +44,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CBD2D0AA217791060036C5C8 /* ReSwift.framework in Embed Frameworks */,
-				CBD2D09E217790ED0036C5C8 /* BoostBLEKit.framework in Embed Frameworks */,
-				CBD2D0A2217790F20036C5C8 /* ReactiveSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,10 +73,6 @@
 		CB84A381201BA3D300C02CD8 /* JoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
 		CB8C7EB3201FEF6500274A09 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CBC72DF9201AC35C00ABE096 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
-		CBD2D02F217790160036C5C8 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		CBD2D031217790310036C5C8 /* BoostBLEKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BoostBLEKit.xcodeproj; path = Carthage/Checkouts/BoostBLEKit/BoostBLEKit.xcodeproj; sourceTree = "<group>"; };
-		CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveSwift.xcodeproj; path = Carthage/Checkouts/ReactiveSwift/ReactiveSwift.xcodeproj; sourceTree = "<group>"; };
-		CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReSwift.xcodeproj; path = Carthage/Checkouts/ReSwift/ReSwift.xcodeproj; sourceTree = "<group>"; };
 		CBD94E831F391B3F0037ED71 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		CBD94E851F391D7F0037ED71 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		CBD94E871F391E2E0037ED71 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
@@ -242,9 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBD2D0A9217791060036C5C8 /* ReSwift.framework in Frameworks */,
-				CBD2D09D217790ED0036C5C8 /* BoostBLEKit.framework in Frameworks */,
-				CBD2D0A1217790F20036C5C8 /* ReactiveSwift.framework in Frameworks */,
+				CB312AF92564BB300057368F /* BoostBLEKit in Frameworks */,
+				CB312AFF2564BB710057368F /* ReactiveSwift in Frameworks */,
+				CB312AFC2564BB490057368F /* ReSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				CB3BE8AF1F2FF2F4000561F7 /* BoostRemote */,
-				CBD2D02E217790030036C5C8 /* Carthage */,
 				CB3BE8AE1F2FF2F4000561F7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -298,55 +144,6 @@
 			path = BoostRemote;
 			sourceTree = "<group>";
 		};
-		CBD2D02E217790030036C5C8 /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				CBD2D02F217790160036C5C8 /* Cartfile */,
-				CBD2D031217790310036C5C8 /* BoostBLEKit.xcodeproj */,
-				CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */,
-				CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */,
-			);
-			name = Carthage;
-			sourceTree = "<group>";
-		};
-		CBD2D032217790310036C5C8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CBD2D037217790320036C5C8 /* BoostBLEKit.framework */,
-				CBD2D039217790320036C5C8 /* BoostBLEKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CBD2D053217790420036C5C8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CBD2D05D217790420036C5C8 /* ReactiveSwift.framework */,
-				CBD2D05F217790420036C5C8 /* ReactiveSwiftTests.xctest */,
-				CBD2D061217790420036C5C8 /* ReactiveSwift.framework */,
-				CBD2D063217790420036C5C8 /* ReactiveSwiftTests.xctest */,
-				CBD2D065217790420036C5C8 /* ReactiveSwift.framework */,
-				CBD2D067217790420036C5C8 /* ReactiveSwift.framework */,
-				CBD2D069217790420036C5C8 /* ReactiveSwiftTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CBD2D083217790570036C5C8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CBD2D08E217790580036C5C8 /* ReSwift.framework */,
-				CBD2D090217790580036C5C8 /* ReSwift-iOSTests.xctest */,
-				CBD2D092217790580036C5C8 /* ReSwift.framework */,
-				CBD2D094217790580036C5C8 /* ReSwift-macOSTests.xctest */,
-				CBD2D096217790580036C5C8 /* ReSwift.framework */,
-				CBD2D098217790580036C5C8 /* ReSwift-tvOSTests.xctest */,
-				CBD2D09A217790580036C5C8 /* ReSwift.framework */,
-				CBD2D09C217790580036C5C8 /* SwiftLintIntegration.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CBF9D2D81F3CB63300B97E11 /* Redux */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,11 +170,13 @@
 			buildRules = (
 			);
 			dependencies = (
-				CBD2D0A0217790ED0036C5C8 /* PBXTargetDependency */,
-				CBD2D0A4217790F20036C5C8 /* PBXTargetDependency */,
-				CBD2D0AC217791060036C5C8 /* PBXTargetDependency */,
 			);
 			name = BoostRemote;
+			packageProductDependencies = (
+				CB312AF82564BB300057368F /* BoostBLEKit */,
+				CB312AFB2564BB490057368F /* ReSwift */,
+				CB312AFE2564BB710057368F /* ReactiveSwift */,
+			);
 			productName = BoostRemote;
 			productReference = CB3BE8AD1F2FF2F4000561F7 /* BoostRemote.app */;
 			productType = "com.apple.product-type.application";
@@ -389,7 +188,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = bricklife.com;
 				TargetAttributes = {
 					CB3BE8AC1F2FF2F4000561F7 = {
@@ -411,150 +210,19 @@
 				de,
 			);
 			mainGroup = CB3BE8A41F2FF2F4000561F7;
+			packageReferences = (
+				CB312AF72564BB300057368F /* XCRemoteSwiftPackageReference "BoostBLEKit" */,
+				CB312AFA2564BB490057368F /* XCRemoteSwiftPackageReference "ReSwift" */,
+				CB312AFD2564BB710057368F /* XCRemoteSwiftPackageReference "ReactiveSwift" */,
+			);
 			productRefGroup = CB3BE8AE1F2FF2F4000561F7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CBD2D032217790310036C5C8 /* Products */;
-					ProjectRef = CBD2D031217790310036C5C8 /* BoostBLEKit.xcodeproj */;
-				},
-				{
-					ProductGroup = CBD2D053217790420036C5C8 /* Products */;
-					ProjectRef = CBD2D052217790420036C5C8 /* ReactiveSwift.xcodeproj */;
-				},
-				{
-					ProductGroup = CBD2D083217790570036C5C8 /* Products */;
-					ProjectRef = CBD2D082217790570036C5C8 /* ReSwift.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CB3BE8AC1F2FF2F4000561F7 /* BoostRemote */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CBD2D037217790320036C5C8 /* BoostBLEKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BoostBLEKit.framework;
-			remoteRef = CBD2D036217790320036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D039217790320036C5C8 /* BoostBLEKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BoostBLEKitTests.xctest;
-			remoteRef = CBD2D038217790320036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D05D217790420036C5C8 /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = CBD2D05C217790420036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D05F217790420036C5C8 /* ReactiveSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveSwiftTests.xctest;
-			remoteRef = CBD2D05E217790420036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D061217790420036C5C8 /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = CBD2D060217790420036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D063217790420036C5C8 /* ReactiveSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveSwiftTests.xctest;
-			remoteRef = CBD2D062217790420036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D065217790420036C5C8 /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = CBD2D064217790420036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D067217790420036C5C8 /* ReactiveSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReactiveSwift.framework;
-			remoteRef = CBD2D066217790420036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D069217790420036C5C8 /* ReactiveSwiftTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ReactiveSwiftTests.xctest;
-			remoteRef = CBD2D068217790420036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D08E217790580036C5C8 /* ReSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReSwift.framework;
-			remoteRef = CBD2D08D217790580036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D090217790580036C5C8 /* ReSwift-iOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ReSwift-iOSTests.xctest";
-			remoteRef = CBD2D08F217790580036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D092217790580036C5C8 /* ReSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReSwift.framework;
-			remoteRef = CBD2D091217790580036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D094217790580036C5C8 /* ReSwift-macOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ReSwift-macOSTests.xctest";
-			remoteRef = CBD2D093217790580036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D096217790580036C5C8 /* ReSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReSwift.framework;
-			remoteRef = CBD2D095217790580036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D098217790580036C5C8 /* ReSwift-tvOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ReSwift-tvOSTests.xctest";
-			remoteRef = CBD2D097217790580036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D09A217790580036C5C8 /* ReSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ReSwift.framework;
-			remoteRef = CBD2D099217790580036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CBD2D09C217790580036C5C8 /* SwiftLintIntegration.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftLintIntegration.xctest;
-			remoteRef = CBD2D09B217790580036C5C8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CB3BE8AB1F2FF2F4000561F7 /* Resources */ = {
@@ -600,24 +268,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CBD2D0A0217790ED0036C5C8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BoostBLEKit;
-			targetProxy = CBD2D09F217790ED0036C5C8 /* PBXContainerItemProxy */;
-		};
-		CBD2D0A4217790F20036C5C8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ReactiveSwift-iOS";
-			targetProxy = CBD2D0A3217790F20036C5C8 /* PBXContainerItemProxy */;
-		};
-		CBD2D0AC217791060036C5C8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ReSwift-iOS";
-			targetProxy = CBD2D0AB217791060036C5C8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CB3BE8B41F2FF2F4000561F7 /* Main.storyboard */ = {
@@ -685,6 +335,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -746,6 +397,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -767,7 +419,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -779,11 +432,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = UV6TAX3ANB;
 				INFOPLIST_FILE = BoostRemote/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bricklife.ios.boost-remote";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -795,11 +451,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = UV6TAX3ANB;
 				INFOPLIST_FILE = BoostRemote/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bricklife.ios.boost-remote";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -828,6 +487,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB312AF72564BB300057368F /* XCRemoteSwiftPackageReference "BoostBLEKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bricklife/BoostBLEKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.0;
+			};
+		};
+		CB312AFA2564BB490057368F /* XCRemoteSwiftPackageReference "ReSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReSwift/ReSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		CB312AFD2564BB710057368F /* XCRemoteSwiftPackageReference "ReactiveSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveCocoa/ReactiveSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB312AF82564BB300057368F /* BoostBLEKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB312AF72564BB300057368F /* XCRemoteSwiftPackageReference "BoostBLEKit" */;
+			productName = BoostBLEKit;
+		};
+		CB312AFB2564BB490057368F /* ReSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB312AFA2564BB490057368F /* XCRemoteSwiftPackageReference "ReSwift" */;
+			productName = ReSwift;
+		};
+		CB312AFE2564BB710057368F /* ReactiveSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB312AFD2564BB710057368F /* XCRemoteSwiftPackageReference "ReactiveSwift" */;
+			productName = ReactiveSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CB3BE8A51F2FF2F4000561F7 /* Project object */;
 }
