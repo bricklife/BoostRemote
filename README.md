@@ -13,7 +13,7 @@ Remote Control iOS app for LEGO® BOOST
 - LEGO® BOOST Move Hub, Powered Up Smart Hub, or Technic CONTROL+ Smart Hub
 
 ## App Store
-https://itunes.apple.com/us/app/boost-remote/id1270503610?ls=1&mt=8
+https://apps.apple.com/us/app/boost-remote/id1270503610
 
 ## Demonstration
 https://youtu.be/WuvGT8WqLrQ
