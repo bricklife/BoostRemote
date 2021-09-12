@@ -19,7 +19,7 @@ https://apps.apple.com/us/app/boost-remote/id1270503610
 https://youtu.be/WuvGT8WqLrQ
 
 ## How to build
-1. Install [Xcode 12.2](https://developer.apple.com/xcode/)
+1. Install [Xcode 12.x](https://developer.apple.com/xcode/)
 2. Clone this repository including submodules
 3. Open `BoostRemote.xcodeproj`
 4. Build `BoostRemote` scheme
