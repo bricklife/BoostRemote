@@ -79,7 +79,7 @@ class ControllerViewController: UIViewController {
                     .withLatest(from: settingsState.signal.map { $0.directions[port] ?? true })
                     .map { (power: Int8, direction: Bool) in direction ? power : -power }
                     .observeValues { [weak self] (value) in
-                        self?.sendCommand(port: port, power: value)
+                        self?.sendStartPowerCommand(port: port, power: value)
                 }
             }
         }
@@ -93,7 +93,7 @@ class ControllerViewController: UIViewController {
     private var timers: [BoostBLEKit.Port: Timer] = [:]
     private var waitingCommands: [BoostBLEKit.Port: Command] = [:]
     
-    private func sendCommand(port: BoostBLEKit.Port, power: Int8) {
+    private func sendStartPowerCommand(port: BoostBLEKit.Port, power: Int8) {
         guard let command = connectedHub?.motorStartPowerCommand(port: port, power: power) else { return }
         
         if timers[port] != nil {
