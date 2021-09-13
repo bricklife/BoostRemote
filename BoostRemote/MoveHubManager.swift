@@ -58,7 +58,9 @@ class MoveHubManager: NSObject {
             self.connectedHub = Duplo.TrainBase()
         case .controlPlus:
             self.connectedHub = ControlPlus.SmartHub()
-        case .remoteControl:
+        case .spikeEssential:
+            self.connectedHub = Spike.EssentialHub()
+        default:
             return false
         }
         
