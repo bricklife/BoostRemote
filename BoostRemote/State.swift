@@ -10,7 +10,7 @@ import Foundation
 import ReSwift
 import BoostBLEKit
 
-struct State: StateType {
+struct State {
     
     var connectionState: ConnectionState
     var portState: PortState
